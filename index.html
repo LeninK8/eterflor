@@ -201,8 +201,46 @@
 </section>
 
 <section id="comentarios" style="background-color: #f5f5f5; padding: 50px 20px;">
-    <h2 style="text-align: center; font-size: 36px; color: #0288d1;">¡Déjanos tu comentario! 📝</h2>
+    <h2 style="text-align: center; font-size: 36px; color: #0288d1;">¡Déjanos tucomentario! 📝</h2>
     <p style="text-align: center; color: #555; font-size: 18px; margin-bottom: 40px;">Nos encantaría saber tu opinión. ¡Tu feedback es muy importante para nosotros!</p>
 
     <div style="display: flex; justify-content: center;">
-        <form action="/submit-comment" method="POST" style="background-color: white; padding: 30px; border-radius: 15px; box-shadow: 0 4px 8px rgba(0,0
+        <form action="/submit-comment" method="POST" style="background-color: white; padding: 30px; border-radius: 15px; box-shadow: 0 4px 8px rgba(0,0,0,0.1); width: 80%; max-width: 600px;">
+            <label for="nombre" style="font-size: 18px; color: #0288d1;">Tu Nombre:</label>
+            <input type="text" id="nombre" name="nombre" placeholder="Escribe tu nombre" required style="width: 100%; padding: 10px; margin-bottom: 20px; border: 1px solid #ccc; border-radius: 5px; box-sizing: border-box;">
+
+            <label for="comentario" style="font-size: 18px; color: #0288d1;">Tu Comentario:</label>
+            <textarea id="comentario" name="comentario" rows="5" placeholder="¿Qué piensas de ÉterFlor?" required style="width: 100%; padding: 10px; margin-bottom: 20px; border: 1px solid #ccc; border-radius: 5px; box-sizing: border-box;"></textarea>
+
+            <button type="submit" style="background-color: #0288d1; color: white; padding: 12px 20px; border: none; border-radius: 20px; cursor: pointer; font-size: 16px; font-weight: bold;">Enviar Comentario</button>
+        </form>
+    </div>
+</section>
+
+<script>
+    function crearPetalo() {
+        const petalo = document.createElement('div');
+        petalo.classList.add('petalo');
+        petalo.style.left = `${Math.random() * 100}vw`;
+        petalo.style.animationDelay = `${Math.random() * 5}s`;
+        petalo.style.animationDuration = `${Math.random() * 5 + 8}s`;
+        petalo.style.transform = `rotate(${Math.random() * 360}deg)`;
+        document.body.appendChild(petalo);
+
+        // Eliminar el pétalo después de que termine la animación para evitar sobrecargar el DOM
+        petalo.addEventListener('animationend', () => {
+            petalo.remove();
+        });
+    }
+
+    // Generar algunos pétalos iniciales
+    for (let i = 0; i < 10; i++) {
+        crearPetalo();
+    }
+
+    // Generar un nuevo pétalo cada cierto tiempo (opcional)
+    setInterval(crearPetalo, 1500); // Crea un pétalo cada 1.5 segundos
+</script>
+
+</body>
+</html>

@@ -10,7 +10,7 @@
             margin: 0;
             font-family: 'Montserrat', sans-serif;
             background-color: #fff8f4;
-            overflow-x: hidden; /* Para evitar scroll horizontal por las hojas */
+            overflow-x: hidden; /* Para evitar scroll horizontal general */
         }
 
         header {
@@ -59,6 +59,8 @@
             border-radius: 20px;
             cursor: pointer;
             font-weight: bold;
+            display: block; /* Para centrar el botón */
+            margin: 10px auto 0; /* Centrar el botón */
         }
 
         .boton-pago:hover {
@@ -85,6 +87,117 @@
             from { transform: rotate(0deg); }
             to { transform: rotate(360deg); }
         }
+
+        .seccion-productos {
+            background-color: #fff7f0;
+            padding: 50px 20px;
+        }
+
+        .seccion-productos h2 {
+            text-align: center;
+            font-size: 36px;
+            color: #6d4c41;
+        }
+
+        .contenedor-scroll {
+            display: flex;
+            overflow-x: auto;
+            padding: 20px 0;
+            gap: 30px;
+        }
+
+        .tarjeta-producto {
+            background-color: white;
+            border-radius: 15px;
+            padding: 20px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+            width: 300px;
+            flex: 0 0 auto; /* Evita que las tarjetas se estiren y permite el scroll */
+        }
+
+        .tarjeta-producto img {
+            width: 100%;
+            border-radius: 10px;
+            margin-bottom: 10px;
+        }
+
+        .tarjeta-producto h3 {
+            margin-top: 0;
+            color: #8e24aa;
+        }
+
+        /* Estilos específicos para cada sección */
+        #libros {
+            background-color: #fff3e0;
+        }
+
+        #libros h2 {
+            color: #4e342e;
+        }
+
+        #electrodomesticos {
+            background-color: #e1f5fe;
+        }
+
+        #electrodomesticos h2 {
+            color: #0288d1;
+        }
+
+        #comentarios {
+            background-color: #f5f5f5;
+            padding: 50px 20px;
+            text-align: center;
+        }
+
+        #comentarios h2 {
+            font-size: 36px;
+            color: #0288d1;
+        }
+
+        #comentarios p {
+            color: #555;
+            font-size: 18px;
+            margin-bottom: 40px;
+        }
+
+        #comentarios form {
+            background-color: white;
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+            width: 80%;
+            max-width: 600px;
+            margin: 0 auto;
+            text-align: left;
+        }
+
+        #comentarios label {
+            font-size: 18px;
+            color: #0288d1;
+            display: block;
+            margin-bottom: 5px;
+        }
+
+        #comentarios input[type="text"],
+        #comentarios textarea {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 20px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            box-sizing: border-box;
+        }
+
+        #comentarios button[type="submit"] {
+            background-color: #0288d1;
+            color: white;
+            padding: 12px 20px;
+            border: none;
+            border-radius: 20px;
+            cursor: pointer;
+            font-size: 16px;
+            font-weight: bold;
+        }
     </style>
 </head>
 <body>
@@ -98,110 +211,116 @@
     <img src="https://pngimg.com/uploads/autumn_leaves/autumn_leaves_PNG3610.png" class="hojas hoja5">
 </header>
 
-<section id="flores" style="background-color: #fff7f0; padding: 50px 20px;">
-    <h2 style="text-align: center; font-size: 36px; color: #6d4c41;">Flores Eternas</h2>
-    <div style="display: flex; flex-wrap: wrap; justify-content: center; gap: 30px; margin-top: 40px;">
-
-        <div style="background-color: white; border-radius: 15px; padding: 20px; box-shadow: 0 4px 8px rgba(0,0,0,0.1); width: 300px;">
-            <img src="https://via.placeholder.com/300x200/ffcdd2/880e4f?Text=Flor%20Rosada" alt="Flor Eterna Rosada" style="width: 100%; border-radius: 10px;">
-            <h3 style="margin-top: 15px; color: #8e24aa;">Flor Rosada Eterna</h3>
-            <p style="color: #555;">Simboliza la belleza inmortal del amor que desafía al tiempo. Cada pétalo guarda una promesa eterna. 🌹</p>
-            <div style="margin-top: 10px; text-align: center;">
-                <button class="boton-pago pagar-yape-btn" data-producto="Flor Rosada Eterna">Pagar con Yape</button>
-            </div>
+<section id="flores" class="seccion-productos">
+    <h2>Flores Eternas</h2>
+    <div class="contenedor-scroll">
+        <div class="tarjeta-producto">
+            <img src="https://via.placeholder.com/300x200/ffcdd2/880e4f?Text=Flor%20Rosada" alt="Flor Eterna Rosada">
+            <h3>Flor Rosada Eterna</h3>
+            <p>Simboliza la belleza inmortal del amor que desafía al tiempo. Cada pétalo guarda una promesa eterna. 🌹</p>
+            <button class="boton-pago pagar-yape-btn" data-producto="Flor Rosada Eterna">Pagar con Yape</button>
         </div>
-
-        <div style="background-color: white; border-radius: 15px; padding: 20px; box-shadow: 0 4px 8px rgba(0,0,0,0.1); width: 300px;">
-            <img src="https://via.placeholder.com/300x200/bbdefb/1a237e?Text=Flor%20Azul" alt="Flor Eterna Azul" style="width: 100%; border-radius: 10px;">
-            <h3 style="margin-top: 15px; color: #1565c0;">Flor Azul Eterna</h3>
-            <p style="color: #555;">Misteriosa como el cielo nocturno, esta flor representa el amor profundo que trasciende vidas. 🌌</p>
-            <div style="margin-top: 10px; text-align: center;">
-                <button class="boton-pago pagar-yape-btn" data-producto="Flor Azul Eterna">Pagar con Yape</button>
-            </div>
+        <div class="tarjeta-producto">
+            <img src="https://via.placeholder.com/300x200/bbdefb/1a237e?Text=Flor%20Azul" alt="Flor Eterna Azul">
+            <h3>Flor Azul Eterna</h3>
+            <p>Misteriosa como el cielo nocturno, esta flor representa el amor profundo que trasciende vidas. 🌌</p>
+            <button class="boton-pago pagar-yape-btn" data-producto="Flor Azul Eterna">Pagar con Yape</button>
         </div>
-
+        <div class="tarjeta-producto">
+            <img src="https://via.placeholder.com/300x200/f8bbd0/ad1457?Text=Flor%20Lila" alt="Flor Eterna Lila">
+            <h3>Flor Lila Eterna</h3>
+            <p>Representa la magia y el encanto, un recuerdo perenne de momentos especiales y sueños compartidos. ✨</p>
+            <button class="boton-pago pagar-yape-btn" data-producto="Flor Lila Eterna">Pagar con Yape</button>
+        </div>
+        <div class="tarjeta-producto">
+            <img src="https://via.placeholder.com/300x200/c8e6c9/1b5e20?Text=Flor%20Verde" alt="Flor Eterna Verde">
+            <h3>Flor Verde Eterna</h3>
+            <p>Símbolo de esperanza y renovación, esta flor perdura como la promesa de un futuro lleno de vida y armonía. 🌿</p>
+            <button class="boton-pago pagar-yape-btn" data-producto="Flor Verde Eterna">Pagar con Yape</button>
+        </div>
+        <div class="tarjeta-producto">
+            <img src="https://via.placeholder.com/300x200/ffe0b2/bf360c?Text=Flor%20Naranja" alt="Flor Eterna Naranja">
+            <h3>Flor Naranja Eterna</h3>
+            <p>Irradia energía y entusiasmo, un tributo a la alegría de vivir y a los lazos afectivos que perduran. 🔥</p>
+            <button class="boton-pago pagar-yape-btn" data-producto="Flor Naranja Eterna">Pagar con Yape</button>
+        </div>
     </div>
 </section>
 
-<section id="libros" style="background-color: #fff3e0; padding: 50px 20px;">
-    <h2 style="text-align: center; font-size: 36px; color: #4e342e;">Libros Eternos</h2>
-    <div style="display: flex; flex-wrap: wrap; justify-content: center; gap: 30px; margin-top: 40px;">
-
-        <div style="background-color: white; border-radius: 15px; padding: 20px; box-shadow: 0 4px 8px rgba(0,0,0,0.1); width: 300px;">
-            <img src="https://via.placeholder.com/300x200/d1c4e9/311b92?Text=Libro%201" alt="Libro 1" style="width: 100%; border-radius: 10px;">
-            <h3 style="margin-top: 15px; color: #6a1b9a;">"Susurros del Infinito"</h3>
-            <p style="color: #555;">Un viaje entre líneas donde el alma se expande, y el tiempo se detiene ante el poder de una historia que trasciende dimensiones.</p>
-            <div style="margin-top: 10px; text-align: center;">
-                <button class="boton-pago pagar-yape-btn" data-producto="Libro Susurros del Infinito">Pagar con Yape</button>
-            </div>
+<section id="libros" class="seccion-productos">
+    <h2>Libros Eternos</h2>
+    <div class="contenedor-scroll">
+        <div class="tarjeta-producto">
+            <img src="https://via.placeholder.com/300x200/d1c4e9/311b92?Text=Libro%201" alt="Libro Susurros del Infinito">
+            <h3>"Susurros del Infinito"</h3>
+            <p>Un viaje entre líneas donde el alma se expande, y el tiempo se detiene ante el poder de una historia que trasciende dimensiones.</p>
+            <button class="boton-pago pagar-yape-btn" data-producto="Libro Susurros del Infinito">Pagar con Yape</button>
         </div>
-
-        <div style="background-color: white; border-radius: 15px; padding: 20px; box-shadow: 0 4px 8px rgba(0,0,0,0.1); width: 300px;">
-            <img src="https://via.placeholder.com/300x200/ffe0b2/bf360c?Text=Libro%202" alt="Libro 2" style="width: 100%; border-radius: 10px;">
-            <h3 style="margin-top: 15px; color: #d84315;">"El Guardián de los Sueños"</h3>
-            <p style="color: #555;">Entre sueños y realidades, esta obra revela que incluso en la oscuridad, hay luces que nunca se apagan.</p>
-            <div style="margin-top: 10px; text-align: center;">
-                <button class="boton-pago pagar-yape-btn" data-producto="Libro El Guardián de los Sueños">Pagar con Yape</button>
-            </div>
+        <div class="tarjeta-producto">
+            <img src="https://via.placeholder.com/300x200/ffe0b2/bf360c?Text=Libro%202" alt="Libro El Guardián de los Sueños">
+            <h3>"El Guardián de los Sueños"</h3>
+            <p>Entre sueños y realidades, esta obra revela que incluso en la oscuridad, hay luces que nunca se apagan.</p>
+            <button class="boton-pago pagar-yape-btn" data-producto="Libro El Guardián de los Sueños">Pagar con Yape</button>
         </div>
-
-        <div style="background-color: white; border-radius: 15px; padding: 20px; box-shadow: 0 4px 8px rgba(0,0,0,0.1); width: 300px;">
-            <img src="https://via.placeholder.com/300x200/cddc39/1b5e20?Text=Libro%203" alt="Libro 3" style="width: 100%; border-radius: 10px;">
-            <h3 style="margin-top: 15px; color: #1e88e5;">"Fragmentos de Eternidad"</h3>
-            <p style="color: #555;">Cada página es una chispa de lo eterno, un eco del alma que persiste más allá del tiempo.</p>
-            <div style="margin-top: 10px; text-align: center;">
-                <button class="boton-pago pagar-yape-btn" data-producto="Libro Fragmentos de Eternidad">Pagar con Yape</button>
-            </div>
+        <div class="tarjeta-producto">
+            <img src="https://via.placeholder.com/300x200/cddc39/1b5e20?Text=Libro%203" alt="Libro Fragmentos de Eternidad">
+            <h3>"Fragmentos de Eternidad"</h3>
+            <p>Cada página es una chispa de lo eterno, un eco del alma que persiste más allá del tiempo.</p>
+            <button class="boton-pago pagar-yape-btn" data-producto="Libro Fragmentos de Eternidad">Pagar con Yape</button>
         </div>
-
-        <div style="background-color: white; border-radius: 15px; padding: 20px; box-shadow: 0 4px 8px rgba(0,0,0,0.1); width: 300px;">
-            <img src="https://via.placeholder.com/300x200/81d4fa/0d47a1?Text=Libro%204" alt="Libro 4" style="width: 100%; border-radius: 10px;">
-            <h3 style="margin-top: 15px; color: #2e7d32;">"La Flor de los Recuerdos"</h3>
-            <p style="color: #555;">Un relato que florece en el corazón, donde cada palabra es un pétalo que guarda memorias imborrables.</p>
-            <div style="margin-top: 10px; text-align: center;">
-                <button class="boton-pago pagar-yape-btn" data-producto="Libro La Flor de los Recuerdos">Pagar con Yape</button>
-            </div>
+        <div class="tarjeta-producto">
+            <img src="https://via.placeholder.com/300x200/81d4fa/0d47a1?Text=Libro%204" alt="Libro La Flor de los Recuerdos">
+            <h3>"La Flor de los Recuerdos"</h3>
+            <p>Un relato que florece en el corazón, donde cada palabra es un pétalo que guarda memorias imborrables.</p>
+            <button class="boton-pago pagar-yape-btn" data-producto="Libro La Flor de los Recuerdos">Pagar con Yape</button>
         </div>
-
+        <div class="tarjeta-producto">
+            <img src="https://via.placeholder.com/300x200/ffab91/d84315?Text=Libro%205" alt="Libro El Tejedor de Mundos">
+            <h3>"El Tejedor de Mundos"</h3>
+            <p>Sumérgete en un universo de posibilidades infinitas, donde cada elección entrelaza destinos en la tela del cosmos.</p>
+            <button class="boton-pago pagar-yape-btn" data-producto="Libro El Tejedor de Mundos">Pagar con Yape</button>
+        </div>
     </div>
 </section>
 
-<section id="electrodomesticos" style="background-color: #e1f5fe; padding: 50px 20px;">
-    <h2 style="text-align: center; font-size: 36px; color: #0288d1;">Electrodomésticos Eternos</h2>
-    <div style="display: flex; flex-wrap: wrap; justify-content: center; gap: 30px; margin-top: 40px;">
-
-        <div style="background-color: white; border-radius: 15px; padding: 20px; box-shadow: 0 4px 8px rgba(0,0,0,0.1); width: 300px;">
-            <img src="https://via.placeholder.com/300x200/b3e5fc/01579b?Text=Cafetera" alt="Electrodoméstico 1" style="width: 100%; border-radius: 10px;">
-            <h3 style="margin-top: 15px; color: #01579b;">Cafetera Eterna</h3>
-            <p style="color: #555;">Despierta cada mañana con el aroma de la eternidad. Esta cafetera es tu compañera ideal para un día perfecto. ☕</p>
-            <div style="margin-top: 10px; text-align: center;">
-                <button class="boton-pago pagar-yape-btn" data-producto="Cafetera Eterna">Pagar con Yape</button>
-            </div>
+<section id="electrodomesticos" class="seccion-productos">
+    <h2>Electrodomésticos Eternos</h2>
+    <div class="contenedor-scroll">
+        <div class="tarjeta-producto">
+            <img src="https://via.placeholder.com/300x200/b3e5fc/01579b?Text=Cafetera" alt="Cafetera Eterna">
+            <h3>Cafetera Eterna</h3>
+            <p>Despierta cada mañana con el aroma de la eternidad. Esta cafetera es tu compañera ideal para un día perfecto. ☕</p>
+            <button class="boton-pago pagar-yape-btn" data-producto="Cafetera Eterna">Pagar con Yape</button>
         </div>
-
-        <div style="background-color: white; border-radius: 15px; padding: 20px; box-shadow: 0 4px 8px rgba(0,0,0,0.1); width: 300px;">
-            <img src="https://via.placeholder.com/300x200/81d4fa/0288d1?Text=Licuadora" alt="Electrodoméstico 2" style="width: 100%; border-radius: 10px;">
-            <h3 style="margin-top: 15px; color: #0288d1;">Licuadora Eterna</h3>
-            <p style="color: #555;">Perfecta para preparar tus bebidas más refrescantes. Esta licuadora no conoce el paso del tiempo. 🥤</p>
-            <div style="margin-top: 10px; text-align: center;">
-                <button class="boton-pago pagar-yape-btn" data-producto="Licuadora Eterna">Pagar con Yape</button>
-            </div>
+        <div class="tarjeta-producto">
+            <img src="https://via.placeholder.com/300x200/81d4fa/0288d1?Text=Licuadora" alt="Licuadora Eterna">
+            <h3>Licuadora Eterna</h3>
+            <p>Perfecta para preparar tus bebidas más refrescantes. Esta licuadora no conoce el paso del tiempo. 🥤</p>
+            <button class="boton-pago pagar-yape-btn" data-producto="Licuadora Eterna">Pagar con Yape</button>
         </div>
-
-        <div style="background-color: white; border-radius: 15px; padding: 20px; box-shadow: 0 4px 8px rgba(0,0,0,0.1); width: 300px;">
-            <img src="https://via.placeholder.com/300x200/4fc3f7/0277bd?Text=Tostadora" alt="Electrodoméstico 3" style="width: 100%; border-radius: 10px;">
-            <h3 style="margin-top: 15px; color: #0277bd;">Tostadora Eterna</h3>
-            <p style="color: #555;">Tu desayuno será perfecto con esta tostadora, que transforma cada rebanada en un pedazo de felicidad. 🍞</p>
-            <div style="margin-top: 10px; text-align: center;">
-                <button class="boton-pago pagar-yape-btn" data-producto="Tostadora Eterna">Pagar con Yape</button>
-            </div>
+        <div class="tarjeta-producto">
+            <img src="https://via.placeholder.com/300x200/4fc3f7/0277bd?Text=Tostadora" alt="Tostadora Eterna">
+            <h3>Tostadora Eterna</h3>
+            <p>Tu desayuno será perfecto con esta tostadora, que transforma cada rebanada en un pedazo de felicidad. 🍞</p>
+            <button class="boton-pago pagar-yape-btn" data-producto="Tostadora Eterna">Pagar con Yape</button>
         </div>
-
+        <div class="tarjeta-producto">
+            <img src="https://via.placeholder.com/300x200/e0f7fa/00acc1?Text=Refrigerador" alt="Refrigerador Eterno">
+            <h3>Refrigerador Eterno</h3>
+            <p>Conserva tus alimentos frescos para siempre. Este refrigerador es un guardián del sabor que desafía las leyes del tiempo. 🍎</p>
+            <button class="boton-pago pagar-yape-btn" data-producto="Refrigerador Eterno">Pagar con Yape</button>
+        </div>
+        <div class="tarjeta-producto">
+            <img src="https://via.placeholder.com/300x200/b2ebf2/00838f?Text=Lavadora" alt="Lavadora Eterna">
+            <h3>Lavadora Eterna</h3>
+            <p>Mantén tu ropa impecable sin preocuparte por el desgaste. Esta lavadora es un símbolo de pureza que perdura ciclo tras ciclo. 👕</p>
+            <button class="boton-pago pagar-yape-btn" data-producto="Lavadora Eterna">Pagar con Yape</button>
+        </div>
     </div>
 </section>
 
 <section id="comentarios" style="background-color: #f5f5f5; padding: 50px 20px;">
-    <h2 style="text-align: center; font-size: 36px; color: #0288d1;">¡Déjanos tucomentario! 📝</h2>
+    <h2 style="text-align: center; font-size: 36px; color: #0288d1;">¡Déjanos tu comentario! 📝</h2>
     <p style="text-align: center; color: #555; font-size: 18px; margin-bottom: 40px;">Nos encantaría saber tu opinión. ¡Tu feedback es muy importante para nosotros!</p>
 
     <div style="display: flex; justify-content: center;">

@@ -213,4 +213,24 @@
   </div>
 </section>
 
+<section id="comentarios" style="background-color: #f5f5f5; padding: 50px 20px;">
+  <h2 style="text-align: center; font-size: 36px; color: #0288d1;">¡Déjanos tu comentario! 📝</h2>
+  <p style="text-align: center; color: #555; font-size: 18px; margin-bottom: 40px;">Nos encantaría saber tu opinión. ¡Tu feedback es muy importante para nosotros!</p>
+
+  <div style="display: flex; justify-content: center;">
+    <form action="/submit-comment" method="POST" style="background-color: white; padding: 30px; border-radius: 15px; box-shadow: 0 4px 8px rgba(0,0,0,0.1); width: 80%; max-width: 600px;">
+      <label for="nombre" style="font-size: 18px; color: #0288d1;">Tu Nombre:</label>
+      <input type="text" id="nombre" name="nombre" placeholder="Escribe tu nombre" required style="width: 100%; padding: 10px; margin-top: 10px; border-radius: 8px; border: 1px solid #ccc; font-size: 16px; margin-bottom: 20px;">
+
+      <label for="comentario" style="font-size: 18px; color: #0288d1;">Tu Comentario:</label>
+      <textarea id="comentario" name="comentario" placeholder="Escribe tu comentario aquí..." rows="6" required style="width: 100%; padding: 10px; margin-top: 10px; border-radius: 8px; border: 1px solid #ccc; font-size: 16px;"></textarea>
+
+      <div style="text-align: center; margin-top: 20px;">
+        <button type="submit" style="background-color: #0288d1; color: white; border: none; padding: 10px 20px; border-radius: 20px; cursor: pointer; font-size: 18px;">
+          Enviar Comentario
+        </button>
+      </div>
+    </form>
+  </div>
+</section>
 

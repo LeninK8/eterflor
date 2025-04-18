@@ -13,46 +13,55 @@
     }
 
     header {
-      background: linear-gradient(135deg, #f8bbd0, #ffe0e0);
+      background: linear-gradient(135deg, #000000, #3d3d3d);
       padding: 60px 20px;
       text-align: center;
       position: relative;
       overflow: hidden;
+      color: #ffd700;
     }
 
     header h1 {
       font-family: 'Great Vibes', cursive;
       font-size: 4em;
-      color: #880e4f;
+      color: #ffd700;
       margin: 0;
+      z-index: 1;
+      position: relative;
     }
 
     .hojas {
-  position: absolute;
-  opacity: 0.2;
-  animation: flotar 10s infinite ease-in-out;
-}
+      position: absolute;
+      width: 60px;
+      opacity: 0.15;
+      animation: flotar 10s infinite ease-in-out;
+      filter: hue-rotate(45deg) brightness(1.2);
+    }
 
-.hoja1 {
-  top: 10px;
-  left: 20px;
-  transform: rotate(20deg);
-}
-
-.hoja2 {
-  bottom: 10px;
-  right: 30px;
-  transform: rotate(-30deg);
-}
+    .hoja1 { top: 10px; left: 20px; transform: rotate(20deg); }
+    .hoja2 { bottom: 10px; right: 30px; transform: rotate(-30deg); }
+    .hoja3 { top: 50px; right: 100px; transform: rotate(10deg); }
+    .hoja4 { bottom: 40px; left: 80px; transform: rotate(-15deg); }
+    .hoja5 { top: 80px; left: 150px; transform: rotate(25deg); }
 
     @keyframes flotar {
       0% { transform: translateY(0) rotate(0deg); }
-      50% { transform: translateY(10px) rotate(5deg); }
+      50% { transform: translateY(15px) rotate(10deg); }
       100% { transform: translateY(0) rotate(0deg); }
     }
   </style>
 </head>
 <body>
+
+<header>
+  <h1>ÉterFlor</h1>
+  <!-- Hojas doradas (puedes cambiar la imagen si tienes una personalizada) -->
+  <img src="https://pngimg.com/uploads/autumn_leaves/autumn_leaves_PNG3610.png" class="hojas hoja1">
+  <img src="https://pngimg.com/uploads/autumn_leaves/autumn_leaves_PNG3610.png" class="hojas hoja2">
+  <img src="https://pngimg.com/uploads/autumn_leaves/autumn_leaves_PNG3610.png" class="hojas hoja3">
+  <img src="https://pngimg.com/uploads/autumn_leaves/autumn_leaves_PNG3610.png" class="hojas hoja4">
+  <img src="https://pngimg.com/uploads/autumn_leaves/autumn_leaves_PNG3610.png" class="hojas hoja5">
+</header>
 
 <section id="flores" style="background-color: #fff7f0; padding: 50px 20px;">
   <h2 style="text-align: center; font-size: 36px; color: #6d4c41;">Flores Eternas</h2>
@@ -62,35 +71,11 @@
     <div style="background-color: white; border-radius: 15px; padding: 20px; box-shadow: 0 4px 8px rgba(0,0,0,0.1); width: 300px;">
       <img src="https://example.com/flor1.jpg" alt="Flor Eterna Rosada" style="width: 100%; border-radius: 10px;">
       <h3 style="margin-top: 15px; color: #8e24aa;">Flor Rosada Eterna</h3>
-      <p style="color: #555;">Una rosa que nunca se marchita, perfecta para recordar momentos especiales.</p>
+      <p style="color: #555;">Simboliza la belleza inmortal del amor que desafía al tiempo. Cada pétalo guarda una promesa eterna. 🌹</p>
       <div style="margin-top: 10px;">
-        <a href="https://wa.me/51987654321?text=Hola%2C%20quiero%20comprar%20la%20Flor%20Rosada%20eterna%20🌹" target="_blank" style="text-decoration: none; margin-right: 10px;">
+        <a href="https://wa.me/51987654321?text=Hola%2C%20quiero%20comprar%20la%20Flor%20Rosada%20eterna%20🌹" target="_blank" style="text-decoration: none;">
           <button style="background-color: #25d366; color: white; border: none; padding: 10px 20px; border-radius: 20px; cursor: pointer;">
             WhatsApp
-          </button>
-        </a>
-        <a href="https://example.com/yape-rosada.jpg" target="_blank" style="text-decoration: none;">
-          <button style="background-color: #7c4dff; color: white; border: none; padding: 10px 20px; border-radius: 20px; cursor: pointer;">
-            Yape
-          </button>
-        </a>
-      </div>
-    </div>
-
-    <!-- Flor 3 -->
-    <div style="background-color: white; border-radius: 15px; padding: 20px; box-shadow: 0 4px 8px rgba(0,0,0,0.1); width: 300px;">
-      <img src="https://example.com/flor1.jpg" alt="Flor Eterna Rosada" style="width: 100%; border-radius: 10px;">
-      <h3 style="margin-top: 15px; color: #8e24aa;">Flor Rosada Eterna</h3>
-      <p style="color: #555;">Una rosa que nunca se marchita, perfecta para recordar momentos especiales.</p>
-      <div style="margin-top: 10px;">
-        <a href="https://wa.me/51987654321?text=Hola%2C%20quiero%20comprar%20la%20Flor%20Rosada%20eterna%20🌹" target="_blank" style="text-decoration: none; margin-right: 10px;">
-          <button style="background-color: #25d366; color: white; border: none; padding: 10px 20px; border-radius: 20px; cursor: pointer;">
-            WhatsApp
-          </button>
-        </a>
-        <a href="https://example.com/yape-rosada.jpg" target="_blank" style="text-decoration: none;">
-          <button style="background-color: #7c4dff; color: white; border: none; padding: 10px 20px; border-radius: 20px; cursor: pointer;">
-            Yape
           </button>
         </a>
       </div>
@@ -100,16 +85,11 @@
     <div style="background-color: white; border-radius: 15px; padding: 20px; box-shadow: 0 4px 8px rgba(0,0,0,0.1); width: 300px;">
       <img src="https://example.com/flor2.jpg" alt="Flor Eterna Azul" style="width: 100%; border-radius: 10px;">
       <h3 style="margin-top: 15px; color: #1565c0;">Flor Azul Eterna</h3>
-      <p style="color: #555;">Elegante y misteriosa, ideal para demostrar amor eterno y profundo.</p>
+      <p style="color: #555;">Misteriosa como el cielo nocturno, esta flor representa el amor profundo que trasciende vidas. 🌌</p>
       <div style="margin-top: 10px;">
-        <a href="https://wa.me/51987654321?text=Hola%2C%20quiero%20comprar%20la%20Flor%20Azul%20eterna%20🌸" target="_blank" style="text-decoration: none; margin-right: 10px;">
+        <a href="https://wa.me/51987654321?text=Hola%2C%20quiero%20comprar%20la%20Flor%20Azul%20eterna%20🌸" target="_blank" style="text-decoration: none;">
           <button style="background-color: #25d366; color: white; border: none; padding: 10px 20px; border-radius: 20px; cursor: pointer;">
             WhatsApp
-          </button>
-        </a>
-        <a href="https://example.com/yape-azul.jpg" target="_blank" style="text-decoration: none;">
-          <button style="background-color: #7c4dff; color: white; border: none; padding: 10px 20px; border-radius: 20px; cursor: pointer;">
-            Yape
           </button>
         </a>
       </div>
@@ -117,3 +97,6 @@
 
   </div>
 </section>
+
+</body>
+</html>

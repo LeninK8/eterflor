@@ -143,52 +143,19 @@
             color: #0288d1;
         }
 
-        #comentarios {
+        #enlace-comentarios {
             background-color: #f5f5f5;
             padding: 50px 20px;
             text-align: center;
         }
 
-        #comentarios h2 {
+        #enlace-comentarios h2 {
             font-size: 36px;
             color: #0288d1;
-        }
-
-        #comentarios p {
-            color: #555;
-            font-size: 18px;
-            margin-bottom: 40px;
-        }
-
-        #comentarios form {
-            background-color: white;
-            padding: 30px;
-            border-radius: 15px;
-            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-            width: 80%;
-            max-width: 600px;
-            margin: 0 auto;
-            text-align: left;
-        }
-
-        #comentarios label {
-            font-size: 18px;
-            color: #0288d1;
-            display: block;
-            margin-bottom: 5px;
-        }
-
-        #comentarios input[type="text"],
-        #comentarios textarea {
-            width: 100%;
-            padding: 10px;
             margin-bottom: 20px;
-            border: 1px solid #ccc;
-            border-radius: 5px;
-            box-sizing: border-box;
         }
 
-        #comentarios button[type="submit"] {
+        #enlace-comentarios a {
             background-color: #0288d1;
             color: white;
             padding: 12px 20px;
@@ -197,6 +164,11 @@
             cursor: pointer;
             font-size: 16px;
             font-weight: bold;
+            text-decoration: none;
+        }
+
+        #enlace-comentarios a:hover {
+            background-color: #01579b;
         }
     </style>
 </head>
@@ -308,7 +280,7 @@
             <img src="https://via.placeholder.com/300x200/e0f7fa/00acc1?Text=Refrigerador" alt="Refrigerador Eterno">
             <h3>Refrigerador Eterno</h3>
             <p>Conserva tus alimentos frescos para siempre. Este refrigerador es un guardián del sabor que desafía las leyes del tiempo. 🍎</p>
-            <button class="boton-pago pagar-yape-btn" data-producto="Refrigerador Eterno">Pagar con Yape</button>
+            <button class="boton-pago pagar-yape-btn" data-producto="Refrigerador Eterna">Pagar con Yape</button>
         </div>
         <div class="tarjeta-producto">
             <img src="https://via.placeholder.com/300x200/b2ebf2/00838f?Text=Lavadora" alt="Lavadora Eterna">
@@ -319,21 +291,9 @@
     </div>
 </section>
 
-<section id="comentarios" style="background-color: #f5f5f5; padding: 50px 20px;">
-    <h2 style="text-align: center; font-size: 36px; color: #0288d1;">¡Déjanos tu comentario! 📝</h2>
-    <p style="text-align: center; color: #555; font-size: 18px; margin-bottom: 40px;">Nos encantaría saber tu opinión. ¡Tu feedback es muy importante para nosotros!</p>
-
-    <div style="display: flex; justify-content: center;">
-        <form action="/submit-comment" method="POST" style="background-color: white; padding: 30px; border-radius: 15px; box-shadow: 0 4px 8px rgba(0,0,0,0.1); width: 80%; max-width: 600px;">
-            <label for="nombre" style="font-size: 18px; color: #0288d1;">Tu Nombre:</label>
-            <input type="text" id="nombre" name="nombre" placeholder="Escribe tu nombre" required style="width: 100%; padding: 10px; margin-bottom: 20px; border: 1px solid #ccc; border-radius: 5px; box-sizing: border-box;">
-
-            <label for="comentario" style="font-size: 18px; color: #0288d1;">Tu Comentario:</label>
-            <textarea id="comentario" name="comentario" rows="5" placeholder="¿Qué piensas de ÉterFlor?" required style="width: 100%; padding: 10px; margin-bottom: 20px; border: 1px solid #ccc; border-radius: 5px; box-sizing: border-box;"></textarea>
-
-            <button type="submit" style="background-color: #0288d1; color: white; padding: 12px 20px; border: none; border-radius: 20px; cursor: pointer; font-size: 16px; font-weight: bold;">Enviar Comentario</button>
-        </form>
-    </div>
+<section id="enlace-comentarios">
+    <h2>¿Tienes algo que contarnos?</h2>
+    <a href="comentarios.html">Envíanos tu comentario</a>
 </section>
 
 <script>

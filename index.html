@@ -4,82 +4,59 @@
   <meta charset="UTF-8">
   <title>ÉterFlor</title>
   <style>
+    @import url('https://fonts.googleapis.com/css2?family=Great+Vibes&family=Montserrat:wght@400;700&display=swap');
+
     body {
       margin: 0;
-      font-family: 'Arial', sans-serif;
-      background-color: #fff0f5;
-      color: #333;
+      font-family: 'Montserrat', sans-serif;
+      background-color: #fff8f4;
     }
 
     header {
-      background-color: #c2185b;
-      color: white;
-      padding: 20px;
+      background: linear-gradient(135deg, #f8bbd0, #ffe0e0);
+      padding: 60px 20px;
       text-align: center;
-      font-size: 2em;
+      position: relative;
+      overflow: hidden;
     }
 
-    .seccion {
-      padding: 30px;
-    }
-
-    .seccion h2 {
-      margin-bottom: 15px;
+    header h1 {
+      font-family: 'Great Vibes', cursive;
+      font-size: 4em;
       color: #880e4f;
+      margin: 0;
     }
 
-    .galeria {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 15px;
+    .hojas {
+      position: absolute;
+      width: 100px;
+      opacity: 0.1;
+      animation: flotar 10s infinite ease-in-out;
     }
 
-    .item {
-      width: 120px;
-      height: 120px;
-      background-color: #f8bbd0;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      border-radius: 10px;
-      box-shadow: 0 4px 6px rgba(0,0,0,0.1);
-      cursor: pointer;
-      transition: transform 0.2s;
+    .hoja1 {
+      top: 10px;
+      left: 20px;
+      transform: rotate(20deg);
     }
 
-    .item:hover {
-      transform: scale(1.05);
+    .hoja2 {
+      bottom: 10px;
+      right: 30px;
+      transform: rotate(-30deg);
     }
 
-    .item img {
-      max-width: 100%;
-      max-height: 100%;
-      border-radius: 10px;
+    @keyframes flotar {
+      0% { transform: translateY(0) rotate(0deg); }
+      50% { transform: translateY(10px) rotate(5deg); }
+      100% { transform: translateY(0) rotate(0deg); }
     }
   </style>
 </head>
 <body>
 
   <header>
-    ÉterFlor
+    <img src="https://www.svgrepo.com/show/313971/leaf.svg" class="hojas hoja1">
+    <img src="https://www.svgrepo.com/show/313971/leaf.svg" class="hojas hoja2">
+    <h1>ÉterFlor</h1>
   </header>
-
-  <section class="seccion">
-    <h2>Flores eternas</h2>
-    <div class="galeria">
-      <div class="item"><img src="https://via.placeholder.com/100?text=Flor1" alt="Flor 1"></div>
-      <div class="item"><img src="https://via.placeholder.com/100?text=Flor2" alt="Flor 2"></div>
-      <div class="item"><img src="https://via.placeholder.com/100?text=Flor3" alt="Flor 3"></div>
-      <div class="item"><img src="https://via.placeholder.com/100?text=Flor4" alt="Flor 4"></div>
-    </div>
-  </section>
-    <section class="seccion">
-    <h2>Libros</h2>
-    <div class="galeria">
-      <div class="item"><img src="https://via.placeholder.com/100?text=Libro1" alt="Libro 1"></div>
-      <div class="item"><img src="https://via.placeholder.com/100?text=Libro2" alt="Libro 2"></div>
-      <div class="item"><img src="https://via.placeholder.com/100?text=Libro3" alt="Libro 3"></div>
-      <div class="item"><img src="https://via.placeholder.com/100?text=Libro4" alt="Libro 4"></div>
-    </div>
-  </section>
-

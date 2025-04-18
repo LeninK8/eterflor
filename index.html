@@ -10,6 +10,7 @@
             margin: 0;
             font-family: 'Montserrat', sans-serif;
             background-color: #fff8f4;
+            overflow-x: hidden; /* Para evitar scroll horizontal por las hojas */
         }
 
         header {
@@ -64,73 +65,25 @@
             background-color: #e0ab00;
         }
 
-        .modal-overlay {
-            display: none; /* Oculto por defecto */
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background-color: rgba(0, 0, 0, 0.5); /* Fondo oscuro semitransparente */
-            justify-content: center;
-            align-items: center;
-            z-index: 1000; /* Asegura que esté por encima de todo */
-        }
-
-        .modal-content {
-            background-color: white;
-            padding: 20px;
-            border-radius: 10px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-            width: 80%;
-            max-width: 500px;
-            position: relative;
-        }
-
-        .modal-content label {
-            display: block;
-            margin-bottom: 5px;
-            font-weight: bold;
-        }
-
-        .modal-content input[type="text"],
-        .modal-content textarea {
-            width: 100%;
-            padding: 8px;
-            margin-bottom: 10px;
-            border: 1px solid #ccc;
-            border-radius: 5px;
-            box-sizing: border-box;
-        }
-
-        .modal-content img.qr-image {
-            max-width: 150px;
-            display: block;
-            margin: 10px auto;
-            border-radius: 5px;
-            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-        }
-
-        .modal-close-button {
+        .petalo {
             position: absolute;
-            top: 10px;
-            right: 10px;
-            background: none;
-            border: none;
-            font-size: 1.2em;
-            cursor: pointer;
-            color: #777;
+            width: 30px;
+            height: 30px;
+            background-image: url('https://i.pinimg.com/originals/2d/1a/4e/2d1a4e01a7b10c942f7062b9472a109a.png'); /* Reemplaza con la URL de un pétalo */
+            background-size: cover;
+            opacity: 0.6;
+            animation: caer 8s infinite ease-in-out, rotar 5s infinite linear;
+            z-index: -1; /* Para que estén detrás del contenido principal */
         }
 
-        .modal-close-button:hover {
-            color: #333;
+        @keyframes caer {
+            0% { transform: translateY(-100px) rotate(0deg); opacity: 0.6; }
+            100% { transform: translateY(120vh) rotate(360deg); opacity: 0; }
         }
 
-        .contact-message {
-            margin-top: 20px;
-            text-align: center;
-            font-size: 0.9em;
-            color: #555;
+        @keyframes rotar {
+            from { transform: rotate(0deg); }
+            to { transform: rotate(360deg); }
         }
     </style>
 </head>
@@ -237,4 +190,19 @@
 
         <div style="background-color: white; border-radius: 15px; padding: 20px; box-shadow: 0 4px 8px rgba(0,0,0,0.1); width: 300px;">
             <img src="https://via.placeholder.com/300x200/4fc3f7/0277bd?Text=Tostadora" alt="Electrodoméstico 3" style="width: 100%; border-radius: 10px;">
-            <h3 style="margin-top: 1
+            <h3 style="margin-top: 15px; color: #0277bd;">Tostadora Eterna</h3>
+            <p style="color: #555;">Tu desayuno será perfecto con esta tostadora, que transforma cada rebanada en un pedazo de felicidad. 🍞</p>
+            <div style="margin-top: 10px; text-align: center;">
+                <button class="boton-pago pagar-yape-btn" data-producto="Tostadora Eterna">Pagar con Yape</button>
+            </div>
+        </div>
+
+    </div>
+</section>
+
+<section id="comentarios" style="background-color: #f5f5f5; padding: 50px 20px;">
+    <h2 style="text-align: center; font-size: 36px; color: #0288d1;">¡Déjanos tu comentario! 📝</h2>
+    <p style="text-align: center; color: #555; font-size: 18px; margin-bottom: 40px;">Nos encantaría saber tu opinión. ¡Tu feedback es muy importante para nosotros!</p>
+
+    <div style="display: flex; justify-content: center;">
+        <form action="/submit-comment" method="POST" style="background-color: white; padding: 30px; border-radius: 15px; box-shadow: 0 4px 8px rgba(0,0

@@ -1,236 +1,207 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8">
-  <title>ÉterFlor</title>
-  <style>
-    @import url('https://fonts.googleapis.com/css2?family=Great+Vibes&family=Montserrat:wght@400;700&display=swap');
+    <meta charset="UTF-8">
+    <title>ÉterFlor</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Great+Vibes&family=Montserrat:wght@400;700&display=swap');
 
-    body {
-      margin: 0;
-      font-family: 'Montserrat', sans-serif;
-      background-color: #fff8f4;
-    }
+        body {
+            margin: 0;
+            font-family: 'Montserrat', sans-serif;
+            background-color: #fff8f4;
+        }
 
-    header {
-      background: linear-gradient(135deg, #000000, #3d3d3d);
-      padding: 60px 20px;
-      text-align: center;
-      position: relative;
-      overflow: hidden;
-      color: #ffd700;
-    }
+        header {
+            background: linear-gradient(135deg, #000000, #3d3d3d);
+            padding: 60px 20px;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+            color: #ffd700;
+        }
 
-    header h1 {
-      font-family: 'Great Vibes', cursive;
-      font-size: 4em;
-      color: #ffd700;
-      margin: 0;
-      z-index: 1;
-      position: relative;
-    }
+        header h1 {
+            font-family: 'Great Vibes', cursive;
+            font-size: 4em;
+            color: #ffd700;
+            margin: 0;
+            z-index: 1;
+            position: relative;
+        }
 
-    .hojas {
-      position: absolute;
-      width: 60px;
-      opacity: 0.15;
-      animation: flotar 10s infinite ease-in-out;
-      filter: hue-rotate(45deg) brightness(1.2);
-    }
+        .hojas {
+            position: absolute;
+            width: 60px;
+            opacity: 0.15;
+            animation: flotar 10s infinite ease-in-out;
+            filter: hue-rotate(45deg) brightness(1.2);
+        }
 
-    .hoja1 { top: 10px; left: 20px; transform: rotate(20deg); }
-    .hoja2 { bottom: 10px; right: 30px; transform: rotate(-30deg); }
-    .hoja3 { top: 50px; right: 100px; transform: rotate(10deg); }
-    .hoja4 { bottom: 40px; left: 80px; transform: rotate(-15deg); }
-    .hoja5 { top: 80px; left: 150px; transform: rotate(25deg); }
+        .hoja1 { top: 10px; left: 20px; transform: rotate(20deg); }
+        .hoja2 { bottom: 10px; right: 30px; transform: rotate(-30deg); }
+        .hoja3 { top: 50px; right: 100px; transform: rotate(10deg); }
+        .hoja4 { bottom: 40px; left: 80px; transform: rotate(-15deg); }
+        .hoja5 { top: 80px; left: 150px; transform: rotate(25deg); }
 
-    @keyframes flotar {
-      0% { transform: translateY(0) rotate(0deg); }
-      50% { transform: translateY(15px) rotate(10deg); }
-      100% { transform: translateY(0) rotate(0deg); }
-    }
-  </style>
+        @keyframes flotar {
+            0% { transform: translateY(0) rotate(0deg); }
+            50% { transform: translateY(15px) rotate(10deg); }
+            100% { transform: translateY(0) rotate(0deg); }
+        }
+
+        .boton-pago {
+            background-color: #ffc107; /* Amarillo Yape */
+            color: #212121; /* Gris oscuro Yape */
+            border: none;
+            padding: 10px 20px;
+            border-radius: 20px;
+            cursor: pointer;
+            text-decoration: none;
+            display: inline-block;
+            font-weight: bold;
+        }
+
+        .boton-pago:hover {
+            background-color: #e0ab00;
+        }
+
+        .qr-container {
+            text-align: center;
+            margin-top: 15px;
+        }
+
+        .qr-image {
+            max-width: 150px;
+            border-radius: 10px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+    </style>
 </head>
 <body>
 
 <header>
-  <h1>ÉterFlor</h1>
-  <!-- Hojas doradas (puedes cambiar la imagen si tienes una personalizada) -->
-  <img src="https://pngimg.com/uploads/autumn_leaves/autumn_leaves_PNG3610.png" class="hojas hoja1">
-  <img src="https://pngimg.com/uploads/autumn_leaves/autumn_leaves_PNG3610.png" class="hojas hoja2">
-  <img src="https://pngimg.com/uploads/autumn_leaves/autumn_leaves_PNG3610.png" class="hojas hoja3">
-  <img src="https://pngimg.com/uploads/autumn_leaves/autumn_leaves_PNG3610.png" class="hojas hoja4">
-  <img src="https://pngimg.com/uploads/autumn_leaves/autumn_leaves_PNG3610.png" class="hojas hoja5">
+    <h1>ÉterFlor</h1>
+    <img src="https://pngimg.com/uploads/autumn_leaves/autumn_leaves_PNG3610.png" class="hojas hoja1">
+    <img src="https://pngimg.com/uploads/autumn_leaves/autumn_leaves_PNG3610.png" class="hojas hoja2">
+    <img src="https://pngimg.com/uploads/autumn_leaves/autumn_leaves_PNG3610.png" class="hojas hoja3">
+    <img src="https://pngimg.com/uploads/autumn_leaves/autumn_leaves_PNG3610.png" class="hojas hoja4">
+    <img src="https://pngimg.com/uploads/autumn_leaves/autumn_leaves_PNG3610.png" class="hojas hoja5">
 </header>
 
 <section id="flores" style="background-color: #fff7f0; padding: 50px 20px;">
-  <h2 style="text-align: center; font-size: 36px; color: #6d4c41;">Flores Eternas</h2>
-  <div style="display: flex; flex-wrap: wrap; justify-content: center; gap: 30px; margin-top: 40px;">
+    <h2 style="text-align: center; font-size: 36px; color: #6d4c41;">Flores Eternas</h2>
+    <div style="display: flex; flex-wrap: wrap; justify-content: center; gap: 30px; margin-top: 40px;">
 
-    <!-- Flor 1 -->
-    <div style="background-color: white; border-radius: 15px; padding: 20px; box-shadow: 0 4px 8px rgba(0,0,0,0.1); width: 300px;">
-      <img src="https://example.com/flor1.jpg" alt="Flor Eterna Rosada" style="width: 100%; border-radius: 10px;">
-      <h3 style="margin-top: 15px; color: #8e24aa;">Flor Rosada Eterna</h3>
-      <p style="color: #555;">Simboliza la belleza inmortal del amor que desafía al tiempo. Cada pétalo guarda una promesa eterna. 🌹</p>
-      <div style="margin-top: 10px;">
-        <a href="https://i.pinimg.com/736x/5a/ab/63/5aab638696a0fa7f361a610aa2c32503.jpg" target="_blank" style="text-decoration: none;">
-          <button style="background-color: #25d366; color: white; border: none; padding: 10px 20px; border-radius: 20px; cursor: pointer;">
-            WhatsApp
-          </button>
-        </a>
-      </div>
+        <div style="background-color: white; border-radius: 15px; padding: 20px; box-shadow: 0 4px 8px rgba(0,0,0,0.1); width: 300px;">
+            <img src="https://via.placeholder.com/300x200/ffcdd2/880e4f?Text=Flor%20Rosada" alt="Flor Eterna Rosada" style="width: 100%; border-radius: 10px;">
+            <h3 style="margin-top: 15px; color: #8e24aa;">Flor Rosada Eterna</h3>
+            <p style="color: #555;">Simboliza la belleza inmortal del amor que desafía al tiempo. Cada pétalo guarda una promesa eterna. 🌹</p>
+            <div style="margin-top: 10px; text-align: center;">
+                <a href="#" class="boton-pago">Pagar con Yape</a>
+                <div class="qr-container">
+                    <img src="https://via.placeholder.com/100x100/ffe082/6d4c41?Text=QR%20Yape" alt="Código QR Yape" class="qr-image">
+                    <p style="font-size: 0.8em; color: #777;">Escanea el código QR</p>
+                </div>
+            </div>
+        </div>
+
+        <div style="background-color: white; border-radius: 15px; padding: 20px; box-shadow: 0 4px 8px rgba(0,0,0,0.1); width: 300px;">
+            <img src="https://via.placeholder.com/300x200/bbdefb/1a237e?Text=Flor%20Azul" alt="Flor Eterna Azul" style="width: 100%; border-radius: 10px;">
+            <h3 style="margin-top: 15px; color: #1565c0;">Flor Azul Eterna</h3>
+            <p style="color: #555;">Misteriosa como el cielo nocturno, esta flor representa el amor profundo que trasciende vidas. 🌌</p>
+            <div style="margin-top: 10px; text-align: center;">
+                <a href="#" class="boton-pago">Pagar con Yape</a>
+                <div class="qr-container">
+                    <img src="https://via.placeholder.com/100x100/ffe082/6d4c41?Text=QR%20Yape" alt="Código QR Yape" class="qr-image">
+                    <p style="font-size: 0.8em; color: #777;">Escanea el código QR</p>
+                </div>
+            </div>
+        </div>
+
     </div>
-
-    <!-- Flor 2 -->
-    <div style="background-color: white; border-radius: 15px; padding: 20px; box-shadow: 0 4px 8px rgba(0,0,0,0.1); width: 300px;">
-      <img src="https://example.com/flor2.jpg" alt="Flor Eterna Azul" style="width: 100%; border-radius: 10px;">
-      <h3 style="margin-top: 15px; color: #1565c0;">Flor Azul Eterna</h3>
-      <p style="color: #555;">Misteriosa como el cielo nocturno, esta flor representa el amor profundo que trasciende vidas. 🌌</p>
-      <div style="margin-top: 10px;">
-        <a href="https://i.pinimg.com/736x/01/e6/d3/01e6d3e45d47764180b279fcee852535.jpg" target="_blank" style="text-decoration: none;">
-          <button style="background-color: #25d366; color: white; border: none; padding: 10px 20px; border-radius: 20px; cursor: pointer;">
-            WhatsApp
-          </button>
-        </a>
-      </div>
-    </div>
-
-  </div>
 </section>
 
-</body>
-</html>
-
 <section id="libros" style="background-color: #fff3e0; padding: 50px 20px;">
-  <h2 style="text-align: center; font-size: 36px; color: #4e342e;">Libros Eternos</h2>
-  <div style="display: flex; flex-wrap: wrap; justify-content: center; gap: 30px; margin-top: 40px;">
+    <h2 style="text-align: center; font-size: 36px; color: #4e342e;">Libros Eternos</h2>
+    <div style="display: flex; flex-wrap: wrap; justify-content: center; gap: 30px; margin-top: 40px;">
 
-    <!-- Libro 1 -->
-    <div style="background-color: white; border-radius: 15px; padding: 20px; box-shadow: 0 4px 8px rgba(0,0,0,0.1); width: 300px;">
-      <img src="https://example.com/libro1.jpg" alt="Libro 1" style="width: 100%; border-radius: 10px;">
-      <h3 style="margin-top: 15px; color: #6a1b9a;">"Susurros del Infinito"</h3>
-      <p style="color: #555;">Un viaje entre líneas donde el alma se expande, y el tiempo se detiene ante el poder de una historia que trasciende dimensiones.</p>
-      <div style="margin-top: 10px;">
-        <a href="https://wa.me/51987654321?text=Hola%2C%20quiero%20el%20libro%20Susurros%20del%20Infinito%20📖" target="_blank" style="text-decoration: none;">
-          <button style="background-color: #25d366; color: white; border: none; padding: 10px 20px; border-radius: 20px; cursor: pointer;">
-            WhatsApp
-          </button>
-        </a>
-      </div>
+        <div style="background-color: white; border-radius: 15px; padding: 20px; box-shadow: 0 4px 8px rgba(0,0,0,0.1); width: 300px;">
+            <img src="https://via.placeholder.com/300x200/d1c4e9/311b92?Text=Libro%201" alt="Libro 1" style="width: 100%; border-radius: 10px;">
+            <h3 style="margin-top: 15px; color: #6a1b9a;">"Susurros del Infinito"</h3>
+            <p style="color: #555;">Un viaje entre líneas donde el alma se expande, y el tiempo se detiene ante el poder de una historia que trasciende dimensiones.</p>
+            <div style="margin-top: 10px; text-align: center;">
+                <a href="#" class="boton-pago">Pagar con Yape</a>
+                <div class="qr-container">
+                    <img src="https://via.placeholder.com/100x100/ffe082/6d4c41?Text=QR%20Yape" alt="Código QR Yape" class="qr-image">
+                    <p style="font-size: 0.8em; color: #777;">Escanea el código QR</p>
+                </div>
+            </div>
+        </div>
+
+        <div style="background-color: white; border-radius: 15px; padding: 20px; box-shadow: 0 4px 8px rgba(0,0,0,0.1); width: 300px;">
+            <img src="https://via.placeholder.com/300x200/ffe0b2/bf360c?Text=Libro%202" alt="Libro 2" style="width: 100%; border-radius: 10px;">
+            <h3 style="margin-top: 15px; color: #d84315;">"El Guardián de los Sueños"</h3>
+            <p style="color: #555;">Entre sueños y realidades, esta obra revela que incluso en la oscuridad, hay luces que nunca se apagan.</p>
+            <div style="margin-top: 10px; text-align: center;">
+                <a href="#" class="boton-pago">Pagar con Yape</a>
+                <div class="qr-container">
+                    <img src="https://via.placeholder.com/100x100/ffe082/6d4c41?Text=QR%20Yape" alt="Código QR Yape" class="qr-image">
+                    <p style="font-size: 0.8em; color: #777;">Escanea el código QR</p>
+                </div>
+            </div>
+        </div>
+
+        <div style="background-color: white; border-radius: 15px; padding: 20px; box-shadow: 0 4px 8px rgba(0,0,0,0.1); width: 300px;">
+            <img src="https://via.placeholder.com/300x200/cddc39/1b5e20?Text=Libro%203" alt="Libro 3" style="width: 100%; border-radius: 10px;">
+            <h3 style="margin-top: 15px; color: #1e88e5;">"Fragmentos de Eternidad"</h3>
+            <p style="color: #555;">Cada página es una chispa de lo eterno, un eco del alma que persiste más allá del tiempo.</p>
+            <div style="margin-top: 10px; text-align: center;">
+                <a href="#" class="boton-pago">Pagar con Yape</a>
+                <div class="qr-container">
+                    <img src="https://via.placeholder.com/100x100/ffe082/6d4c41?Text=QR%20Yape" alt="Código QR Yape" class="qr-image">
+                    <p style="font-size: 0.8em; color: #777;">Escanea el código QR</p>
+                </div>
+            </div>
+        </div>
+
+        <div style="background-color: white; border-radius: 15px; padding: 20px; box-shadow: 0 4px 8px rgba(0,0,0,0.1); width: 300px;">
+            <img src="https://via.placeholder.com/300x200/81d4fa/0d47a1?Text=Libro%204" alt="Libro 4" style="width: 100%; border-radius: 10px;">
+            <h3 style="margin-top: 15px; color: #2e7d32;">"La Flor de los Recuerdos"</h3>
+            <p style="color: #555;">Un relato que florece en el corazón, donde cada palabra es un pétalo que guarda memorias imborrables.</p>
+            <div style="margin-top: 10px; text-align: center;">
+                <a href="#" class="boton-pago">Pagar con Yape</a>
+                <div class="qr-container">
+                    <img src="https://via.placeholder.com/100x100/ffe082/6d4c41?Text=QR%20Yape" alt="Código QR Yape" class="qr-image">
+                    <p style="font-size: 0.8em; color: #777;">Escanea el código QR</p>
+                </div>
+            </div>
+        </div>
+
     </div>
-
-    <!-- Libro 2 -->
-    <div style="background-color: white; border-radius: 15px; padding: 20px; box-shadow: 0 4px 8px rgba(0,0,0,0.1); width: 300px;">
-      <img src="https://example.com/libro2.jpg" alt="Libro 2" style="width: 100%; border-radius: 10px;">
-      <h3 style="margin-top: 15px; color: #d84315;">"El Guardián de los Sueños"</h3>
-      <p style="color: #555;">Entre sueños y realidades, esta obra revela que incluso en la oscuridad, hay luces que nunca se apagan.</p>
-      <div style="margin-top: 10px;">
-        <a href="https://wa.me/51987654321?text=Hola%2C%20quiero%20el%20libro%20El%20Guardián%20de%20los%20Sueños%20📚" target="_blank" style="text-decoration: none;">
-          <button style="background-color: #25d366; color: white; border: none; padding: 10px 20px; border-radius: 20px; cursor: pointer;">
-            WhatsApp
-          </button>
-        </a>
-      </div>
-    </div>
-
-    <!-- Libro 3 -->
-    <div style="background-color: white; border-radius: 15px; padding: 20px; box-shadow: 0 4px 8px rgba(0,0,0,0.1); width: 300px;">
-      <img src="https://example.com/libro3.jpg" alt="Libro 3" style="width: 100%; border-radius: 10px;">
-      <h3 style="margin-top: 15px; color: #1e88e5;">"Fragmentos de Eternidad"</h3>
-      <p style="color: #555;">Cada página es una chispa de lo eterno, un eco del alma que persiste más allá del tiempo.</p>
-      <div style="margin-top: 10px;">
-        <a href="https://wa.me/51987654321?text=Hola%2C%20quiero%20el%20libro%20Fragmentos%20de%20Eternidad%20📖" target="_blank" style="text-decoration: none;">
-          <button style="background-color: #25d366; color: white; border: none; padding: 10px 20px; border-radius: 20px; cursor: pointer;">
-            WhatsApp
-          </button>
-        </a>
-      </div>
-    </div>
-
-    <!-- Libro 4 -->
-    <div style="background-color: white; border-radius: 15px; padding: 20px; box-shadow: 0 4px 8px rgba(0,0,0,0.1); width: 300px;">
-      <img src="https://example.com/libro4.jpg" alt="Libro 4" style="width: 100%; border-radius: 10px;">
-      <h3 style="margin-top: 15px; color: #2e7d32;">"La Flor de los Recuerdos"</h3>
-      <p style="color: #555;">Un relato que florece en el corazón, donde cada palabra es un pétalo que guarda memorias imborrables.</p>
-      <div style="margin-top: 10px;">
-        <a href="https://wa.me/51987654321?text=Hola%2C%20quiero%20el%20libro%20La%20Flor%20de%20los%20Recuerdos%20📘" target="_blank" style="text-decoration: none;">
-          <button style="background-color: #25d366; color: white; border: none; padding: 10px 20px; border-radius: 20px; cursor: pointer;">
-            WhatsApp
-          </button>
-        </a>
-      </div>
-    </div>
-
-  </div>
 </section>
 
 <section id="electrodomesticos" style="background-color: #e1f5fe; padding: 50px 20px;">
-  <h2 style="text-align: center; font-size: 36px; color: #0288d1;">Electrodomésticos Eternos</h2>
-  <div style="display: flex; flex-wrap: wrap; justify-content: center; gap: 30px; margin-top: 40px;">
+    <h2 style="text-align: center; font-size: 36px; color: #0288d1;">Electrodomésticos Eternos</h2>
+    <div style="display: flex; flex-wrap: wrap; justify-content: center; gap: 30px; margin-top: 40px;">
 
-    <!-- Electrodoméstico 1 -->
-    <div style="background-color: white; border-radius: 15px; padding: 20px; box-shadow: 0 4px 8px rgba(0,0,0,0.1); width: 300px;">
-      <img src="https://example.com/electro1.jpg" alt="Electrodoméstico 1" style="width: 100%; border-radius: 10px;">
-      <h3 style="margin-top: 15px; color: #01579b;">Cafetera Eterna</h3>
-      <p style="color: #555;">Despierta cada mañana con el aroma de la eternidad. Esta cafetera es tu compañera ideal para un día perfecto. ☕</p>
-      <div style="margin-top: 10px;">
-        <a href="https://wa.me/51987654321?text=Hola%2C%20quiero%20la%20Cafetera%20Eterna%20☕" target="_blank" style="text-decoration: none;">
-          <button style="background-color: #25d366; color: white; border: none; padding: 10px 20px; border-radius: 20px; cursor: pointer;">
-            WhatsApp
-          </button>
-        </a>
-      </div>
-    </div>
+        <div style="background-color: white; border-radius: 15px; padding: 20px; box-shadow: 0 4px 8px rgba(0,0,0,0.1); width: 300px;">
+            <img src="https://via.placeholder.com/300x200/b3e5fc/01579b?Text=Cafetera" alt="Electrodoméstico 1" style="width: 100%; border-radius: 10px;">
+            <h3 style="margin-top: 15px; color: #01579b;">Cafetera Eterna</h3>
+            <p style="color: #555;">Despierta cada mañana con el aroma de la eternidad. Esta cafetera es tu compañera ideal para un día perfecto. ☕</p>
+            <div style="margin-top: 10px; text-align: center;">
+                <a href="#" class="boton-pago">Pagar con Yape</a>
+                <div class="qr-container">
+                    <img src="https://via.placeholder.com/100x100/ffe082/6d4c41?Text=QR%20Yape" alt="Código QR Yape" class="qr-image">
+                    <p style="font-size: 0.8em; color: #777;">Escanea el código QR</p>
+                </div>
+            </div>
+        </div>
 
-    <!-- Electrodoméstico 2 -->
-    <div style="background-color: white; border-radius: 15px; padding: 20px; box-shadow: 0 4px 8px rgba(0,0,0,0.1); width: 300px;">
-      <img src="https://example.com/electro2.jpg" alt="Electrodoméstico 2" style="width: 100%; border-radius: 10px;">
-      <h3 style="margin-top: 15px; color: #0288d1;">Licuadora Eterna</h3>
-      <p style="color: #555;">Perfecta para preparar tus bebidas más refrescantes. Esta licuadora no conoce el paso del tiempo. 🥤</p>
-      <div style="margin-top: 10px;">
-        <a href="https://wa.me/51987654321?text=Hola%2C%20quiero%20la%20Licuadora%20Eterna%20🥤" target="_blank" style="text-decoration: none;">
-          <button style="background-color: #25d366; color: white; border: none; padding: 10px 20px; border-radius: 20px; cursor: pointer;">
-            WhatsApp
-          </button>
-        </a>
-      </div>
-    </div>
-
-    <!-- Electrodoméstico 3 -->
-    <div style="background-color: white; border-radius: 15px; padding: 20px; box-shadow: 0 4px 8px rgba(0,0,0,0.1); width: 300px;">
-      <img src="https://example.com/electro3.jpg" alt="Electrodoméstico 3" style="width: 100%; border-radius: 10px;">
-      <h3 style="margin-top: 15px; color: #0288d1;">Tostadora Eterna</h3>
-      <p style="color: #555;">Tu desayuno será perfecto con esta tostadora, que transforma cada rebanada en un pedazo de felicidad. 🍞</p>
-      <div style="margin-top: 10px;">
-        <a href="https://wa.me/51987654321?text=Hola%2C%20quiero%20la%20Tostadora%20Eterna%20🍞" target="_blank" style="text-decoration: none;">
-          <button style="background-color: #25d366; color: white; border: none; padding: 10px 20px; border-radius: 20px; cursor: pointer;">
-            WhatsApp
-          </button>
-        </a>
-      </div>
-    </div>
-
-  </div>
-</section>
-
-<section id="comentarios" style="background-color: #f5f5f5; padding: 50px 20px;">
-  <h2 style="text-align: center; font-size: 36px; color: #0288d1;">¡Déjanos tu comentario! 📝</h2>
-  <p style="text-align: center; color: #555; font-size: 18px; margin-bottom: 40px;">Nos encantaría saber tu opinión. ¡Tu feedback es muy importante para nosotros!</p>
-
-  <div style="display: flex; justify-content: center;">
-    <form action="/submit-comment" method="POST" style="background-color: white; padding: 30px; border-radius: 15px; box-shadow: 0 4px 8px rgba(0,0,0,0.1); width: 80%; max-width: 600px;">
-      <label for="nombre" style="font-size: 18px; color: #0288d1;">Tu Nombre:</label>
-      <input type="text" id="nombre" name="nombre" placeholder="Escribe tu nombre" required style="width: 100%; padding: 10px; margin-top: 10px; border-radius: 8px; border: 1px solid #ccc; font-size: 16px; margin-bottom: 20px;">
-
-      <label for="comentario" style="font-size: 18px; color: #0288d1;">Tu Comentario:</label>
-      <textarea id="comentario" name="comentario" placeholder="Escribe tu comentario aquí..." rows="6" required style="width: 100%; padding: 10px; margin-top: 10px; border-radius: 8px; border: 1px solid #ccc; font-size: 16px;"></textarea>
-
-      <div style="text-align: center; margin-top: 20px;">
-        <button type="submit" style="background-color: #0288d1; color: white; border: none; padding: 10px 20px; border-radius: 20px; cursor: pointer; font-size: 18px;">
-          Enviar Comentario
-        </button>
-      </div>
-    </form>
-  </div>
-</section>
-
+        <div style="background-color: white; border-radius: 15px; padding: 20px; box-shadow: 0 4px 8px rgba(0,0,0,0.1); width: 300px;">
+            <img src="https://via.placeholder.com/300x200/81d4fa/0288d1?Text=Licuadora" alt="Electrodoméstico 2" style="width: 100%; border-radius: 10px;">
+            <h3 style="margin-top: 15px; color: #0288d1;">Licuadora Eterna</h3>
+            <p style="color: #555;">Perfecta para preparar tus bebidas más refrescantes. Esta licuadora no conoce el paso del tiempo. 🥤</p>
+            <div style="margin-top: 10px; text-align: center;">
+                <a href="#" class="boton-pago">Pagar con Yape</a>
+                <div class="qr-container">

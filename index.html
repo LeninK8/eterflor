@@ -57,8 +57,6 @@
             padding: 10px 20px;
             border-radius: 20px;
             cursor: pointer;
-            text-decoration: none;
-            display: inline-block;
             font-weight: bold;
         }
 
@@ -66,15 +64,73 @@
             background-color: #e0ab00;
         }
 
-        .qr-container {
-            text-align: center;
-            margin-top: 15px;
+        .modal-overlay {
+            display: none; /* Oculto por defecto */
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.5); /* Fondo oscuro semitransparente */
+            justify-content: center;
+            align-items: center;
+            z-index: 1000; /* Asegura que esté por encima de todo */
         }
 
-        .qr-image {
-            max-width: 150px;
+        .modal-content {
+            background-color: white;
+            padding: 20px;
             border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            width: 80%;
+            max-width: 500px;
+            position: relative;
+        }
+
+        .modal-content label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: bold;
+        }
+
+        .modal-content input[type="text"],
+        .modal-content textarea {
+            width: 100%;
+            padding: 8px;
+            margin-bottom: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            box-sizing: border-box;
+        }
+
+        .modal-content img.qr-image {
+            max-width: 150px;
+            display: block;
+            margin: 10px auto;
+            border-radius: 5px;
             box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+
+        .modal-close-button {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            background: none;
+            border: none;
+            font-size: 1.2em;
+            cursor: pointer;
+            color: #777;
+        }
+
+        .modal-close-button:hover {
+            color: #333;
+        }
+
+        .contact-message {
+            margin-top: 20px;
+            text-align: center;
+            font-size: 0.9em;
+            color: #555;
         }
     </style>
 </head>
@@ -98,11 +154,7 @@
             <h3 style="margin-top: 15px; color: #8e24aa;">Flor Rosada Eterna</h3>
             <p style="color: #555;">Simboliza la belleza inmortal del amor que desafía al tiempo. Cada pétalo guarda una promesa eterna. 🌹</p>
             <div style="margin-top: 10px; text-align: center;">
-                <a href="#" class="boton-pago">Pagar con Yape</a>
-                <div class="qr-container">
-                    <img src="https://via.placeholder.com/100x100/ffe082/6d4c41?Text=QR%20Yape" alt="Código QR Yape" class="qr-image">
-                    <p style="font-size: 0.8em; color: #777;">Escanea el código QR</p>
-                </div>
+                <button class="boton-pago pagar-yape-btn" data-producto="Flor Rosada Eterna">Pagar con Yape</button>
             </div>
         </div>
 
@@ -111,11 +163,7 @@
             <h3 style="margin-top: 15px; color: #1565c0;">Flor Azul Eterna</h3>
             <p style="color: #555;">Misteriosa como el cielo nocturno, esta flor representa el amor profundo que trasciende vidas. 🌌</p>
             <div style="margin-top: 10px; text-align: center;">
-                <a href="#" class="boton-pago">Pagar con Yape</a>
-                <div class="qr-container">
-                    <img src="https://via.placeholder.com/100x100/ffe082/6d4c41?Text=QR%20Yape" alt="Código QR Yape" class="qr-image">
-                    <p style="font-size: 0.8em; color: #777;">Escanea el código QR</p>
-                </div>
+                <button class="boton-pago pagar-yape-btn" data-producto="Flor Azul Eterna">Pagar con Yape</button>
             </div>
         </div>
 
@@ -131,11 +179,7 @@
             <h3 style="margin-top: 15px; color: #6a1b9a;">"Susurros del Infinito"</h3>
             <p style="color: #555;">Un viaje entre líneas donde el alma se expande, y el tiempo se detiene ante el poder de una historia que trasciende dimensiones.</p>
             <div style="margin-top: 10px; text-align: center;">
-                <a href="#" class="boton-pago">Pagar con Yape</a>
-                <div class="qr-container">
-                    <img src="https://via.placeholder.com/100x100/ffe082/6d4c41?Text=QR%20Yape" alt="Código QR Yape" class="qr-image">
-                    <p style="font-size: 0.8em; color: #777;">Escanea el código QR</p>
-                </div>
+                <button class="boton-pago pagar-yape-btn" data-producto="Libro Susurros del Infinito">Pagar con Yape</button>
             </div>
         </div>
 
@@ -144,11 +188,7 @@
             <h3 style="margin-top: 15px; color: #d84315;">"El Guardián de los Sueños"</h3>
             <p style="color: #555;">Entre sueños y realidades, esta obra revela que incluso en la oscuridad, hay luces que nunca se apagan.</p>
             <div style="margin-top: 10px; text-align: center;">
-                <a href="#" class="boton-pago">Pagar con Yape</a>
-                <div class="qr-container">
-                    <img src="https://via.placeholder.com/100x100/ffe082/6d4c41?Text=QR%20Yape" alt="Código QR Yape" class="qr-image">
-                    <p style="font-size: 0.8em; color: #777;">Escanea el código QR</p>
-                </div>
+                <button class="boton-pago pagar-yape-btn" data-producto="Libro El Guardián de los Sueños">Pagar con Yape</button>
             </div>
         </div>
 
@@ -157,11 +197,7 @@
             <h3 style="margin-top: 15px; color: #1e88e5;">"Fragmentos de Eternidad"</h3>
             <p style="color: #555;">Cada página es una chispa de lo eterno, un eco del alma que persiste más allá del tiempo.</p>
             <div style="margin-top: 10px; text-align: center;">
-                <a href="#" class="boton-pago">Pagar con Yape</a>
-                <div class="qr-container">
-                    <img src="https://via.placeholder.com/100x100/ffe082/6d4c41?Text=QR%20Yape" alt="Código QR Yape" class="qr-image">
-                    <p style="font-size: 0.8em; color: #777;">Escanea el código QR</p>
-                </div>
+                <button class="boton-pago pagar-yape-btn" data-producto="Libro Fragmentos de Eternidad">Pagar con Yape</button>
             </div>
         </div>
 
@@ -170,11 +206,7 @@
             <h3 style="margin-top: 15px; color: #2e7d32;">"La Flor de los Recuerdos"</h3>
             <p style="color: #555;">Un relato que florece en el corazón, donde cada palabra es un pétalo que guarda memorias imborrables.</p>
             <div style="margin-top: 10px; text-align: center;">
-                <a href="#" class="boton-pago">Pagar con Yape</a>
-                <div class="qr-container">
-                    <img src="https://via.placeholder.com/100x100/ffe082/6d4c41?Text=QR%20Yape" alt="Código QR Yape" class="qr-image">
-                    <p style="font-size: 0.8em; color: #777;">Escanea el código QR</p>
-                </div>
+                <button class="boton-pago pagar-yape-btn" data-producto="Libro La Flor de los Recuerdos">Pagar con Yape</button>
             </div>
         </div>
 
@@ -190,11 +222,7 @@
             <h3 style="margin-top: 15px; color: #01579b;">Cafetera Eterna</h3>
             <p style="color: #555;">Despierta cada mañana con el aroma de la eternidad. Esta cafetera es tu compañera ideal para un día perfecto. ☕</p>
             <div style="margin-top: 10px; text-align: center;">
-                <a href="#" class="boton-pago">Pagar con Yape</a>
-                <div class="qr-container">
-                    <img src="https://via.placeholder.com/100x100/ffe082/6d4c41?Text=QR%20Yape" alt="Código QR Yape" class="qr-image">
-                    <p style="font-size: 0.8em; color: #777;">Escanea el código QR</p>
-                </div>
+                <button class="boton-pago pagar-yape-btn" data-producto="Cafetera Eterna">Pagar con Yape</button>
             </div>
         </div>
 
@@ -203,5 +231,4 @@
             <h3 style="margin-top: 15px; color: #0288d1;">Licuadora Eterna</h3>
             <p style="color: #555;">Perfecta para preparar tus bebidas más refrescantes. Esta licuadora no conoce el paso del tiempo. 🥤</p>
             <div style="margin-top: 10px; text-align: center;">
-                <a href="#" class="boton-pago">Pagar con Yape</a>
-                <div class="qr-container">
+                <button class="boton-

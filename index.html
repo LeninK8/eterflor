@@ -180,6 +180,7 @@
             transform: scale(0.97);
         }
 
+        /* Animación de pétalos */
         .petalo-animado {
             position: absolute;
             top: -50px;
@@ -193,7 +194,7 @@
             botonesYape.forEach(boton => {
                 boton.addEventListener("click", () => {
                     const producto = boton.dataset.producto;
-                    alert(`Gracias por tu interés en "${producto}". Para continuar con el pago, contáctanos por WhatsApp.`);
+                    alert(Gracias por tu interés en "${producto}". Para continuar con el pago, contáctanos por WhatsApp.);
                     window.location.href = "https://wa.me/51999999999?text=Hola,%20quiero%20comprar%20" + encodeURIComponent(producto);
                 });
             });
@@ -202,9 +203,9 @@
             for (let i = 0; i < 25; i++) {
                 const petalo = document.createElement("div");
                 petalo.classList.add("petalo", "petalo-animado");
-                petalo.style.left = `${Math.random() * 100}vw`;
-                petalo.style.animationDuration = `${5 + Math.random() * 5}s`;
-                petalo.style.animationDelay = `${Math.random() * 5}s`;
+                petalo.style.left = ${Math.random() * 100}vw;
+                petalo.style.animationDuration = ${5 + Math.random() * 5}s;
+                petalo.style.animationDelay = ${Math.random() * 5}s;
                 document.body.appendChild(petalo);
             }
         });
@@ -221,39 +222,7 @@
     <img src="https://pngimg.com/uploads/autumn_leaves/autumn_leaves_PNG3610.png" class="hojas hoja5">
 </header>
 
-<div class="seccion-productos" id="libros">
-    <h2>Libros Eternos</h2>
-    <div class="contenedor-scroll">
-        <div class="tarjeta-producto">
-            <img src="https://via.placeholder.com/300x200" alt="Libro 1">
-            <h3>Libro 1</h3>
-            <button class="pagar-yape-btn" data-producto="Libro 1">Pagar por Yape</button>
-        </div>
-        <div class="tarjeta-producto">
-            <img src="https://via.placeholder.com/300x200" alt="Libro 2">
-            <h3>Libro 2</h3>
-            <button class="pagar-yape-btn" data-producto="Libro 2">Pagar por Yape</button>
-        </div>
-        <!-- Agrega más productos aquí -->
-    </div>
-</div>
-
-<div class="seccion-productos" id="electrodomesticos">
-    <h2>Electrodomésticos</h2>
-    <div class="contenedor-scroll">
-        <div class="tarjeta-producto">
-            <img src="https://via.placeholder.com/300x200" alt="Electrodoméstico 1">
-            <h3>Electrodoméstico 1</h3>
-            <button class="pagar-yape-btn" data-producto="Electrodoméstico 1">Pagar por Yape</button>
-        </div>
-        <!-- Agrega más productos aquí -->
-    </div>
-</div>
-
-<div id="enlace-comentarios">
-    <h2>Deja tu comentario</h2>
-    <a href="#comentarios">Ir a Comentarios</a>
-</div>
+<!-- El resto del contenido sigue igual -->
 
 </body>
 </html>

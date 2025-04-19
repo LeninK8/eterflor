@@ -1,118 +1,156 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Comentarios con Pétalos</title>
-    <style>
-        body { font-family: sans-serif; margin: 20px; background-color: #f4f4f4; }
-        .formulario-comentario { background-color: #fff; padding: 20px; border-radius: 8px; box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); margin-bottom: 20px; }
-        .formulario-comentario label { display: block; margin-bottom: 5px; font-weight: bold; }
-        .formulario-comentario input[type="text"],
-        .formulario-comentario textarea { width: calc(100% - 12px); padding: 8px; margin-bottom: 10px; border: 1px solid #ccc; border-radius: 4px; box-sizing: border-box; }
-        .formulario-comentario button { background-color: #5cb85c; color: white; padding: 10px 15px; border: none; border-radius: 4px; cursor: pointer; font-size: 1em; }
-        .formulario-comentario button:hover { background-color: #4cae4c; }
-        #contenedor-comentarios { margin-top: 20px; }
-        .comentario-usuario { background-color: #e9ecef; padding: 10px; border-radius: 4px; margin-bottom: 10px; }
-        .nombre-usuario { font-weight: bold; margin-bottom: 5px; }
-        .contenido-comentario { margin-bottom: 0; }
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Comentarios con Pétalos</title>
+  <style>
+    body {
+      font-family: sans-serif;
+      margin: 20px;
+      background-color: #f4f4f4;
+    }
+    .formulario-comentario {
+      background-color: #fff;
+      padding: 20px;
+      border-radius: 8px;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+      margin-bottom: 20px;
+    }
+    .formulario-comentario label {
+      display: block;
+      margin-bottom: 5px;
+      font-weight: bold;
+    }
+    .formulario-comentario input[type="text"],
+    .formulario-comentario textarea {
+      width: calc(100% - 12px);
+      padding: 8px;
+      margin-bottom: 10px;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+      box-sizing: border-box;
+    }
+    .formulario-comentario button {
+      background-color: #5cb85c;
+      color: white;
+      padding: 10px 15px;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+      font-size: 1em;
+    }
+    .formulario-comentario button:hover {
+      background-color: #4cae4c;
+    }
+    #contenedor-comentarios {
+      margin-top: 20px;
+    }
+    .comentario-usuario {
+      background-color: #e9ecef;
+      padding: 10px;
+      border-radius: 4px;
+      margin-bottom: 10px;
+    }
+    .nombre-usuario {
+      font-weight: bold;
+      margin-bottom: 5px;
+    }
+    .contenido-comentario {
+      margin-bottom: 0;
+    }
 
-        .petalo-container {
-            position: relative;
-            overflow: hidden;
-            width: 100%;
-            height: 200px; /* Ajusta la altura según necesites */
-            pointer-events: none; /* Para que no interfiera con el formulario */
-        }
+    .petalo-container {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      pointer-events: none;
+      overflow: hidden;
+      z-index: 9999;
+    }
 
-        .petalo {
-            position: absolute;
-            top: -20px;
-            opacity: 0;
-            font-size: 1em;
-            color: pink; /* Puedes elegir otro color */
-            animation: caerDesvanecer 2s linear forwards;
-            user-select: none; /* Para que no se pueda seleccionar el texto */
-        }
+    .petalo {
+      position: absolute;
+      font-size: 1.5em;
+      color: pink;
+      animation: caerDesvanecer 2s linear forwards;
+      user-select: none;
+    }
 
-        @keyframes caerDesvanecer {
-            0% {
-                top: -20px;
-                opacity: 1;
-                transform: translateX(0) rotate(0deg);
-            }
-            100% {
-                top: 100%;
-                opacity: 0;
-                transform: translateX(20px) rotate(360deg);
-            }
-        }
-    </style>
+    @keyframes caerDesvanecer {
+      0% {
+        top: -20px;
+        opacity: 1;
+        transform: translateX(0) rotate(0deg);
+      }
+      100% {
+        top: 100%;
+        opacity: 0;
+        transform: translateX(30px) rotate(360deg);
+      }
+    }
+  </style>
 </head>
 <body>
 
-    <div class="formulario-comentario">
-        <h2>Deja tu comentario</h2>
-        <label for="nombre">Nombre:</label>
-        <input type="text" id="nombre" name="nombre">
-        <label for="comentario">Comentario:</label>
-        <textarea id="comentario" name="comentario"></textarea>
-        <button type="button" onclick="agregarComentario()">Enviar Comentario</button>
-    </div>
+  <div class="formulario-comentario">
+    <h2>Deja tu comentario</h2>
+    <label for="nombre">Nombre:</label>
+    <input type="text" id="nombre" name="nombre" />
+    <label for="comentario">Comentario:</label>
+    <textarea id="comentario" name="comentario"></textarea>
+    <button type="button" onclick="agregarComentario()">Enviar Comentario</button>
+  </div>
 
-    <div id="contenedor-comentarios">
-        <h2>Comentarios</h2>
-    </div>
+  <div id="contenedor-comentarios">
+    <h2>Comentarios</h2>
+  </div>
 
-    <div id="petalo-container" aria-hidden="true">
-        </div>
+  <div id="petalo-container" class="petalo-container" aria-hidden="true"></div>
 
-    <script>
-        const comentarioInput = document.getElementById('comentario');
-        const petaloContainer = document.getElementById('petalo-container');
-        const contenedorComentarios = document.getElementById('contenedor-comentarios');
-        const nombreInput = document.getElementById('nombre');
+  <script>
+    const comentarioInput = document.getElementById('comentario');
+    const petaloContainer = document.getElementById('petalo-container');
+    const contenedorComentarios = document.getElementById('contenedor-comentarios');
+    const nombreInput = document.getElementById('nombre');
 
-        comentarioInput.addEventListener('input', function() {
-            const palabras = this.value.split(/\s+/).filter(word => word.length > 0);
-            palabras.forEach((palabra, index) => {
-                setTimeout(() => {
-                    crearPetalo(palabra);
-                }, index * 300); // Ajusta el tiempo para que no se sobrepongan demasiado
-            });
-        });
+    comentarioInput.addEventListener('input', () => {
+      crearPetalo();
+    });
 
-        function crearPetalo(texto) {
-            const petalo = document.createElement('div');
-            petalo.classList.add('petalo');
-            petalo.textContent = texto;
-            petalo.style.left = `${Math.random() * 100}%`;
-            petalo.style.animationDelay = `${Math.random() * 1}s`; // Variar el inicio de la animación
+    function crearPetalo() {
+      const petalo = document.createElement('div');
+      petalo.classList.add('petalo');
+      petalo.textContent = '❀'; // Puedes cambiarlo por '✿' o cualquier otro emoji de flor
+      petalo.style.left = `${Math.random() * 100}%`;
+      petalo.style.animationDelay = `${Math.random()}s`;
 
-            petaloContainer.appendChild(petalo);
+      petaloContainer.appendChild(petalo);
 
-            setTimeout(() => {
-                petalo.remove();
-            }, 2000);
-        }
+      setTimeout(() => {
+        petalo.remove();
+      }, 2000);
+    }
 
-        function agregarComentario() {
-            const nombre = nombreInput.value.trim();
-            const comentarioTexto = comentarioInput.value.trim();
+    function agregarComentario() {
+      const nombre = nombreInput.value.trim();
+      const comentarioTexto = comentarioInput.value.trim();
 
-            if (nombre && comentarioTexto) {
-                const nuevoComentario = document.createElement('div');
-                nuevoComentario.classList.add('comentario-usuario');
-                nuevoComentario.innerHTML = `<p class="nombre-usuario">${nombre}:</p><p class="contenido-comentario">${comentarioTexto}</p>`;
-                contenedorComentarios.appendChild(nuevoComentario);
+      if (nombre && comentarioTexto) {
+        const nuevoComentario = document.createElement('div');
+        nuevoComentario.classList.add('comentario-usuario');
+        nuevoComentario.innerHTML = `<p class="nombre-usuario">${nombre}:</p><p class="contenido-comentario">${comentarioTexto}</p>`;
+        contenedorComentarios.appendChild(nuevoComentario);
 
-                nombreInput.value = '';
-                comentarioInput.value = '';
-            } else {
-                alert('Por favor, ingresa tu nombre y comentario.');
-            }
-        }
-    </script>
+        nombreInput.value = '';
+        comentarioInput.value = '';
+      } else {
+        alert('Por favor, ingresa tu nombre y comentario.');
+      }
+    }
+  </script>
 
 </body>
 </html>

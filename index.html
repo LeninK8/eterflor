@@ -45,236 +45,41 @@
         .hoja4 { bottom: 40px; left: 80px; transform: rotate(-15deg); }
         .hoja5 { top: 80px; left: 150px; transform: rotate(25deg); }
 
+        /* Hoja del carrito */
+        .hojaCarrito {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            width: 50px;
+            opacity: 0.3;
+            animation: flotarCarrito 12s infinite ease-in-out;
+            filter: hue-rotate(90deg) brightness(1.5);
+        }
+
         @keyframes flotar {
             0% { transform: translateY(0) rotate(0deg); }
             50% { transform: translateY(15px) rotate(10deg); }
             100% { transform: translateY(0) rotate(0deg); }
         }
 
-        .seccion-productos {
-            background-color: #fff7f0;
-            padding: 50px 20px;
-        }
-
-        .seccion-productos h2 {
-            text-align: center;
-            font-size: 36px;
-            color: #6d4c41;
-        }
-
-        .contenedor-scroll {
-            display: flex;
-            overflow-x: auto;
-            padding: 20px 0;
-            gap: 30px;
-        }
-
-        .tarjeta-producto {
-            background-color: white;
-            border-radius: 15px;
-            padding: 20px;
-            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-            width: 300px;
-            flex: 0 0 auto;
-            animation: deslizarDesdeAbajo 0.8s ease-in-out;
-        }
-
-        .tarjeta-producto img {
-            width: 100%;
-            border-radius: 10px;
-            margin-bottom: 10px;
-        }
-
-        .tarjeta-producto h3 {
-            margin-top: 0;
-            color: #8e24aa;
-        }
-
-        .boton-pago {
-            background-color: #ffc107;
-            color: #212121;
-            border: none;
-            padding: 10px 20px;
-            border-radius: 20px;
-            cursor: pointer;
-            font-weight: bold;
-            display: block;
-            margin: 10px auto 0;
-        }
-
-        .boton-pago:hover {
-            background-color: #e0ab00;
-        }
-
-        .boton-agregar {
-            background-color: #4caf50;
-            color: white;
-            border: none;
-            padding: 10px 20px;
-            border-radius: 20px;
-            cursor: pointer;
-            font-weight: bold;
-            display: block;
-            margin: 10px auto;
-        }
-
-        .boton-agregar:hover {
-            background-color: #388e3c;
-        }
-
-        @keyframes deslizarDesdeAbajo {
-            from { transform: translateY(50px); opacity: 0; }
-            to { transform: translateY(0); opacity: 1; }
-        }
-
-        .petalo {
-            position: absolute;
-            width: 30px;
-            height: 30px;
-            background-image: url('https://i.pinimg.com/originals/2d/1a/4e/2d1a4e01a7b10c942f7062b9472a109a.png');
-            background-size: cover;
-            opacity: 0.6;
-            animation: caer 8s infinite ease-in-out, rotar 5s infinite linear;
-            z-index: -1;
-        }
-
-        @keyframes caer {
-            0% { transform: translateY(-100px) rotate(0deg); opacity: 0.6; }
-            100% { transform: translateY(120vh) rotate(360deg); opacity: 0; }
-        }
-
-        @keyframes rotar {
-            from { transform: rotate(0deg); }
-            to { transform: rotate(360deg); }
-        }
-
-        #libros {
-            background-color: #fff3e0;
-        }
-
-        #libros h2 {
-            color: #4e342e;
-        }
-
-        #electrodomesticos {
-            background-color: #e1f5fe;
-        }
-
-        #electrodomesticos h2 {
-            color: #0288d1;
-        }
-
-        #enlace-comentarios {
-            background-color: #f5f5f5;
-            padding: 50px 20px;
-            text-align: center;
-        }
-
-        #enlace-comentarios h2 {
-            font-size: 36px;
-            color: #0288d1;
-            margin-bottom: 20px;
-        }
-
-        #enlace-comentarios a {
-            background-color: #0288d1;
-            color: white;
-            padding: 12px 20px;
-            border: none;
-            border-radius: 20px;
-            cursor: pointer;
-            font-size: 16px;
-            font-weight: bold;
-            text-decoration: none;
-        }
-
-        #enlace-comentarios a:hover {
-            background-color: #01579b;
-        }
-
-        .petalo-animado {
-            position: absolute;
-            top: -50px;
-            left: calc(100% * var(--random-x));
-            animation: caer 10s linear infinite, rotar 4s linear infinite;
+        @keyframes flotarCarrito {
+            0% { transform: translateY(0) rotate(0deg); }
+            50% { transform: translateY(12px) rotate(15deg); }
+            100% { transform: translateY(0) rotate(0deg); }
         }
     </style>
-    <script>
-        document.addEventListener("DOMContentLoaded", () => {
-            const botonesYape = document.querySelectorAll(".pagar-yape-btn");
-            botonesYape.forEach(boton => {
-                boton.addEventListener("click", () => {
-                    const producto = boton.dataset.producto;
-                    alert(`Gracias por tu interés en "${producto}". Para continuar con el pago, contáctanos por WhatsApp.`);
-                    window.location.href = "https://wa.me/51999999999?text=Hola,%20quiero%20comprar%20" + encodeURIComponent(producto);
-                });
-            });
-
-            // Generar pétalos flotantes animados
-            for (let i = 0; i < 25; i++) {
-                const petalo = document.createElement("div");
-                petalo.classList.add("petalo", "petalo-animado");
-                petalo.style.left = `${Math.random() * 100}vw`;
-                petalo.style.animationDuration = `${5 + Math.random() * 5}s`;
-                petalo.style.animationDelay = `${Math.random() * 5}s`;
-                document.body.appendChild(petalo);
-            }
-        });
-    </script>
 </head>
 <body>
-
-<header>
-    <h1>ÉterFlor</h1>
-    <img src="https://pngimg.com/uploads/autumn_leaves/autumn_leaves_PNG3610.png" class="hojas hoja1">
-    <img src="https://pngimg.com/uploads/autumn_leaves/autumn_leaves_PNG3610.png" class="hojas hoja2">
-    <img src="https://pngimg.com/uploads/autumn_leaves/autumn_leaves_PNG3610.png" class="hojas hoja3">
-    <img src="https://pngimg.com/uploads/autumn_leaves/autumn_leaves_PNG3610.png" class="hojas hoja4">
-    <img src="https://pngimg.com/uploads/autumn_leaves/autumn_leaves_PNG3610.png" class="hojas hoja5">
-</header>
-
-<div class="seccion-productos" id="libros">
-    <h2>Libros Eternos</h2>
-    <div class="contenedor-scroll">
-        <div class="tarjeta-producto">
-            <img src="https://via.placeholder.com/300x200" alt="Libro 1">
-            <h3>Libro 1</h3>
-            <button class="pagar-yape-btn" data-producto="Libro 1">Pagar por Yape</button>
-            <button class="boton-agregar" data-producto="Libro 1">Agregar al Carrito</button>
-        </div>
-        <div class="tarjeta-producto">
-            <img src="https://via.placeholder.com/300x200" alt="Libro 2">
-            <h3>Libro 2</h3>
-            <button class="pagar-yape-btn" data-producto="Libro 2">Pagar por Yape</button>
-            <button class="boton-agregar" data-producto="Libro 2">Agregar al Carrito</button>
-        </div>
-        <div class="tarjeta-producto">
-            <img src="https://via.placeholder.com/300x200" alt="Libro 3">
-            <h3>Libro 3</h3>
-            <button class="pagar-yape-btn" data-producto="Libro 3">Pagar por Yape</button>
-            <button class="boton-agregar" data-producto="Libro 3">Agregar al Carrito</button>
-        </div>
-        <!-- Agrega más productos aquí -->
-    </div>
-</div>
-
-<div class="seccion-productos" id="electrodomesticos">
-    <h2>Electrodomésticos</h2>
-    <div class="contenedor-scroll">
-        <div class="tarjeta-producto">
-            <img src="https://via.placeholder.com/300x200" alt="Electrodoméstico 1">
-            <h3>Electrodoméstico 1</h3>
-            <button class="pagar-yape-btn" data-producto="Electrodoméstico 1">Pagar por Yape</button>
-            <button class="boton-agregar" data-producto="Electrodoméstico 1">Agregar al Carrito</button>
-        </div>
-        <!-- Agrega más productos aquí -->
-    </div>
-</div>
-
-<div id="enlace-comentarios">
-    <h2>Deja tu comentario</h2>
-    <a href="#comentarios">Ir a Comentarios</a>
-</div>
-
+    <header>
+        <h1>ÉterFlor</h1>
+        <img src="https://pngimg.com/uploads/autumn_leaves/autumn_leaves_PNG3610.png" class="hojas hoja1">
+        <img src="https://pngimg.com/uploads/autumn_leaves/autumn_leaves_PNG3610.png" class="hojas hoja2">
+        <img src="https://pngimg.com/uploads/autumn_leaves/autumn_leaves_PNG3610.png" class="hojas hoja3">
+        <img src="https://pngimg.com/uploads/autumn_leaves/autumn_leaves_PNG3610.png" class="hojas hoja4">
+        <img src="https://pngimg.com/uploads/autumn_leaves/autumn_leaves_PNG3610.png" class="hojas hoja5">
+        
+        <!-- Hoja del carrito -->
+        <img src="https://pngimg.com/uploads/cart/cart_PNG27.png" class="hojas hojaCarrito">
+    </header>
 </body>
 </html>

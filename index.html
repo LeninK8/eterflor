@@ -20,6 +20,10 @@
             position: relative;
             overflow: hidden;
             color: #ffd700;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 20px;
         }
 
         header h1 {
@@ -47,10 +51,10 @@
 
         /* Hoja del carrito */
         .hojaCarrito {
-            position: absolute;
-            top: 20px;
-            right: 20px;
-            width: 50px;
+            position: relative;
+            top: 0;
+            left: 0;
+            width: 60px;
             opacity: 0.3;
             animation: flotarCarrito 12s infinite ease-in-out;
             filter: hue-rotate(90deg) brightness(1.5);
@@ -79,7 +83,7 @@
         <img src="https://pngimg.com/uploads/autumn_leaves/autumn_leaves_PNG3610.png" class="hojas hoja5">
         
         <!-- Hoja del carrito -->
-        <img src="https://pngimg.com/uploads/cart/cart_PNG27.png" class="hojas hojaCarrito">
+        <img src="https://pngimg.com/uploads/cart/cart_PNG27.png" class="hojaCarrito">
     </header>
 </body>
 </html>

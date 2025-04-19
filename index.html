@@ -2,266 +2,300 @@
 <html lang="es">
 <head>
     <meta charset="UTF-8">
-    <title>ÉterFlor</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>ÉterFlor - Flores Eternas</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
     <style>
-        @import url('https://fonts.googleapis.com/css2?family=Great+Vibes&family=Montserrat:wght@400;700&display=swap');
-
+        /* Estilos globales */
         body {
+            font-family: 'Arial', sans-serif;
             margin: 0;
-            font-family: 'Montserrat', sans-serif;
-            background-color: #f1f1f1;
-            overflow-x: hidden;
-            position: relative;
+            padding: 0;
+            background-color: #1a1a1a; /* Fondo oscuro */
+            color: #d4af37; /* Dorado elegante */
         }
 
+        h1, h2, h3, p {
+            color: #d4af37; /* Dorado elegante */
+        }
+
+        /* Sección del encabezado */
         header {
-            background: linear-gradient(135deg, #6c7d7f, #2f3d3b);
-            padding: 60px 20px;
+            background-color: #333333; /* Fondo oscuro */
+            padding: 20px;
             text-align: center;
-            color: #fff;
-            position: relative;
-            overflow: hidden;
         }
 
         header h1 {
-            font-family: 'Great Vibes', cursive;
-            font-size: 4em;
-            color: #ffd700;
+            font-size: 3rem;
             margin: 0;
-            position: relative;
-            z-index: 1;
+            color: #d4af37;
         }
 
-        .hoja {
-            position: absolute;
-            width: 40px;
-            opacity: 0.2;
-            animation: caer 5s linear infinite;
-            pointer-events: none;
+        header p {
+            font-size: 1.2rem;
         }
 
-        @keyframes caer {
-            0% {
-                transform: translateY(-50px) rotate(0deg);
-                opacity: 0.2;
-            }
-            100% {
-                transform: translateY(300px) rotate(360deg);
-                opacity: 0;
-            }
-        }
-
-        .hoja:nth-child(1) { left: 10%; animation-duration: 5s; }
-        .hoja:nth-child(2) { left: 20%; animation-duration: 6s; }
-        .hoja:nth-child(3) { left: 30%; animation-duration: 7s; }
-        .hoja:nth-child(4) { left: 40%; animation-duration: 8s; }
-        .hoja:nth-child(5) { left: 50%; animation-duration: 5.5s; }
-
-        .flores-eternas h2 {
-            text-align: center;
-            font-size: 2.5em;
-            background-color: #f8d3d3;
-            padding: 10px 20px;
-            border-radius: 10px;
-            color: #3d3d3d;
-            margin-top: 20px;
-        }
-
-        .contenedor-flores {
-            display: flex;
-            overflow-x: auto;
-            gap: 20px;
-            padding: 20px;
-            scroll-behavior: smooth;
-        }
-
-        .flor {
-            background-color: #c5b8b0;
-            border-radius: 10px;
-            padding: 20px;
-            width: 300px;
-            text-align: center;
-            box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1);
-            transition: transform 0.3s ease-in-out;
-            overflow: hidden;
-            flex-shrink: 0;
-            position: relative;
-        }
-
-        .flor img {
-            max-width: 100%;
-            border-radius: 10px;
-        }
-
-        .flor h3 {
-            margin: 10px 0;
-            color: #3d3d3d;
-        }
-
-        .flor p {
-            color: #444;
-        }
-
-        .flor a {
-            background-color: #ffd700;
-            color: #3d3d3d;
+        /* Estilo de la barra de navegación */
+        nav {
+            background-color: #222222; /* Fondo oscuro para la barra de navegación */
             padding: 10px;
+        }
+
+        nav a {
+            color: #d4af37; /* Texto dorado */
+            margin: 0 20px;
             text-decoration: none;
-            border-radius: 5px;
-            font-weight: bold;
-            display: inline-block;
-            margin-top: 10px;
-            transition: background-color 0.3s ease;
+            font-size: 1.2rem;
+            transition: color 0.3s;
         }
 
-        .flor a:hover {
-            background-color: #ffcc00;
+        nav a:hover {
+            color: #b68d29; /* Color dorado oscuro al pasar el mouse */
         }
 
-        .flor:hover {
-            transform: scale(1.05);
-        }
-
-        .contenedor-flores::-webkit-scrollbar {
-            height: 8px;
-        }
-
-        .contenedor-flores::-webkit-scrollbar-thumb {
-            background-color: #888;
-            border-radius: 5px;
-        }
-
-        .contenedor-flores::-webkit-scrollbar-thumb:hover {
-            background-color: #555;
-        }
-
-        /* Estilos para la sección de libros eternos */
-        .libros-eternos {
-            background-color: #fef8f5;
-            padding: 60px 20px;
+        /* Sección de flores */
+        .flowers-section {
+            background-color: #444444; /* Fondo gris oscuro */
+            padding: 50px 0;
             text-align: center;
+            margin-top: 50px;
         }
 
-        .libros-eternos h2 {
-            font-size: 2.5em;
-            color: #5d3b3b;
-            margin-bottom: 20px;
-        }
-
-        .libros-container {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
-            gap: 30px;
-            margin-top: 30px;
-        }
-
-        .libro {
-            background-color: #fff;
-            border: 2px solid #e0c9c0;
+        .flower-card {
+            background-color: #555555; /* Fondo oscuro para tarjetas */
+            color: #d4af37; /* Texto dorado */
+            border: 2px solid #d4af37;
+            border-radius: 10px;
             padding: 20px;
-            width: 250px;
-            border-radius: 20px;
-            box-shadow: 0 0 15px rgba(0, 0, 0, 0.08);
+            margin: 20px;
+            display: inline-block;
+            width: calc(20% - 40px);
+            box-sizing: border-box;
             transition: transform 0.3s ease;
         }
 
-        .libro:hover {
-            transform: translateY(-10px);
+        .flower-card:hover {
+            transform: scale(1.05); /* Efecto sutil de hover */
         }
 
-        .libro img {
-            max-width: 100%;
-            border-radius: 12px;
-        }
-
-        .libro h3 {
-            font-size: 1.2em;
-            color: #503131;
-            margin: 10px 0;
-        }
-
-        .libro p {
-            font-size: 0.95em;
-            color: #6a4c4c;
-            margin-bottom: 15px;
-        }
-
-        .libro a {
-            display: inline-block;
-            padding: 8px 16px;
-            background-color: #d8a68a;
-            color: white;
+        .flower-image {
+            width: 100%;
+            height: auto;
             border-radius: 10px;
-            text-decoration: none;
-            font-weight: bold;
         }
 
-        .libro a:hover {
-            background-color: #bf886f;
+        .flower-title {
+            font-size: 1.5rem;
+            margin-top: 15px;
+        }
+
+        .flower-price {
+            font-size: 1.2rem;
+            margin-top: 10px;
+        }
+
+        /* Carrusel de flores */
+        .carousel-item {
+            display: flex;
+            justify-content: center;
+        }
+
+        .carousel-inner {
+            display: flex;
+            justify-content: center;
+        }
+
+        .carousel-item img {
+            max-width: 100%;
+            max-height: 300px;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        /* Sección de contacto */
+        .contact-section {
+            background-color: #333333; /* Fondo oscuro */
+            padding: 50px 0;
+            text-align: center;
+        }
+
+        .contact-form input, .contact-form textarea {
+            background-color: #555555; /* Fondo oscuro */
+            color: #d4af37; /* Texto dorado */
+            border: 1px solid #d4af37;
+            padding: 10px;
+            margin: 10px;
+            width: 80%;
+            border-radius: 5px;
+        }
+
+        .contact-form button {
+            background-color: #d4af37; /* Botón dorado */
+            color: #333333; /* Texto oscuro */
+            border: none;
+            padding: 10px 20px;
+            font-size: 1.2rem;
+            cursor: pointer;
+            border-radius: 5px;
+            transition: background-color 0.3s;
+        }
+
+        .contact-form button:hover {
+            background-color: #b68d29; /* Efecto hover del botón */
+        }
+
+        /* Sección de rifa */
+        .raffle-section {
+            background-color: #444444; /* Fondo gris oscuro */
+            padding: 50px 0;
+            text-align: center;
+        }
+
+        .raffle-button {
+            background-color: #d4af37; /* Botón dorado */
+            color: #333333; /* Texto oscuro */
+            border: none;
+            padding: 10px 20px;
+            font-size: 1.2rem;
+            cursor: pointer;
+            border-radius: 5px;
+            transition: background-color 0.3s;
+        }
+
+        .raffle-button:hover {
+            background-color: #b68d29; /* Efecto hover */
+        }
+
+        /* Estilos para el footer */
+        footer {
+            background-color: #333333; /* Fondo oscuro */
+            color: #d4af37; /* Texto dorado */
+            padding: 30px 0;
+            text-align: center;
+            font-size: 1rem;
+        }
+
+        footer a {
+            color: #d4af37; /* Texto dorado para enlaces */
+            text-decoration: none;
+        }
+
+        footer a:hover {
+            color: #b68d29; /* Efecto hover */
+        }
+
+        /* Estilo responsivo */
+        @media (max-width: 768px) {
+            .flower-card {
+                width: calc(50% - 40px); /* Ajustar a 50% en pantallas pequeñas */
+            }
+        }
+
+        @media (max-width: 576px) {
+            .flower-card {
+                width: calc(100% - 40px); /* Ajustar a 100% en pantallas muy pequeñas */
+            }
         }
     </style>
 </head>
 <body>
 
-<header>
-    <h1>ÉterFlor</h1>
-    <div class="hoja" style="animation-delay: 0s;"></div>
-    <div class="hoja" style="animation-delay: 2s;"></div>
-    <div class="hoja" style="animation-delay: 4s;"></div>
-    <div class="hoja" style="animation-delay: 1s;"></div>
-    <div class="hoja" style="animation-delay: 3s;"></div>
-</header>
+    <header>
+        <h1>Bienvenidos a ÉterFlor</h1>
+        <p>Flores Eternas con un toque de elegancia.</p>
+    </header>
 
-<section class="flores-eternas">
-    <h2>Flores Eternas</h2>
-    <div class="contenedor-flores">
-        <div class="flor">
-            <img src="https://cdn.pixabay.com/photo/2016/11/29/09/15/rose-1867364_1280.jpg" alt="Eterna Dorada">
-            <h3>Eterna Dorada</h3>
-            <p>La flor dorada que desafía el tiempo, símbolo de un amor que nunca se desvanece. Esta eterna belleza es la representación de la luz infinita que irradia de un alma pura.</p>
-            <a href="https://wa.me/51999999999?text=Hola,%20quiero%20comprar%20la%20Eterna%20Dorada%20de%20ÉterFlor." target="_blank">Pagar por WhatsApp</a>
-        </div>
-        <div class="flor">
-            <img src="https://cdn.pixabay.com/photo/2017/08/30/07/52/rose-2699715_1280.jpg" alt="Eterna Azul">
-            <h3>Eterna Azul</h3>
-            <p>El color del cielo infinito, una flor que encierra la calma del océano y la serenidad del firmamento. Su existencia se entrelaza con las estrellas, y su fragancia calma el alma.</p>
-            <a href="https://wa.me/51999999999?text=Hola,%20quiero%20comprar%20la%20Eterna%20Azul%20de%20ÉterFlor." target="_blank">Pagar por WhatsApp</a>
-        </div>
-        <div class="flor">
-            <img src="https://cdn.pixabay.com/photo/2021/02/20/12/24/rose-6031824_1280.jpg" alt="Eterna Amarilla">
-            <h3>Eterna Amarilla</h3>
-            <p>Brilla con la luz del sol eterno, símbolo de esperanza y alegría infinita. Su cálido resplandor y fragancia única llenan el aire de energía positiva, recordándonos que la felicidad nunca se apaga.</p>
-            <a href="https://wa.me/51999999999?text=Hola,%20quiero%20comprar%20la%20Eterna%20Amarilla%20de%20ÉterFlor." target="_blank">Pagar por WhatsApp</a>
-        </div>
-        <div class="flor">
-            <img src="https://cdn.pixabay.com/photo/2021/02/20/12/24/rose-6031824_1280.jpg" alt="Eterna Cristal">
-            <h3>Eterna Cristal</h3>
-            <p>La flor que refleja toda la belleza del mundo a través de su pureza inmaculada. Su cristalina esencia transmite paz y equilibrio, evocando serenidad incluso en los momentos más turbulentos.</p>
-            <a href="https://wa.me/51999999999?text=Hola,%20quiero%20comprar%20la%20Eterna%20Cristal%20de%20ÉterFlor." target="_blank">Pagar por WhatsApp</a>
-        </div>
-    </div>
-</section>
+    <!-- Barra de navegación -->
+    <nav>
+        <a href="#flores">Flores</a>
+        <a href="#contacto">Contacto</a>
+        <a href="#rifa">Rifa</a>
+    </nav>
 
-<section class="libros-eternos">
-    <h2>Libros Eternos</h2>
-    <div class="libros-container">
-        <!-- Libros aquí -->
-        <div class="libro">
-            <img src="https://via.placeholder.com/200" alt="Portada libro 1">
-            <h3>La Flor del Alma</h3>
-            <p>Un viaje a través del alma humana, explorando los secretos más profundos y las emociones que perduran más allá del tiempo.</p>
-            <a href="#">Comprar</a>
+    <!-- Carrusel de flores -->
+    <section class="flowers-section" id="flores">
+        <h2>Flores Eternas</h2>
+        <div id="flowerCarousel" class="carousel slide" data-bs-ride="carousel">
+            <div class="carousel-inner">
+                <div class="carousel-item active">
+                    <img src="https://via.placeholder.com/600x300" class="d-block w-100" alt="Ramo de Rosas Doradas">
+                </div>
+                <div class="carousel-item">
+                    <img src="https://via.placeholder.com/600x300" class="d-block w-100" alt="Ramo de Lirios Plateados">
+                </div>
+                <div class="carousel-item">
+                    <img src="https://via.placeholder.com/600x300" class="d-block w-100" alt="Ramo de Orquídeas">
+                </div>
+                <div class="carousel-item">
+                    <img src="https://via.placeholder.com/600x300" class="d-block w-100" alt="Ramo de Tulipanes">
+                </div>
+                <div class="carousel-item">
+                    <img src="https://via.placeholder.com/600x300" class="d-block w-100" alt="Ramo de Margaritas Doradas">
+                </div>
+            </div>
+            <button class="carousel-control-prev" type="button" data-bs-target="#flowerCarousel" data-bs-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Previous</span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#flowerCarousel" data-bs-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Next</span>
+            </button>
         </div>
-        <div class="libro">
-            <img src="https://via.placeholder.com/200" alt="Portada libro 2">
-            <h3>El Jardín Secreto</h3>
-            <p>Un relato que mezcla magia y naturaleza, donde el misterio del jardín guarda secretos que transforman vidas.</p>
-            <a href="#">Comprar</a>
-        </div>
-        <!-- Más libros aquí -->
-    </div>
-</section>
+    </section>
 
+    <section class="flowers-section">
+        <h3>Ramos Especiales</h3>
+        <div class="flower-card">
+            <img src="https://via.placeholder.com/300" alt="Ramo de flores" class="flower-image">
+            <h3 class="flower-title">Ramo de Rosas Doradas</h3>
+            <p class="flower-price">S/ 50.00</p>
+        </div>
+        <div class="flower-card">
+            <img src="https://via.placeholder.com/300" alt="Ramo de flores" class="flower-image">
+            <h3 class="flower-title">Ramo de Lirios Plateados</h3>
+            <p class="flower-price">S/ 45.00</p>
+        </div>
+        <div class="flower-card">
+            <img src="https://via.placeholder.com/300" alt="Ramo de flores" class="flower-image">
+            <h3 class="flower-title">Ramo de Orquídeas</h3>
+            <p class="flower-price">S/ 70.00</p>
+        </div>
+        <div class="flower-card">
+            <img src="https://via.placeholder.com/300" alt="Ramo de flores" class="flower-image">
+            <h3 class="flower-title">Ramo de Tulipanes</h3>
+            <p class="flower-price">S/ 60.00</p>
+        </div>
+        <div class="flower-card">
+            <img src="https://via.placeholder.com/300" alt="Ramo de flores" class="flower-image">
+            <h3 class="flower-title">Ramo de Margaritas Doradas</h3>
+            <p class="flower-price">S/ 40.00</p>
+        </div>
+    </section>
+
+    <section class="contact-section" id="contacto">
+        <h2>Contáctanos</h2>
+        <form class="contact-form">
+            <input type="text" placeholder="Tu nombre" required>
+            <input type="email" placeholder="Tu correo" required>
+            <textarea placeholder="Mensaje" required></textarea>
+            <button type="submit">Enviar</button>
+        </form>
+    </section>
+
+    <section class="raffle-section" id="rifa">
+        <h2>¡Participa en nuestra Rifa!</h2>
+        <p>¡Puedes ganar un ramo de flores eternas! Compra tu boleto aquí:</p>
+        <button class="raffle-button">Comprar Boleto</button>
+    </section>
+
+    <footer>
+        <p>© 2025 ÉterFlor. Todos los derechos reservados.</p>
+        <p><a href="#">Política de privacidad</a> | <a href="#">Términos y condiciones</a></p>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>

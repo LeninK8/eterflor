@@ -51,43 +51,6 @@
             100% { transform: translateY(0) rotate(0deg); }
         }
 
-        .boton-pago {
-            background-color: #ffc107;
-            color: #212121;
-            border: none;
-            padding: 10px 20px;
-            border-radius: 20px;
-            cursor: pointer;
-            font-weight: bold;
-            display: block;
-            margin: 10px auto 0;
-        }
-
-        .boton-pago:hover {
-            background-color: #e0ab00;
-        }
-
-        .petalo {
-            position: absolute;
-            width: 30px;
-            height: 30px;
-            background-image: url('https://i.pinimg.com/originals/2d/1a/4e/2d1a4e01a7b10c942f7062b9472a109a.png');
-            background-size: cover;
-            opacity: 0.6;
-            animation: caer 8s infinite ease-in-out, rotar 5s infinite linear;
-            z-index: -1;
-        }
-
-        @keyframes caer {
-            0% { transform: translateY(-100px) rotate(0deg); opacity: 0.6; }
-            100% { transform: translateY(120vh) rotate(360deg); opacity: 0; }
-        }
-
-        @keyframes rotar {
-            from { transform: rotate(0deg); }
-            to { transform: rotate(360deg); }
-        }
-
         .seccion-productos {
             background-color: #fff7f0;
             padding: 50px 20px;
@@ -125,6 +88,64 @@
         .tarjeta-producto h3 {
             margin-top: 0;
             color: #8e24aa;
+        }
+
+        .boton-pago {
+            background-color: #ffc107;
+            color: #212121;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 20px;
+            cursor: pointer;
+            font-weight: bold;
+            display: block;
+            margin: 10px auto 0;
+        }
+
+        .boton-pago:hover {
+            background-color: #e0ab00;
+        }
+
+        .boton-agregar {
+            background-color: #4caf50;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 20px;
+            cursor: pointer;
+            font-weight: bold;
+            display: block;
+            margin: 10px auto;
+        }
+
+        .boton-agregar:hover {
+            background-color: #388e3c;
+        }
+
+        @keyframes deslizarDesdeAbajo {
+            from { transform: translateY(50px); opacity: 0; }
+            to { transform: translateY(0); opacity: 1; }
+        }
+
+        .petalo {
+            position: absolute;
+            width: 30px;
+            height: 30px;
+            background-image: url('https://i.pinimg.com/originals/2d/1a/4e/2d1a4e01a7b10c942f7062b9472a109a.png');
+            background-size: cover;
+            opacity: 0.6;
+            animation: caer 8s infinite ease-in-out, rotar 5s infinite linear;
+            z-index: -1;
+        }
+
+        @keyframes caer {
+            0% { transform: translateY(-100px) rotate(0deg); opacity: 0.6; }
+            100% { transform: translateY(120vh) rotate(360deg); opacity: 0; }
+        }
+
+        @keyframes rotar {
+            from { transform: rotate(0deg); }
+            to { transform: rotate(360deg); }
         }
 
         #libros {
@@ -171,16 +192,6 @@
             background-color: #01579b;
         }
 
-        @keyframes deslizarDesdeAbajo {
-            from { transform: translateY(50px); opacity: 0; }
-            to { transform: translateY(0); opacity: 1; }
-        }
-
-        .boton-pago:active {
-            transform: scale(0.97);
-        }
-
-        /* Animación de pétalos */
         .petalo-animado {
             position: absolute;
             top: -50px;
@@ -194,7 +205,7 @@
             botonesYape.forEach(boton => {
                 boton.addEventListener("click", () => {
                     const producto = boton.dataset.producto;
-                    alert(Gracias por tu interés en "${producto}". Para continuar con el pago, contáctanos por WhatsApp.);
+                    alert(`Gracias por tu interés en "${producto}". Para continuar con el pago, contáctanos por WhatsApp.`);
                     window.location.href = "https://wa.me/51999999999?text=Hola,%20quiero%20comprar%20" + encodeURIComponent(producto);
                 });
             });
@@ -203,9 +214,9 @@
             for (let i = 0; i < 25; i++) {
                 const petalo = document.createElement("div");
                 petalo.classList.add("petalo", "petalo-animado");
-                petalo.style.left = ${Math.random() * 100}vw;
-                petalo.style.animationDuration = ${5 + Math.random() * 5}s;
-                petalo.style.animationDelay = ${Math.random() * 5}s;
+                petalo.style.left = `${Math.random() * 100}vw`;
+                petalo.style.animationDuration = `${5 + Math.random() * 5}s`;
+                petalo.style.animationDelay = `${Math.random() * 5}s`;
                 document.body.appendChild(petalo);
             }
         });
@@ -222,7 +233,48 @@
     <img src="https://pngimg.com/uploads/autumn_leaves/autumn_leaves_PNG3610.png" class="hojas hoja5">
 </header>
 
-<!-- El resto del contenido sigue igual -->
+<div class="seccion-productos" id="libros">
+    <h2>Libros Eternos</h2>
+    <div class="contenedor-scroll">
+        <div class="tarjeta-producto">
+            <img src="https://via.placeholder.com/300x200" alt="Libro 1">
+            <h3>Libro 1</h3>
+            <button class="pagar-yape-btn" data-producto="Libro 1">Pagar por Yape</button>
+            <button class="boton-agregar" data-producto="Libro 1">Agregar al Carrito</button>
+        </div>
+        <div class="tarjeta-producto">
+            <img src="https://via.placeholder.com/300x200" alt="Libro 2">
+            <h3>Libro 2</h3>
+            <button class="pagar-yape-btn" data-producto="Libro 2">Pagar por Yape</button>
+            <button class="boton-agregar" data-producto="Libro 2">Agregar al Carrito</button>
+        </div>
+        <div class="tarjeta-producto">
+            <img src="https://via.placeholder.com/300x200" alt="Libro 3">
+            <h3>Libro 3</h3>
+            <button class="pagar-yape-btn" data-producto="Libro 3">Pagar por Yape</button>
+            <button class="boton-agregar" data-producto="Libro 3">Agregar al Carrito</button>
+        </div>
+        <!-- Agrega más productos aquí -->
+    </div>
+</div>
+
+<div class="seccion-productos" id="electrodomesticos">
+    <h2>Electrodomésticos</h2>
+    <div class="contenedor-scroll">
+        <div class="tarjeta-producto">
+            <img src="https://via.placeholder.com/300x200" alt="Electrodoméstico 1">
+            <h3>Electrodoméstico 1</h3>
+            <button class="pagar-yape-btn" data-producto="Electrodoméstico 1">Pagar por Yape</button>
+            <button class="boton-agregar" data-producto="Electrodoméstico 1">Agregar al Carrito</button>
+        </div>
+        <!-- Agrega más productos aquí -->
+    </div>
+</div>
+
+<div id="enlace-comentarios">
+    <h2>Deja tu comentario</h2>
+    <a href="#comentarios">Ir a Comentarios</a>
+</div>
 
 </body>
 </html>

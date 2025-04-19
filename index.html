@@ -11,6 +11,7 @@
             font-family: 'Montserrat', sans-serif;
             background-color: #f1f1f1; /* Color pastel claro para el fondo */
             overflow-x: hidden;
+            position: relative;
         }
 
         header {
@@ -30,6 +31,33 @@
             position: relative;
             z-index: 1;
         }
+
+        /* Efecto de las hojas cayendo */
+        .hoja {
+            position: absolute;
+            width: 40px;
+            opacity: 0.2;
+            animation: caer 5s linear infinite;
+            pointer-events: none;
+        }
+
+        @keyframes caer {
+            0% {
+                transform: translateY(-50px) rotate(0deg);
+                opacity: 0.2;
+            }
+            100% {
+                transform: translateY(300px) rotate(360deg);
+                opacity: 0;
+            }
+        }
+
+        /* Colocamos varias hojas aleatorias en la página */
+        .hoja:nth-child(1) { left: 10%; animation-duration: 5s; }
+        .hoja:nth-child(2) { left: 20%; animation-duration: 6s; }
+        .hoja:nth-child(3) { left: 30%; animation-duration: 7s; }
+        .hoja:nth-child(4) { left: 40%; animation-duration: 8s; }
+        .hoja:nth-child(5) { left: 50%; animation-duration: 5.5s; }
 
         .contenedor-flores {
             display: flex;
@@ -106,6 +134,13 @@
 
 <header>
     <h1>ÉterFlor</h1>
+
+    <!-- Hojas que caen -->
+    <div class="hoja" style="animation-delay: 0s;"></div>
+    <div class="hoja" style="animation-delay: 2s;"></div>
+    <div class="hoja" style="animation-delay: 4s;"></div>
+    <div class="hoja" style="animation-delay: 1s;"></div>
+    <div class="hoja" style="animation-delay: 3s;"></div>
 </header>
 
 <section class="flores-eternas">

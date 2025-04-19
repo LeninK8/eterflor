@@ -9,7 +9,7 @@
         body {
             margin: 0;
             font-family: 'Montserrat', sans-serif;
-            background-color: #000000; /* Fondo negro */
+            background-color: #000000;
             overflow-x: hidden;
         }
 
@@ -17,53 +17,66 @@
             background: linear-gradient(135deg, #000000, #3d3d3d);
             padding: 60px 20px;
             text-align: center;
+            color: #ffd700;
             position: relative;
             overflow: hidden;
-            color: #ffd700; /* Texto dorado */
         }
 
         header h1 {
             font-family: 'Great Vibes', cursive;
             font-size: 4em;
-            color: #ffd700; /* Texto dorado */
+            color: #ffd700;
             margin: 0;
-            z-index: 1;
             position: relative;
+            z-index: 1;
         }
 
-        /* Estilo para las hojas doradas */
-        .hojas {
+        .hoja {
             position: absolute;
-            width: 60px;
-            opacity: 0.2;
-            animation: flotar 10s infinite ease-in-out;
-            filter: hue-rotate(45deg) brightness(1.2);
+            width: 40px;
+            opacity: 0.2; /* 20% de transparencia */
+            animation: caer 5s linear forwards;
+            pointer-events: none;
         }
 
-        .hoja1 { top: 30px; left: 40px; transform: rotate(20deg); }
-        .hoja2 { bottom: 30px; right: 60px; transform: rotate(-30deg); }
-        .hoja3 { top: 100px; right: 150px; transform: rotate(10deg); }
-        .hoja4 { bottom: 100px; left: 80px; transform: rotate(-15deg); }
-        .hoja5 { top: 150px; left: 180px; transform: rotate(25deg); }
-
-        @keyframes flotar {
-            0% { transform: translateY(0) rotate(0deg); }
-            50% { transform: translateY(15px) rotate(10deg); }
-            100% { transform: translateY(0) rotate(0deg); }
+        @keyframes caer {
+            0% {
+                transform: translateY(-50px) rotate(0deg);
+                opacity: 0.2;
+            }
+            100% {
+                transform: translateY(300px) rotate(360deg);
+                opacity: 0;
+            }
         }
-
     </style>
 </head>
 <body>
 
 <header>
     <h1>ÉterFlor</h1>
-    <div class="hojas hoja1"></div>
-    <div class="hojas hoja2"></div>
-    <div class="hojas hoja3"></div>
-    <div class="hojas hoja4"></div>
-    <div class="hojas hoja5"></div>
 </header>
+
+<script>
+    const header = document.querySelector('header');
+
+    function crearHoja() {
+        const hoja = document.createElement('img');
+        hoja.src = 'https://w7.pngwing.com/pngs/916/46/png-transparent-skeleton-leaf-golden-leaf-leaf-veins-gold-foil-glitter-maple-leaf-maple-golden-leaf-nature.png';
+        hoja.classList.add('hoja');
+        hoja.style.left = Math.random() * window.innerWidth + 'px';
+        hoja.style.top = '-50px';
+
+        header.appendChild(hoja);
+
+        setTimeout(() => {
+            hoja.remove();
+        }, 5000);
+    }
+
+    // Crear hojas cada cierto tiempo
+    setInterval(crearHoja, 600);
+</script>
 
 </body>
 </html>

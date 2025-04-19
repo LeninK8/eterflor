@@ -20,7 +20,6 @@
             position: relative;
             overflow: hidden;
             color: #ffd700;
-            cursor: pointer; /* Para indicar que se puede hacer clic */
         }
 
         header h1 {
@@ -52,23 +51,11 @@
             100% { transform: translateY(0) rotate(0deg); }
         }
 
-        /* Animación para hacer desaparecer la hoja */
-        @keyframes desaparecer {
-            0% { opacity: 1; }
-            100% { opacity: 0; }
-        }
-
-        /* Estilo para la hoja que se creará al hacer clic */
-        .hoja-creada {
-            opacity: 1;
-            animation: desaparecer 5s forwards;
-        }
-
     </style>
 </head>
 <body>
 
-<header onclick="crearHoja(event)">
+<header>
     <h1>ÉterFlor</h1>
     <div class="hojas hoja1"></div>
     <div class="hojas hoja2"></div>
@@ -76,27 +63,6 @@
     <div class="hojas hoja4"></div>
     <div class="hojas hoja5"></div>
 </header>
-
-<script>
-    function crearHoja(event) {
-        // Crear una nueva hoja
-        let hoja = document.createElement('div');
-        hoja.classList.add('hojas');
-        hoja.style.left = event.clientX - 30 + 'px'; // Posición horizontal (ajustar)
-        hoja.style.top = event.clientY - 30 + 'px'; // Posición vertical (ajustar)
-
-        // Aplicar la animación para que desaparezca después de 5 segundos
-        hoja.classList.add('hoja-creada');
-
-        // Agregar la hoja al encabezado
-        document.querySelector('header').appendChild(hoja);
-
-        // Eliminar la hoja después de 5 segundos
-        setTimeout(() => {
-            hoja.remove();
-        }, 5000);
-    }
-</script>
 
 </body>
 </html>

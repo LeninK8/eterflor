@@ -9,7 +9,7 @@
         body {
             margin: 0;
             font-family: 'Montserrat', sans-serif;
-            background-color: #fff8f4;
+            background-color: #000000; /* Fondo negro */
             overflow-x: hidden;
         }
 
@@ -19,31 +19,32 @@
             text-align: center;
             position: relative;
             overflow: hidden;
-            color: #ffd700;
+            color: #ffd700; /* Texto dorado */
         }
 
         header h1 {
             font-family: 'Great Vibes', cursive;
             font-size: 4em;
-            color: #ffd700;
+            color: #ffd700; /* Texto dorado */
             margin: 0;
             z-index: 1;
             position: relative;
         }
 
+        /* Estilo para las hojas doradas */
         .hojas {
             position: absolute;
             width: 60px;
-            opacity: 0.15;
+            opacity: 0.2;
             animation: flotar 10s infinite ease-in-out;
             filter: hue-rotate(45deg) brightness(1.2);
         }
 
-        .hoja1 { top: 20px; left: 50px; transform: rotate(20deg); }
-        .hoja2 { bottom: 30px; right: 70px; transform: rotate(-30deg); }
-        .hoja3 { top: 100px; right: 200px; transform: rotate(10deg); }
-        .hoja4 { bottom: 100px; left: 100px; transform: rotate(-15deg); }
-        .hoja5 { top: 150px; left: 150px; transform: rotate(25deg); }
+        .hoja1 { top: 30px; left: 40px; transform: rotate(20deg); }
+        .hoja2 { bottom: 30px; right: 60px; transform: rotate(-30deg); }
+        .hoja3 { top: 100px; right: 150px; transform: rotate(10deg); }
+        .hoja4 { bottom: 100px; left: 80px; transform: rotate(-15deg); }
+        .hoja5 { top: 150px; left: 180px; transform: rotate(25deg); }
 
         @keyframes flotar {
             0% { transform: translateY(0) rotate(0deg); }

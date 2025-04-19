@@ -1,248 +1,111 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ÉterFlor</title>
-    <link rel="stylesheet" href="styles.css">
-    <!-- Incluyendo Swiper para los carruseles -->
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.css">
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            background-color: #2b2b2b;
-            color: #fff;
-            margin: 0;
-            padding: 0;
-        }
-        /* Encabezado */
-        header {
-            background-color: #000;
-            padding: 20px;
-            text-align: center;
-        }
-        header h1 {
-            font-size: 3em;
-            color: #FFD700; /* Dorado elegante */
-            margin: 0;
-        }
-        header nav a {
-            color: #fff;
-            margin: 0 15px;
-            text-decoration: none;
-            font-size: 1.2em;
-        }
-        header nav a:hover {
-            text-decoration: underline;
-        }
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>ÉterFlor</title>
+  <style>
+    /* Fondo pastel */
+    body {
+      margin: 0;
+      padding: 0;
+      background: linear-gradient(135deg, #fce4ec, #e0f7fa);
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      overflow: hidden;
+    }
 
-        /* Sección Flores Eternas */
-        .section {
-            padding: 40px 0;
-            background-color: #1e1e1e;
-            text-align: center;
-        }
-        .section-title {
-            font-size: 2.5em;
-            color: #FFD700; /* Dorado elegante */
-            margin-bottom: 20px;
-        }
-        .swiper-container {
-            width: 80%;
-            margin: auto;
-        }
-        .swiper-slide {
-            background-color: #333;
-            padding: 20px;
-            border-radius: 10px;
-            box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.3);
-            transition: all 0.3s ease;
-        }
-        .swiper-slide:hover {
-            transform: scale(1.05);
-        }
-        .card {
-            background-color: #444;
-            border-radius: 10px;
-            overflow: hidden;
-            color: #fff;
-            text-align: center;
-        }
-        .card img {
-            width: 100%;
-            height: 200px;
-            object-fit: cover;
-        }
-        .card-content {
-            padding: 15px;
-        }
-        .card-title {
-            font-size: 1.5em;
-            color: #FFD700;
-            margin-bottom: 10px;
-        }
-        .card-description {
-            font-size: 1.2em;
-            color: #fff;
-            opacity: 0.8;
-        }
-        .swiper-button-next, .swiper-button-prev {
-            color: #FFD700;
-        }
-    </style>
+    /* Encabezado con estilo pastel */
+    header {
+      position: relative;
+      text-align: center;
+      padding: 100px 20px;
+      color: #fff;
+      z-index: 1;
+    }
+
+    header h1 {
+      font-size: 4em;
+      color: #a64ac9;
+      text-shadow: 2px 2px 5px rgba(0,0,0,0.1);
+      margin: 0;
+    }
+
+    header p {
+      font-size: 1.5em;
+      color: #f06292;
+      margin-top: 10px;
+      letter-spacing: 1px;
+    }
+
+    /* Burbuja flotante */
+    .bubble {
+      position: absolute;
+      bottom: -100px;
+      width: 60px;
+      height: 60px;
+      background: rgba(255, 255, 255, 0.4);
+      border-radius: 50%;
+      animation: rise 20s infinite ease-in;
+    }
+
+    .bubble:nth-child(1) {
+      left: 10%;
+      animation-delay: 0s;
+      width: 40px;
+      height: 40px;
+    }
+
+    .bubble:nth-child(2) {
+      left: 30%;
+      animation-delay: 4s;
+      width: 80px;
+      height: 80px;
+    }
+
+    .bubble:nth-child(3) {
+      left: 50%;
+      animation-delay: 2s;
+    }
+
+    .bubble:nth-child(4) {
+      left: 70%;
+      animation-delay: 6s;
+      width: 100px;
+      height: 100px;
+    }
+
+    .bubble:nth-child(5) {
+      left: 90%;
+      animation-delay: 1s;
+      width: 30px;
+      height: 30px;
+    }
+
+    @keyframes rise {
+      0% {
+        transform: translateY(0) scale(1);
+        opacity: 0.7;
+      }
+      100% {
+        transform: translateY(-120vh) scale(1.2);
+        opacity: 0;
+      }
+    }
+  </style>
 </head>
 <body>
 
-<!-- Encabezado -->
-<header>
+  <header>
     <h1>ÉterFlor</h1>
-    <nav>
-        <a href="#flores">Flores Eternas</a>
-        <a href="#libros">Libros</a>
-        <a href="#contacto">Contacto</a>
-    </nav>
-</header>
+    <p>Flores eternas, emociones infinitas</p>
+  </header>
 
-<!-- Sección de Flores Eternas -->
-<section id="flores" class="section">
-    <div class="container">
-        <h2 class="section-title">Flores Eternas</h2>
-        
-        <!-- Carrusel de Flores Eternas -->
-        <div class="swiper-container">
-            <div class="swiper-wrapper">
-                <!-- Flor 1 -->
-                <div class="swiper-slide">
-                    <div class="card">
-                        <img src="images/flor1.jpg" alt="Flor 1">
-                        <div class="card-content">
-                            <h3 class="card-title">Rosa Eterna Dorada</h3>
-                            <p class="card-description">La rosa dorada, símbolo de amor y valentía, que nunca pierde su esplendor.</p>
-                        </div>
-                    </div>
-                </div>
-                <!-- Flor 2 -->
-                <div class="swiper-slide">
-                    <div class="card">
-                        <img src="images/flor2.jpg" alt="Flor 2">
-                        <div class="card-content">
-                            <h3 class="card-title">Lirio Blanco Inmortal</h3>
-                            <p class="card-description">El lirio blanco, símbolo de pureza y elegancia, que perdura en el tiempo sin desvanecerse.</p>
-                        </div>
-                    </div>
-                </div>
-                <!-- Flor 3 -->
-                <div class="swiper-slide">
-                    <div class="card">
-                        <img src="images/flor3.jpg" alt="Flor 3">
-                        <div class="card-content">
-                            <h3 class="card-title">Tulipán Nocturno</h3>
-                            <p class="card-description">Este tulipán, con sus tonos oscuros, representa la belleza que nunca se apaga.</p>
-                        </div>
-                    </div>
-                </div>
-                <!-- Flor 4 -->
-                <div class="swiper-slide">
-                    <div class="card">
-                        <img src="images/flor4.jpg" alt="Flor 4">
-                        <div class="card-content">
-                            <h3 class="card-title">Violeta Dorada</h3>
-                            <p class="card-description">La violeta dorada, un símbolo de resiliencia, que florece eternamente a pesar de la adversidad.</p>
-                        </div>
-                    </div>
-                </div>
-                <!-- Flor 5 -->
-                <div class="swiper-slide">
-                    <div class="card">
-                        <img src="images/flor5.jpg" alt="Flor 5">
-                        <div class="card-content">
-                            <h3 class="card-title">Orquídea Azul Celestial</h3>
-                            <p class="card-description">La orquídea azul, un emblema de misterio y belleza que jamás pierde su esplendor celestial.</p>
-                        </div>
-                    </div>
-                </div>
-                <!-- Flor 6 -->
-                <div class="swiper-slide">
-                    <div class="card">
-                        <img src="images/flor6.jpg" alt="Flor 6">
-                        <div class="card-content">
-                            <h3 class="card-title">Camelia Plateada</h3>
-                            <p class="card-description">La camelia plateada, un símbolo de amor eterno, con su brillo inquebrantable.</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            
-            <!-- Controles del Carrusel -->
-            <div class="swiper-button-next"></div>
-            <div class="swiper-button-prev"></div>
-        </div>
-    </div>
-</section>
-
-<!-- Librerías para Swiper -->
-<script src="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.js"></script>
-<script>
-    var swiper = new Swiper('.swiper-container', {
-        navigation: {
-            nextEl: '.swiper-button-next',
-            prevEl: '.swiper-button-prev'
-        }
-    });
-</script>
-<!-- Sección de Libros -->
-<section id="libros" style="padding: 60px 0; background-color: #333; color: #fff;">
-    <div class="container">
-        <h2 style="text-align: center; font-size: 3rem; color: #d4af37;">Libros Épicos</h2>
-        <div class="swiper-container" style="margin-top: 30px;">
-            <div class="swiper-wrapper">
-                <!-- Recuadro 1 -->
-                <div class="swiper-slide" style="background-color: #444; border-radius: 10px; padding: 20px;">
-                    <h3 style="text-align: center; color: #d4af37;">El Viaje de las Estrellas</h3>
-                    <p style="color: #ddd;">Una historia épica de exploración espacial donde los personajes enfrentan desafíos desconocidos, mientras buscan salvar a la humanidad.</p>
-                </div>
-                <!-- Recuadro 2 -->
-                <div class="swiper-slide" style="background-color: #444; border-radius: 10px; padding: 20px;">
-                    <h3 style="text-align: center; color: #d4af37;">La Guerra del Silencio</h3>
-                    <p style="color: #ddd;">En una distopía donde el sonido ha sido prohibido, los rebeldes luchan por recuperar lo que una vez fue la voz de la humanidad.</p>
-                </div>
-                <!-- Recuadro 3 -->
-                <div class="swiper-slide" style="background-color: #444; border-radius: 10px; padding: 20px;">
-                    <h3 style="text-align: center; color: #d4af37;">La Herencia de Fuego</h3>
-                    <p style="color: #ddd;">Un joven aprendiz de mago descubre que tiene el poder ancestral de controlar el fuego, pero también una terrible maldición que podría destruirlo todo.</p>
-                </div>
-                <!-- Recuadro 4 -->
-                <div class="swiper-slide" style="background-color: #444; border-radius: 10px; padding: 20px;">
-                    <h3 style="text-align: center; color: #d4af37;">El Último Reino</h3>
-                    <p style="color: #ddd;">En un mundo donde los reinos han caído, un héroe olvidado busca recuperar la gloria y restaurar la paz a su tierra natal.</p>
-                </div>
-                <!-- Recuadro 5 -->
-                <div class="swiper-slide" style="background-color: #444; border-radius: 10px; padding: 20px;">
-                    <h3 style="text-align: center; color: #d4af37;">Sombras de Acero</h3>
-                    <p style="color: #ddd;">Un asesino enmascarado debe decidir entre su lealtad a una organización secreta o su deseo de redención.</p>
-                </div>
-                <!-- Recuadro 6 -->
-                <div class="swiper-slide" style="background-color: #444; border-radius: 10px; padding: 20px;">
-                    <h3 style="text-align: center; color: #d4af37;">La Profecía del Sol</h3>
-                    <p style="color: #ddd;">Una antigua profecía predice la caída del sol y el renacimiento de un nuevo mundo. Un grupo de aventureros debe detener el caos antes de que sea demasiado tarde.</p>
-                </div>
-            </div>
-            <!-- Botones de navegación del carrusel -->
-            <div class="swiper-button-next" style="color: #d4af37;"></div>
-            <div class="swiper-button-prev" style="color: #d4af37;"></div>
-        </div>
-    </div>
-</section>
-<!-- Pie de Página -->
-<footer style="background-color: #222; color: #fff; padding: 40px 0; text-align: center;">
-    <div class="container">
-        <p style="font-size: 1.2rem; color: #d4af37;">ÉterFlor - Flores Eternas y Más</p>
-        <p style="font-size: 1rem; color: #bbb; margin-bottom: 20px;">Transforma tu mundo con nuestras flores y productos únicos. Con el toque de elegancia que mereces.</p>
-        <p style="font-size: 1.2rem; color: #fff;">Para consultas o pedidos, contáctanos al:</p>
-        <p style="font-size: 1.4rem; color: #d4af37; font-weight: bold;">949442473</p>
-        <p style="font-size: 1rem; color: #bbb; margin-top: 20px;">© 2025 ÉterFlor. Todos los derechos reservados.</p>
-    </div>
-</footer>
+  <!-- Burbujas flotantes -->
+  <div class="bubble"></div>
+  <div class="bubble"></div>
+  <div class="bubble"></div>
+  <div class="bubble"></div>
+  <div class="bubble"></div>
 
 </body>
 </html>

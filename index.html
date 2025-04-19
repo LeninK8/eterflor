@@ -1,81 +1,92 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <title>ÉterFlor</title>
-    <style>
-        @import url('https://fonts.googleapis.com/css2?family=Great+Vibes&family=Montserrat:wght@400;700&display=swap');
+  <meta charset="UTF-8">
+  <title>ÉterFlor</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Great+Vibes&family=Montserrat:wght@400;700&display=swap');
 
-        body {
-            margin: 0;
-            font-family: 'Montserrat', sans-serif;
-            background-color: #000000;
-            overflow-x: hidden;
-        }
+    body {
+      margin: 0;
+      font-family: 'Montserrat', sans-serif;
+      background-color: #000000;
+      overflow-x: hidden;
+    }
 
-        header {
-            background: linear-gradient(135deg, #000000, #3d3d3d);
-            padding: 60px 20px;
-            text-align: center;
-            color: #ffd700;
-            position: relative;
-            overflow: hidden;
-        }
+    header {
+      background: linear-gradient(135deg, #000000, #3d3d3d);
+      padding: 60px 20px;
+      text-align: center;
+      color: #ffd700;
+      position: relative;
+      overflow: hidden;
+    }
 
-        header h1 {
-            font-family: 'Great Vibes', cursive;
-            font-size: 4em;
-            color: #ffd700;
-            margin: 0;
-            position: relative;
-            z-index: 1;
-        }
+    header h1 {
+      font-family: 'Great Vibes', cursive;
+      font-size: 4em;
+      color: #ffd700;
+      margin: 0;
+      position: relative;
+      z-index: 1;
+    }
 
-        .hoja {
-            position: absolute;
-            width: 40px;
-            opacity: 0.2; /* 20% de transparencia */
-            animation: caer 5s linear forwards;
-            pointer-events: none;
-        }
+    .hoja {
+      position: absolute;
+      width: 30px;
+      opacity: 0.2;
+      animation: caer 5s linear forwards;
+      pointer-events: none;
+    }
 
-        @keyframes caer {
-            0% {
-                transform: translateY(-50px) rotate(0deg);
-                opacity: 0.2;
-            }
-            100% {
-                transform: translateY(300px) rotate(360deg);
-                opacity: 0;
-            }
-        }
-    </style>
+    @keyframes caer {
+      0% {
+        transform: translateY(-50px) rotate(0deg);
+        opacity: 0.2;
+      }
+      100% {
+        transform: translateY(300px) rotate(360deg);
+        opacity: 0;
+      }
+    }
+  </style>
 </head>
 <body>
 
 <header>
-    <h1>ÉterFlor</h1>
+  <h1>ÉterFlor</h1>
 </header>
 
+<svg id="svg-hoja" width="0" height="0" xmlns="http://www.w3.org/2000/svg">
+  <symbol id="hoja-dorada" viewBox="0 0 64 64">
+    <path fill="#FFD700" d="M32 2C18 10 2 24 12 42s32 20 40 12c8-8 6-24-4-36S38 6 32 2z"/>
+  </symbol>
+</svg>
+
 <script>
-    const header = document.querySelector('header');
+  const header = document.querySelector('header');
 
-    function crearHoja() {
-        const hoja = document.createElement('img');
-        hoja.src = 'https://www.freepnglogos.com/uploads/golden-leaf-png/golden-leaf-png-transparent-image-2.png'; // Nueva hoja dorada
-        hoja.classList.add('hoja');
-        hoja.style.left = Math.random() * window.innerWidth + 'px';
-        hoja.style.top = '-50px';
+  function crearHoja() {
+    const hoja = document.createElementNS("http://www.w3.org/2000/svg", "svg");
+    const use = document.createElementNS("http://www.w3.org/2000/svg", "use");
+    hoja.classList.add('hoja');
+    hoja.style.left = Math.random() * window.innerWidth + 'px';
+    hoja.style.top = '-50px';
+    hoja.setAttribute("width", "40");
+    hoja.setAttribute("height", "40");
+    hoja.setAttribute("viewBox", "0 0 64 64");
+    hoja.setAttribute("xmlns", "http://www.w3.org/2000/svg");
 
-        header.appendChild(hoja);
+    use.setAttributeNS('http://www.w3.org/1999/xlink', 'href', '#hoja-dorada');
+    hoja.appendChild(use);
+    header.appendChild(hoja);
 
-        setTimeout(() => {
-            hoja.remove();
-        }, 5000);
-    }
+    setTimeout(() => {
+      hoja.remove();
+    }, 5000);
+  }
 
-    // Crear hojas cada cierto tiempo
-    setInterval(crearHoja, 600);
+  setInterval(crearHoja, 600);
 </script>
 
 </body>

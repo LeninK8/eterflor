@@ -192,8 +192,41 @@
     </div>
 </section>
 
-<script>
-    // Aquí puedes agregar algún script extra si lo deseas
+    <script>
+    function mostrarHistoria(flor) {
+        let titulo = '';
+        let historia = '';
+
+        // Historia de las flores
+        if (flor === 'rosaDorada') {
+            titulo = 'Rosa Dorada';
+            historia = 'La Rosa Dorada es conocida por su belleza única. Se dice que es un símbolo de amor eterno, un regalo perfecto para aquellos que desean expresar su afecto incondicional.';
+        } else if (flor === 'rosaAzul') {
+            titulo = 'Rosa Azul';
+            historia = 'La Rosa Azul es un símbolo de lo imposible y lo misterioso. Se cree que representa los secretos del amor verdadero, aquello que no puede ser alcanzado por todos.';
+        } else if (flor === 'rosaCristal') {
+            titulo = 'Rosa Cristal';
+            historia = 'La Rosa Cristal es una flor pura y transparente, un símbolo de transparencia y honestidad en las relaciones. Es perfecta para quienes valoran la sinceridad en el amor.';
+        } else if (flor === 'rosaNegra') {
+            titulo = 'Rosa Negra';
+            historia = 'La Rosa Negra es una flor poderosa que representa la fuerza y la pasión. Es ideal para aquellos que buscan un amor intenso y profundo.';
+        } else if (flor === 'rosaRoja') {
+            titulo = 'Rosa Roja';
+            historia = 'La Rosa Roja es el símbolo clásico del amor y la pasión. Es la flor perfecta para quienes desean expresar su amor eterno y sin reservas.';
+        } else if (flor === 'rosaMulticolor') {
+            titulo = 'Rosa Multicolor';
+            historia = 'La Rosa Multicolor es un símbolo de alegría y diversidad. Representa la celebración del amor en todas sus formas, combinando diferentes emociones en una sola flor.';
+        }
+
+        // Mostrar el modal con la historia de la flor seleccionada
+        document.getElementById('florTitulo').innerText = titulo;
+        document.getElementById('florHistoria').innerText = historia;
+        document.getElementById('myModal').style.display = 'block';
+    }
+
+    function cerrarModal() {
+        document.getElementById('myModal').style.display = 'none';
+    }
 </script>
 
 </body>

@@ -49,26 +49,9 @@
         .hoja4 { bottom: 40px; left: 80px; transform: rotate(-15deg); }
         .hoja5 { top: 80px; left: 150px; transform: rotate(25deg); }
 
-        /* Pétalo para el encabezado */
-        .petalo {
-            position: relative;
-            top: 0;
-            left: 0;
-            width: 60px;
-            opacity: 0.3;
-            animation: flotarPetalo 12s infinite ease-in-out;
-            filter: hue-rotate(90deg) brightness(1.5);
-        }
-
         @keyframes flotar {
             0% { transform: translateY(0) rotate(0deg); }
             50% { transform: translateY(15px) rotate(10deg); }
-            100% { transform: translateY(0) rotate(0deg); }
-        }
-
-        @keyframes flotarPetalo {
-            0% { transform: translateY(0) rotate(0deg); }
-            50% { transform: translateY(12px) rotate(15deg); }
             100% { transform: translateY(0) rotate(0deg); }
         }
     </style>
@@ -81,9 +64,6 @@
         <img src="https://pngimg.com/uploads/autumn_leaves/autumn_leaves_PNG3610.png" class="hojas hoja3">
         <img src="https://pngimg.com/uploads/autumn_leaves/autumn_leaves_PNG3610.png" class="hojas hoja4">
         <img src="https://pngimg.com/uploads/autumn_leaves/autumn_leaves_PNG3610.png" class="hojas hoja5">
-        
-        <!-- Pétalo normal -->
-        <img src="https://pngimg.com/uploads/petal/petal_PNG1430.png" class="petalo">
     </header>
 </body>
 </html>

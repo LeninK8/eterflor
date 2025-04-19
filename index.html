@@ -3,674 +3,226 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>ÉterFlor</title>
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Roboto&display=swap" rel="stylesheet">
+  <title>ÉterFlor - Elegancia Natural</title>
   <style>
-    * {
+    body {
+      font-family: 'Arial', sans-serif;
       margin: 0;
       padding: 0;
-      box-sizing: border-box;
-    }
-
-    body {
-      font-family: 'Roboto', sans-serif;
-      background-color: #0d0d0d;
-      color: #fff;
+      background-color: #f7f7f7; /* Color suave de fondo */
     }
 
     header {
-      position: relative;
-      background: linear-gradient(to right, #0d0d0d, #1a1a1a);
-      padding: 100px 20px;
+      background: linear-gradient(135deg, #f8f1d5, #f3e4c3); /* Gradiente suave con colores pasteles */
+      color: #5c4b3b; /* Color de texto marrón suave */
       text-align: center;
+      padding: 60px 20px;
+      position: relative;
       overflow: hidden;
-      border-bottom: 2px solid #caa86b;
     }
 
     header h1 {
-      font-family: 'Playfair Display', serif;
-      font-size: 4rem;
-      color: #caa86b;
-      margin-bottom: 15px;
+      font-size: 3rem;
+      color: #caa86b; /* Dorado elegante */
+      font-weight: bold;
+      margin-bottom: 20px;
     }
 
-    header p {
-      font-size: 1.4rem;
-      color: #d4d4d4;
-      font-style: italic;
-    }
-
-    /* Burbujas decorativas solo en el encabezado */
-    .burbuja {
+    .bubble {
       position: absolute;
-      bottom: -100px;
-      width: 30px;
-      height: 30px;
-      background: rgba(202, 168, 107, 0.2);
+      background-color: rgba(202, 168, 107, 0.6); /* Burbuja dorada suave */
       border-radius: 50%;
-      animation: subirBurbuja 20s infinite ease-in-out;
+      animation: bubble 8s infinite;
     }
 
-    .burbuja:nth-child(1) {
-      left: 10%;
-      width: 20px;
-      height: 20px;
-      animation-duration: 15s;
+    .bubble:nth-child(1) {
+      width: 150px;
+      height: 150px;
+      top: -50px;
+      left: 20%;
+      animation-duration: 6s;
     }
-    .burbuja:nth-child(2) {
-      left: 40%;
-      width: 35px;
-      height: 35px;
-      animation-duration: 18s;
-    }
-    .burbuja:nth-child(3) {
+
+    .bubble:nth-child(2) {
+      width: 100px;
+      height: 100px;
+      top: 10%;
       left: 70%;
-      width: 25px;
-      height: 25px;
-      animation-duration: 12s;
+      animation-duration: 5s;
     }
 
-    @keyframes subirBurbuja {
+    .bubble:nth-child(3) {
+      width: 120px;
+      height: 120px;
+      top: 25%;
+      left: 50%;
+      animation-duration: 7s;
+    }
+
+    .bubble:nth-child(4) {
+      width: 180px;
+      height: 180px;
+      top: 30%;
+      left: 10%;
+      animation-duration: 9s;
+    }
+
+    @keyframes bubble {
       0% {
-        bottom: -50px;
-        opacity: 0;
         transform: translateY(0) scale(1);
+        opacity: 1;
       }
       50% {
-        opacity: 1;
-        transform: translateY(-150px) scale(1.2);
+        transform: translateY(-50px) scale(1.2);
+        opacity: 0.5;
       }
       100% {
-        bottom: 100%;
-        opacity: 0;
-        transform: translateY(-300px) scale(0.8);
+        transform: translateY(0) scale(1);
+        opacity: 1;
       }
+    }
+
+    header .subtitle {
+      font-size: 1.3rem;
+      color: #5c4b3b;
+      font-weight: 400;
+      margin-top: 10px;
     }
   </style>
 </head>
 <body>
 
   <header>
-    <div class="burbuja"></div>
-    <div class="burbuja"></div>
-    <div class="burbuja"></div>
+    <h1>ÉterFlor - Belleza que Perdura</h1>
+    <p class="subtitle">Flores eternas, libros y mucho más, con un toque de elegancia natural.</p>
 
-    <h1>ÉterFlor</h1>
-    <p>Flores eternas, elegancia infinita</p>
+    <!-- Burbujeas animadas -->
+    <div class="bubble"></div>
+    <div class="bubble"></div>
+    <div class="bubble"></div>
+    <div class="bubble"></div>
   </header>
-<section class="flores">
-  <h2>Flores Eternas</h2>
-  <div class="carrusel">
-    <!-- Flor 1 -->
-    <div class="flor">
-      <img src="https://i.ibb.co/g6J7Kvb/flor1.jpg" alt="Flor 1">
-      <h3>Rosa del Amanecer</h3>
-      <p>Una rosa que nunca se marchita. Simboliza amor eterno y pasión dorada.</p>
-      <a href="https://wa.link/lxub3p" target="_blank">S/ 49.90</a>
-    </div>
-
-    <!-- Flor 2 -->
-    <div class="flor">
-      <img src="https://i.ibb.co/1TBRjQD/flor2.jpg" alt="Flor 2">
-      <h3>Lirio de Medianoche</h3>
-      <p>Misterioso, elegante y mágico. Ideal para almas intensas y profundas.</p>
-      <a href="https://wa.link/lxub3p" target="_blank">S/ 54.90</a>
-    </div>
-
-    <!-- Flor 3 -->
-    <div class="flor">
-      <img src="https://i.ibb.co/NWZzsfZ/flor3.jpg" alt="Flor 3">
-      <h3>Orquídea Celestial</h3>
-      <p>Flor divina que refleja pureza, lujo y belleza trascendental.</p>
-      <a href="https://wa.link/lxub3p" target="_blank">S/ 59.90</a>
-    </div>
-
-    <!-- Flor 4 -->
-    <div class="flor">
-      <img src="https://i.ibb.co/yY2RwD3/flor4.jpg" alt="Flor 4">
-      <h3>Margarita Solar</h3>
-      <p>Una chispa de alegría eterna. Ideal para levantar el alma.</p>
-      <a href="https://wa.link/lxub3p" target="_blank">S/ 39.90</a>
-    </div>
-
-    <!-- Flor 5 -->
-    <div class="flor">
-      <img src="https://i.ibb.co/n0y4CZG/flor5.jpg" alt="Flor 5">
-      <h3>Tulipán Éter</h3>
-      <p>Firme, elegante, inmortal. Un regalo que impresiona siempre.</p>
-      <a href="https://wa.link/lxub3p" target="_blank">S/ 44.90</a>
-    </div>
-
-    <!-- Flor 6 -->
-    <div class="flor">
-      <img src="https://i.ibb.co/mFjXrJk/flor6.jpg" alt="Flor 6">
-      <h3>Dalia Dorada</h3>
-      <p>Flor imperial que representa sabiduría, riqueza y estilo supremo.</p>
-      <a href="https://wa.link/lxub3p" target="_blank">S/ 69.90</a>
-    </div>
-  </div>
-</section>
-
-<style>
-.flores {
-  background-color: #121212;
-  padding: 60px 20px;
-  text-align: center;
-}
-
-.flores h2 {
-  font-family: 'Playfair Display', serif;
-  font-size: 3rem;
-  color: #caa86b;
-  margin-bottom: 30px;
-  border-bottom: 2px solid #caa86b;
-  display: inline-block;
-  padding-bottom: 10px;
-}
-
-.carrusel {
-  display: flex;
-  overflow-x: auto;
-  gap: 20px;
-  padding: 20px 0;
-  scrollbar-width: none; /* Firefox */
-}
-
-.carrusel::-webkit-scrollbar {
-  display: none; /* Chrome y Safari */
-}
-
-.flor {
-  background-color: #1e1e1e;
-  border: 1px solid #caa86b33;
-  border-radius: 20px;
-  padding: 20px;
-  min-width: 250px;
-  flex: 0 0 auto;
-  box-shadow: 0 0 10px #caa86b44;
-  transition: transform 0.3s ease;
-}
-
-.flor:hover {
-  transform: scale(1.05);
-}
-
-.flor img {
-  width: 100%;
-  height: 180px;
-  object-fit: cover;
-  border-radius: 15px;
-  margin-bottom: 15px;
-}
-
-.flor h3 {
-  color: #f5f5f5;
-  font-size: 1.4rem;
-  margin-bottom: 10px;
-}
-
-.flor p {
-  color: #ccc;
-  font-size: 0.95rem;
-  margin-bottom: 15px;
-}
-
-.flor a {
-  display: inline-block;
-  background-color: #caa86b;
-  color: #0d0d0d;
-  padding: 10px 20px;
-  border-radius: 30px;
-  font-weight: bold;
-  text-decoration: none;
-  transition: background 0.3s;
-}
-
-.flor a:hover {
-  background-color: #e5c47d;
-}
-</style>
-<section class="libros">
-  <h2>Libros Eternos</h2>
-  <div class="carrusel">
-    <!-- Libro 1 -->
-    <div class="libro">
-      <img src="https://i.ibb.co/BsdN4Ht/libro1.jpg" alt="Libro 1">
-      <h3>El Jardín de los Secretos</h3>
-      <p>Un viaje emocional entre palabras perdidas y sueños floreciendo en el silencio.</p>
-      <a href="https://wa.link/lxub3p" target="_blank">S/ 29.90</a>
-    </div>
-
-    <!-- Libro 2 -->
-    <div class="libro">
-      <img src="https://i.ibb.co/khzMCy3/libro2.jpg" alt="Libro 2">
-      <h3>Sombras del Alba</h3>
-      <p>Donde la oscuridad no da miedo, sino sentido. Ideal para almas intensas.</p>
-      <a href="https://wa.link/lxub3p" target="_blank">S/ 34.90</a>
-    </div>
-
-    <!-- Libro 3 -->
-    <div class="libro">
-      <img src="https://i.ibb.co/TrQ3yJ5/libro3.jpg" alt="Libro 3">
-      <h3>Crónicas del Silencio</h3>
-      <p>Una historia muda que grita emociones. Poético, profundo y directo al corazón.</p>
-      <a href="https://wa.link/lxub3p" target="_blank">S/ 39.90</a>
-    </div>
-
-    <!-- Libro 4 -->
-    <div class="libro">
-      <img src="https://i.ibb.co/SKP1FKf/libro4.jpg" alt="Libro 4">
-      <h3>Voces del Viento</h3>
-      <p>Palabras que vuelan libres. Ideal para quienes sueñan despiertos.</p>
-      <a href="https://wa.link/lxub3p" target="_blank">S/ 27.90</a>
-    </div>
-
-    <!-- Libro 5 -->
-    <div class="libro">
-      <img src="https://i.ibb.co/6yQ2nv8/libro5.jpg" alt="Libro 5">
-      <h3>Entre Líneas Eternas</h3>
-      <p>Un libro que se lee con el alma, no con los ojos. Pura esencia.</p>
-      <a href="https://wa.link/lxub3p" target="_blank">S/ 33.90</a>
-    </div>
-
-    <!-- Libro 6 -->
-    <div class="libro">
-      <img src="https://i.ibb.co/dGD5t9g/libro6.jpg" alt="Libro 6">
-      <h3>Reflejos del Infinito</h3>
-      <p>Una oda a lo eterno, lo intangible y lo que no se puede explicar con palabras.</p>
-      <a href="https://wa.link/lxub3p" target="_blank">S/ 44.90</a>
-    </div>
-  </div>
-</section>
-
-<style>
-.libros {
-  background-color: #0f0f0f;
-  padding: 60px 20px;
-  text-align: center;
-}
-
-.libros h2 {
-  font-family: 'Playfair Display', serif;
-  font-size: 3rem;
-  color: #caa86b;
-  margin-bottom: 30px;
-  border-bottom: 2px solid #caa86b;
-  display: inline-block;
-  padding-bottom: 10px;
-}
-
-.libros .carrusel {
-  display: flex;
-  overflow-x: auto;
-  gap: 20px;
-  padding: 20px 0;
-  scrollbar-width: none;
-}
-
-.libros .carrusel::-webkit-scrollbar {
-  display: none;
-}
-
-.libro {
-  background-color: #1e1e1e;
-  border: 1px solid #caa86b33;
-  border-radius: 20px;
-  padding: 20px;
-  min-width: 250px;
-  flex: 0 0 auto;
-  box-shadow: 0 0 10px #caa86b44;
-  transition: transform 0.3s ease;
-}
-
-.libro:hover {
-  transform: scale(1.05);
-}
-
-.libro img {
-  width: 100%;
-  height: 180px;
-  object-fit: cover;
-  border-radius: 15px;
-  margin-bottom: 15px;
-}
-
-.libro h3 {
-  color: #f5f5f5;
-  font-size: 1.4rem;
-  margin-bottom: 10px;
-}
-
-.libro p {
-  color: #ccc;
-  font-size: 0.95rem;
-  margin-bottom: 15px;
-}
-
-.libro a {
-  display: inline-block;
-  background-color: #caa86b;
-  color: #0d0d0d;
-  padding: 10px 20px;
-  border-radius: 30px;
-  font-weight: bold;
-  text-decoration: none;
-  transition: background 0.3s;
-}
-
-.libro a:hover {
-  background-color: #e5c47d;
-}
-</style>
-<section class="electro">
-  <h2>Electrodomésticos Exclusivos</h2>
-  <div class="carrusel">
-    <!-- Electro 1 -->
-    <div class="producto">
-      <img src="https://i.ibb.co/Bfhnk6W/electro1.jpg" alt="Licuadora Premium">
-      <h3>Licuadora Premium</h3>
-      <p>Poder y elegancia en tu cocina. Tritura hielo como mantequilla.</p>
-      <a href="https://wa.link/lxub3p" target="_blank">S/ 119.90</a>
-    </div>
-
-    <!-- Electro 2 -->
-    <div class="producto">
-      <img src="https://i.ibb.co/HGvCskF/electro2.jpg" alt="Horno Eléctrico 35L">
-      <h3>Horno Eléctrico 35L</h3>
-      <p>Ideal para tus pizzas, pasteles o pollo crocante. Todo en uno.</p>
-      <a href="https://wa.link/lxub3p" target="_blank">S/ 219.90</a>
-    </div>
-
-    <!-- Electro 3 -->
-    <div class="producto">
-      <img src="https://i.ibb.co/NVZZP3R/electro3.jpg" alt="Plancha a Vapor Pro">
-      <h3>Plancha a Vapor Pro</h3>
-      <p>Deslízate entre las arrugas con estilo. Prendas listas al instante.</p>
-      <a href="https://wa.link/lxub3p" target="_blank">S/ 89.90</a>
-    </div>
-
-    <!-- Electro 4 -->
-    <div class="producto">
-      <img src="https://i.ibb.co/7nG0vMM/electro4.jpg" alt="Freidora de Aire">
-      <h3>Freidora de Aire 4L</h3>
-      <p>Come saludable sin perder sabor. Crocante y sin culpa.</p>
-      <a href="https://wa.link/lxub3p" target="_blank">S/ 239.90</a>
-    </div>
-
-    <!-- Electro 5 -->
-    <div class="producto">
-      <img src="https://i.ibb.co/Yp6WcJ7/electro5.jpg" alt="Mini Refrigeradora">
-      <h3>Mini Refrigeradora</h3>
-      <p>Perfecta para tu oficina o cuarto gamer. Todo frío, todo elegante.</p>
-      <a href="https://wa.link/lxub3p" target="_blank">S/ 299.90</a>
-    </div>
-
-    <!-- Electro 6 -->
-    <div class="producto">
-      <img src="https://i.ibb.co/TKmdd0P/electro6.jpg" alt="Batidora Multiuso">
-      <h3>Batidora Multiuso</h3>
-      <p>Desde pasteles hasta smoothies. Potente, rápida y fácil de limpiar.</p>
-      <a href="https://wa.link/lxub3p" target="_blank">S/ 109.90</a>
-    </div>
-  </div>
-</section>
-
-<style>
-.electro {
-  background-color: #111;
-  padding: 60px 20px;
-  text-align: center;
-}
-
-.electro h2 {
-  font-family: 'Playfair Display', serif;
-  font-size: 3rem;
-  color: #caa86b;
-  margin-bottom: 30px;
-  border-bottom: 2px solid #caa86b;
-  display: inline-block;
-  padding-bottom: 10px;
-}
-
-.electro .carrusel {
-  display: flex;
-  overflow-x: auto;
-  gap: 20px;
-  padding: 20px 0;
-  scrollbar-width: none;
-}
-
-.electro .carrusel::-webkit-scrollbar {
-  display: none;
-}
-
-.producto {
-  background-color: #1e1e1e;
-  border: 1px solid #caa86b33;
-  border-radius: 20px;
-  padding: 20px;
-  min-width: 250px;
-  flex: 0 0 auto;
-  box-shadow: 0 0 10px #caa86b44;
-  transition: transform 0.3s ease;
-}
-
-.producto:hover {
-  transform: scale(1.05);
-}
-
-.producto img {
-  width: 100%;
-  height: 180px;
-  object-fit: cover;
-  border-radius: 15px;
-  margin-bottom: 15px;
-}
-
-.producto h3 {
-  color: #f5f5f5;
-  font-size: 1.4rem;
-  margin-bottom: 10px;
-}
-
-.producto p {
-  color: #ccc;
-  font-size: 0.95rem;
-  margin-bottom: 15px;
-}
-
-.producto a {
-  display: inline-block;
-  background-color: #caa86b;
-  color: #0d0d0d;
-  padding: 10px 20px;
-  border-radius: 30px;
-  font-weight: bold;
-  text-decoration: none;
-  transition: background 0.3s;
-}
-
-.producto a:hover {
-  background-color: #e5c47d;
-}
-</style>
-<section class="promociones">
-  <h2>Promociones Especiales</h2>
-  <div class="carrusel">
-    <!-- Promo 1: Flor Eterna + Licuadora + Libro -->
-    <div class="producto">
-      <img src="https://i.ibb.co/Bfhnk6W/electro1.jpg" alt="Licuadora Premium">
-      <h3>Flor Eterna + Licuadora Premium + Libro</h3>
-      <p>¡Paquete exclusivo! Obtén un 10% de descuento. Flor eterna, licuadora premium y un libro de recetas, todo en uno.</p>
-      <a href="https://wa.link/lxub3p" target="_blank">S/ 198.90</a>
-    </div>
-
-    <!-- Promo 2: Horno Eléctrico + Flores Eternas + Batidora -->
-    <div class="producto">
-      <img src="https://i.ibb.co/HGvCskF/electro2.jpg" alt="Horno Eléctrico 35L">
-      <h3>Horno Eléctrico + Flores Eternas + Batidora</h3>
-      <p>¡Combina lo mejor de la cocina y la decoración! 15% de descuento en este increíble paquete.</p>
-      <a href="https://wa.link/lxub3p" target="_blank">S/ 265.92</a>
-    </div>
-
-    <!-- Promo 3: Mini Refrigeradora + Flor Eterna + Libro -->
-    <div class="producto">
-      <img src="https://i.ibb.co/Yp6WcJ7/electro5.jpg" alt="Mini Refrigeradora">
-      <h3>Mini Refrigeradora + Flor Eterna + Libro</h3>
-      <p>Con 12% de descuento, lleva una mini refrigeradora, una flor eterna y un libro para completar tu decoración.</p>
-      <a href="https://wa.link/lxub3p" target="_blank">S/ 312.90</a>
-    </div>
-
-    <!-- Promo 4: Plancha + Flor Eterna + Horno Eléctrico -->
-    <div class="producto">
-      <img src="https://i.ibb.co/TKmdd0P/electro6.jpg" alt="Plancha a Vapor Pro">
-      <h3>Plancha a Vapor + Flor Eterna + Horno Eléctrico</h3>
-      <p>¡Paquete completo para tu hogar con 5% de descuento! Dale estilo a tu ropa y a tu decoración.</p>
-      <a href="https://wa.link/lxub3p" target="_blank">S/ 299.50</a>
-    </div>
-
-    <!-- Promo 5: Freidora de Aire + Libro + Flores Eternas -->
-    <div class="producto">
-      <img src="https://i.ibb.co/NVZZP3R/electro3.jpg" alt="Freidora de Aire">
-      <h3>Freidora de Aire + Libro + Flores Eternas</h3>
-      <p>¡Disfruta de la comida saludable y la lectura con un 8% de descuento en este paquete!</p>
-      <a href="https://wa.link/lxub3p" target="_blank">S/ 389.00</a>
-    </div>
-
-    <!-- Promo 6: Licuadora + Libro + Plancha -->
-    <div class="producto">
-      <img src="https://i.ibb.co/Bfhnk6W/electro1.jpg" alt="Licuadora Premium">
-      <h3>Licuadora Premium + Libro + Plancha a Vapor</h3>
-      <p>10% de descuento para llevarte todo lo necesario para tu cocina y hogar. ¡No lo dejes pasar!</p>
-      <a href="https://wa.link/lxub3p" target="_blank">S/ 185.99</a>
-    </div>
-  </div>
-</section>
-
-<style>
-.promociones {
-  background-color: #111;
-  padding: 60px 20px;
-  text-align: center;
-}
-
-.promociones h2 {
-  font-family: 'Playfair Display', serif;
-  font-size: 3rem;
-  color: #caa86b;
-  margin-bottom: 30px;
-  border-bottom: 2px solid #caa86b;
-  display: inline-block;
-  padding-bottom: 10px;
-}
-
-.promociones .carrusel {
-  display: flex;
-  overflow-x: auto;
-  gap: 20px;
-  padding: 20px 0;
-  scrollbar-width: none;
-}
-
-.promociones .carrusel::-webkit-scrollbar {
-  display: none;
-}
-
-.producto {
-  background-color: #1e1e1e;
-  border: 1px solid #caa86b33;
-  border-radius: 20px;
-  padding: 20px;
-  min-width: 250px;
-  flex: 0 0 auto;
-  box-shadow: 0 0 10px #caa86b44;
-  transition: transform 0.3s ease;
-}
-
-.producto:hover {
-  transform: scale(1.05);
-}
-
-.producto img {
-  width: 100%;
-  height: 180px;
-  object-fit: cover;
-  border-radius: 15px;
-  margin-bottom: 15px;
-}
-
-.producto h3 {
-  color: #f5f5f5;
-  font-size: 1.4rem;
-  margin-bottom: 10px;
-}
-
-.producto p {
-  color: #ccc;
-  font-size: 0.95rem;
-  margin-bottom: 15px;
-}
-
-.producto a {
-  display: inline-block;
-  background-color: #caa86b;
-  color: #0d0d0d;
-  padding: 10px 20px;
-  border-radius: 30px;
-  font-weight: bold;
-  text-decoration: none;
-  transition: background 0.3s;
-}
-
-.producto a:hover {
-  background-color: #e5c47d;
-}
-</style>
-<footer>
-  <div class="container">
-    <div class="footer-content">
-      <p>&copy; 2025 ÉterFlor. Todos los derechos reservados.</p>
-      <div class="contacto">
-        <a href="https://wa.link/lxub3p" target="_blank">¡Contáctanos!</a>
-      </div>
-      <p>Gracias por visitar nuestra página.</p>
-    </div>
-  </div>
-</footer>
-
-<style>
-footer {
-  background-color: #111;
-  color: #f5f5f5;
-  padding: 40px 20px;
-  text-align: center;
-  font-family: 'Arial', sans-serif;
-}
-
-footer .footer-content {
-  max-width: 1200px;
-  margin: 0 auto;
-}
-
-footer .footer-content p {
-  margin: 5px 0;
-}
-
-footer .contacto a {
-  display: inline-block;
-  background-color: #caa86b;
-  color: #0d0d0d;
-  padding: 10px 20px;
-  border-radius: 30px;
-  font-weight: bold;
-  text-decoration: none;
-  transition: background 0.3s;
-}
-
-footer .contacto a:hover {
-  background-color: #e5c47d;
-}
-</style>
 
 </body>
+  <!-- Sección de Flores Eternas -->
+<section class="flower-section">
+  <h2>Flores Eternas</h2>
+  <div class="flower-carousel">
+    <!-- Carrusel de Flores -->
+    <div class="flower-item">
+      <img src="https://via.placeholder.com/300x200/ADD8E6/000000?text=Eterna+Azul" alt="Eterna Azul">
+      <h3>Eterna Azul</h3>
+      <p>Una flor que simboliza la serenidad y la paz eterna. Con un tono azul profundo que jamás perderá su brillo.</p>
+      <button onclick="window.location.href='https://wa.me/1234567890'">Comprar por WhatsApp</button>
+    </div>
+
+    <div class="flower-item">
+      <img src="https://via.placeholder.com/300x200/FF6347/000000?text=Eterna+Roja" alt="Eterna Roja">
+      <h3>Eterna Roja</h3>
+      <p>La flor del amor y la pasión, cuyo color rojo vibrante permanecerá intacto por siempre.</p>
+      <button onclick="window.location.href='https://wa.me/1234567890'">Comprar por WhatsApp</button>
+    </div>
+
+    <div class="flower-item">
+      <img src="https://via.placeholder.com/300x200/FFFFFF/000000?text=Eterna+Blanca" alt="Eterna Blanca">
+      <h3>Eterna Blanca</h3>
+      <p>Pureza y elegancia en su forma más sublime. Una flor blanca que perdurará más allá del tiempo.</p>
+      <button onclick="window.location.href='https://wa.me/1234567890'">Comprar por WhatsApp</button>
+    </div>
+
+    <div class="flower-item">
+      <img src="https://via.placeholder.com/300x200/FFB6C1/000000?text=Eterna+Rosa" alt="Eterna Rosa">
+      <h3>Eterna Rosa</h3>
+      <p>Suave, romántica y delicada. La eterna rosa mantiene su frescura y belleza eternamente.</p>
+      <button onclick="window.location.href='https://wa.me/1234567890'">Comprar por WhatsApp</button>
+    </div>
+
+    <div class="flower-item">
+      <img src="https://via.placeholder.com/300x200/FFFF00/000000?text=Eterna+Amarilla" alt="Eterna Amarilla">
+      <h3>Eterna Amarilla</h3>
+      <p>El sol siempre brilla con la eterna flor amarilla. Brillante y llena de vida.</p>
+      <button onclick="window.location.href='https://wa.me/1234567890'">Comprar por WhatsApp</button>
+    </div>
+
+    <div class="flower-item special-flower">
+      <img src="https://via.placeholder.com/300x200/FFA500/000000?text=Eterna+Naranja" alt="Eterna Naranja">
+      <h3>Eterna Naranja</h3>
+      <p>Flor vibrante que aporta energía y vitalidad. Siempre radiante, siempre viva.</p>
+      <button onclick="window.location.href='https://wa.me/1234567890'">Comprar por WhatsApp</button>
+    </div>
+  </div>
+</section>
+
+<!-- Estilos del Carrusel y Flores -->
+<style>
+  .flower-section {
+    padding: 30px;
+    background-color: #f3f3f3;
+    text-align: center;
+  }
+  .flower-carousel {
+    display: flex;
+    overflow-x: scroll;
+    gap: 20px;
+    padding: 10px;
+    scrollbar-width: none;
+  }
+  .flower-item {
+    background-color: #fff;
+    border-radius: 15px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 15px;
+    text-align: center;
+    flex-shrink: 0;
+    width: 250px;
+    transition: transform 0.3s ease;
+  }
+  .flower-item:hover {
+    transform: scale(1.05);
+  }
+  .flower-item img {
+    width: 100%;
+    border-radius: 10px;
+  }
+  .flower-item h3 {
+    font-size: 18px;
+    margin: 10px 0;
+    color: #333;
+  }
+  .flower-item p {
+    font-size: 14px;
+    color: #666;
+    margin-bottom: 15px;
+  }
+  .flower-item button {
+    padding: 10px 20px;
+    background-color: #ffaf00;
+    border: none;
+    color: white;
+    font-weight: bold;
+    cursor: pointer;
+    border-radius: 5px;
+  }
+  .flower-item button:hover {
+    background-color: #ff8c00;
+  }
+
+  /* Estilo especial para la flor Eterna Naranja */
+  .special-flower {
+    border: 2px solid #ff8c00;
+  }
+
+  /* Estilo para adaptar carrusel a móviles */
+  @media screen and (max-width: 768px) {
+    .flower-carousel {
+      flex-direction: column;
+      align-items: center;
+    }
+    .flower-item {
+      width: 100%;
+      margin-bottom: 20px;
+    }
+  }
+</style>
+
 </html>

@@ -145,8 +145,8 @@
     </div>
 
     <div class="flower-item special-flower">
-      <img src="https://via.placeholder.com/300x200/FFA500/000000?text=Eterna+Naranja" alt="Eterna Naranja">
-      <h3>Eterna Naranja</h3>
+      <img src="https://via.placeholder.com/300x200/FFA500/000000?text=ÉterFlor" alt="ÉterFlor">
+      <h3>ÉterFlor</h3>
       <p>Flor vibrante que aporta energía y vitalidad. Siempre radiante, siempre viva.</p>
       <button onclick="window.location.href='https://wa.me/1234567890'">Comprar por WhatsApp</button>
     </div>
@@ -159,6 +159,11 @@
     padding: 30px;
     background-color: #f3f3f3;
     text-align: center;
+  }
+  .flower-section h2 {
+    font-size: 28px;
+    color: #6d5c4f;
+    margin-bottom: 20px;
   }
   .flower-carousel {
     display: flex;
@@ -207,12 +212,10 @@
     background-color: #ff8c00;
   }
 
-  /* Estilo especial para la flor Eterna Naranja */
   .special-flower {
     border: 2px solid #ff8c00;
   }
 
-  /* Estilo para adaptar carrusel a móviles */
   @media screen and (max-width: 768px) {
     .flower-carousel {
       flex-direction: column;
@@ -224,51 +227,63 @@
     }
   }
 </style>
-<!-- Sección de Libros -->
+
+<!-- Sección de Libros con Precio y WhatsApp actualizado -->
 <section class="book-section">
   <h2>Libros Exclusivos</h2>
   <div class="book-carousel">
-    <!-- Carrusel de Libros -->
+    <!-- Libro 1 -->
     <div class="book-item">
       <img src="https://via.placeholder.com/300x200/D6CFCB/000000?text=Secretos+del+Éter" alt="Libro 1">
       <h3>Secretos del Éter</h3>
       <p>Una obra que te sumerge en lo invisible y lo eterno. Ideal para almas curiosas.</p>
-      <button onclick="window.location.href='https://wa.me/1234567890'">Comprar por WhatsApp</button>
+      <button onclick="window.location.href='https://wa.me/51949442473'">Comprar por WhatsApp</button>
+      <p class="precio">S/ 59.90</p>
     </div>
 
+    <!-- Libro 2 -->
     <div class="book-item">
       <img src="https://via.placeholder.com/300x200/C3D9D6/000000?text=Flor+de+Fuego" alt="Libro 2">
       <h3>Flor de Fuego</h3>
       <p>Una historia intensa sobre amor, pérdida y renacimiento. Atrapante hasta la última página.</p>
-      <button onclick="window.location.href='https://wa.me/1234567890'">Comprar por WhatsApp</button>
+      <button onclick="window.location.href='https://wa.me/51949442473'">Comprar por WhatsApp</button>
+      <p class="precio">S/ 49.90</p>
     </div>
 
+    <!-- Libro 3 -->
     <div class="book-item">
       <img src="https://via.placeholder.com/300x200/EADDCB/000000?text=El+Alquimista+Eterno" alt="Libro 3">
       <h3>El Alquimista Eterno</h3>
       <p>Filosofía, ciencia y magia convergen en esta joya literaria que cambiará tu forma de ver el mundo.</p>
-      <button onclick="window.location.href='https://wa.me/1234567890'">Comprar por WhatsApp</button>
+      <button onclick="window.location.href='https://wa.me/51949442473'">Comprar por WhatsApp</button>
+      <p class="precio">S/ 69.90</p>
     </div>
 
+    <!-- Libro 4 -->
     <div class="book-item">
       <img src="https://via.placeholder.com/300x200/F6E1DC/000000?text=Entre+Sombras+y+Luz" alt="Libro 4">
       <h3>Entre Sombras y Luz</h3>
       <p>Una novela poética y desgarradora que explora la dualidad del alma.</p>
-      <button onclick="window.location.href='https://wa.me/1234567890'">Comprar por WhatsApp</button>
+      <button onclick="window.location.href='https://wa.me/51949442473'">Comprar por WhatsApp</button>
+      <p class="precio">S/ 54.90</p>
     </div>
 
+    <!-- Libro 5 -->
     <div class="book-item">
       <img src="https://via.placeholder.com/300x200/DBD4C8/000000?text=El+Jardín+Interior" alt="Libro 5">
       <h3>El Jardín Interior</h3>
       <p>Reflexiones y relatos cortos que despiertan emociones profundas en cada palabra.</p>
-      <button onclick="window.location.href='https://wa.me/1234567890'">Comprar por WhatsApp</button>
+      <button onclick="window.location.href='https://wa.me/51949442473'">Comprar por WhatsApp</button>
+      <p class="precio">S/ 39.90</p>
     </div>
 
+    <!-- Libro 6 -->
     <div class="book-item">
       <img src="https://via.placeholder.com/300x200/D4E2D4/000000?text=ÉterFlor+Crónicas" alt="Libro 6">
       <h3>ÉterFlor: Crónicas</h3>
       <p>La historia detrás del fenómeno ÉterFlor, contada con estilo y elegancia. Imprescindible.</p>
-      <button onclick="window.location.href='https://wa.me/1234567890'">Comprar por WhatsApp</button>
+      <button onclick="window.location.href='https://wa.me/51949442473'">Comprar por WhatsApp</button>
+      <p class="precio">S/ 64.90</p>
     </div>
   </div>
 </section>
@@ -317,7 +332,7 @@
   .book-item p {
     font-size: 14px;
     color: #666;
-    margin-bottom: 15px;
+    margin-bottom: 10px;
   }
   .book-item button {
     padding: 10px 20px;
@@ -331,17 +346,336 @@
   .book-item button:hover {
     background-color: #a88a4e;
   }
+  .precio {
+    margin-top: 8px;
+    font-size: 16px;
+    color: #8a6d3b;
+    font-weight: bold;
+  }
 
-  /* Móvil responsive */
   @media screen and (max-width: 768px) {
     .book-carousel {
       flex-direction: column;
       align-items: center;
     }
+
     .book-item {
       width: 100%;
       margin-bottom: 20px;
     }
+  }
+</style>
+
+<!-- Sección de Electrodomésticos con Precio -->
+<section class="electro-section">
+  <h2>Electrodomésticos Elegantes</h2>
+  <div class="electro-carousel">
+    <!-- Producto 1 -->
+    <div class="electro-item">
+      <img src="https://via.placeholder.com/300x200/EAE3D2/000000?text=Licuadora+PowerMix" alt="Electro 1">
+      <h3>Licuadora PowerMix</h3>
+      <p>Potente, silenciosa y con diseño premium. Ideal para batidos épicos.</p>
+      <button onclick="window.location.href='https://wa.me/51949442473'">Comprar por WhatsApp</button>
+      <p class="precio">S/ 189.90</p>
+    </div>
+
+    <!-- Producto 2 -->
+    <div class="electro-item">
+      <img src="https://via.placeholder.com/300x200/E9D8D6/000000?text=Cafetera+Gourmet+" alt="Electro 2">
+      <h3>Cafetera Gourmet</h3>
+      <p>Disfruta del aroma de café recién hecho con estilo y elegancia.</p>
+      <button onclick="window.location.href='https://wa.me/51949442473'">Comprar por WhatsApp</button>
+      <p class="precio">S/ 149.90</p>
+    </div>
+
+    <!-- Producto 3 -->
+    <div class="electro-item">
+      <img src="https://via.placeholder.com/300x200/DFD4C5/000000?text=Hervidor+Smart+" alt="Electro 3">
+      <h3>Hervidor Smart</h3>
+      <p>Hierve tu agua en segundos. Preciso, rápido y elegante.</p>
+      <button onclick="window.location.href='https://wa.me/51949442473'">Comprar por WhatsApp</button>
+      <p class="precio">S/ 99.90</p>
+    </div>
+
+    <!-- Producto 4 -->
+    <div class="electro-item">
+      <img src="https://via.placeholder.com/300x200/F4EEE0/000000?text=Freidora+de+aire+" alt="Electro 4">
+      <h3>Freidora de Aire Pro</h3>
+      <p>Comidas crujientes y saludables sin perder el toque gourmet.</p>
+      <button onclick="window.location.href='https://wa.me/51949442473'">Comprar por WhatsApp</button>
+      <p class="precio">S/ 289.90</p>
+    </div>
+
+    <!-- Producto 5 -->
+    <div class="electro-item">
+      <img src="https://via.placeholder.com/300x200/D8CCC0/000000?text=Plancha+Steam+" alt="Electro 5">
+      <h3>Plancha SteamX</h3>
+      <p>Elimina arrugas con vapor profesional. Precisión y potencia.</p>
+      <button onclick="window.location.href='https://wa.me/51949442473'">Comprar por WhatsApp</button>
+      <p class="precio">S/ 129.90</p>
+    </div>
+
+    <!-- Producto 6 -->
+    <div class="electro-item">
+      <img src="https://via.placeholder.com/300x200/E6DFD3/000000?text=Refrigeradora+Mini+" alt="Electro 6">
+      <h3>Refrigeradora MiniCool</h3>
+      <p>Compacta, elegante y eficiente. Perfecta para espacios chic.</p>
+      <button onclick="window.location.href='https://wa.me/51949442473'">Comprar por WhatsApp</button>
+      <p class="precio">S/ 599.90</p>
+    </div>
+  </div>
+</section>
+
+<!-- Estilos -->
+<style>
+  .electro-section {
+    padding: 30px;
+    background-color: #fefefe;
+    text-align: center;
+  }
+
+  .electro-section h2 {
+    font-size: 28px;
+    color: #6d5c4f;
+    margin-bottom: 20px;
+  }
+
+  .electro-carousel {
+    display: flex;
+    overflow-x: scroll;
+    gap: 20px;
+    padding: 10px;
+    scrollbar-width: none;
+  }
+
+  .electro-item {
+    background-color: #ffffff;
+    border-radius: 15px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+    padding: 15px;
+    text-align: center;
+    flex-shrink: 0;
+    width: 250px;
+    transition: transform 0.3s ease;
+  }
+
+  .electro-item:hover {
+    transform: scale(1.05);
+  }
+
+  .electro-item img {
+    width: 100%;
+    border-radius: 10px;
+  }
+
+  .electro-item h3 {
+    font-size: 18px;
+    margin: 10px 0;
+    color: #3b3b3b;
+  }
+
+  .electro-item p {
+    font-size: 14px;
+    color: #666;
+    margin-bottom: 10px;
+  }
+
+  .electro-item button {
+    padding: 10px 20px;
+    background-color: #c8a564;
+    border: none;
+    color: white;
+    font-weight: bold;
+    cursor: pointer;
+    border-radius: 5px;
+  }
+
+  .electro-item button:hover {
+    background-color: #a88a4e;
+  }
+
+  .precio {
+    margin-top: 8px;
+    font-size: 16px;
+    color: #8a6d3b;
+    font-weight: bold;
+  }
+
+  @media screen and (max-width: 768px) {
+    .electro-carousel {
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .electro-item {
+      width: 100%;
+      margin-bottom: 20px;
+    }
+  }
+</style>
+<!-- Sección de Promociones -->
+<section class="promo-section">
+  <h2>Promociones Especiales</h2>
+  <div class="promo-carousel">
+    
+    <!-- Combo 1 -->
+    <div class="promo-item">
+      <h3>Combo Inspiración</h3>
+      <img src="https://via.placeholder.com/300x200/D6CFCB/000000?text=Secretos+del+Éter" alt="Libro">
+      <p><strong>Libro:</strong> Secretos del Éter</p>
+      <img src="https://via.placeholder.com/300x200/ADD8E6/000000?text=Eterna+Azul" alt="Flor">
+      <p><strong>Flor:</strong> Eterna Azul</p>
+      <img src="https://via.placeholder.com/300x200/000000/ffffff?text=Mini+Licuadora+Élite" alt="Electro">
+      <p><strong>Electrodoméstico:</strong> Mini Licuadora Élite</p>
+      <p><del>S/154.90</del> <strong>Combo: S/134.90</strong></p>
+      <button onclick="window.location.href='https://wa.me/1234567890'">Pedir por WhatsApp</button>
+    </div>
+
+    <!-- Combo 2 -->
+    <div class="promo-item">
+      <h3>Combo Pasión</h3>
+      <img src="https://via.placeholder.com/300x200/C3D9D6/000000?text=Flor+de+Fuego" alt="Libro">
+      <p><strong>Libro:</strong> Flor de Fuego</p>
+      <img src="https://via.placeholder.com/300x200/FF6347/000000?text=Eterna+Roja" alt="Flor">
+      <p><strong>Flor:</strong> Eterna Roja</p>
+      <img src="https://via.placeholder.com/300x200/222/ffffff?text=Hervidor+Smart+1.7L" alt="Electro">
+      <p><strong>Electrodoméstico:</strong> Hervidor Smart 1.7L</p>
+      <p><del>S/169.90</del> <strong>Combo: S/144.90</strong></p>
+      <button onclick="window.location.href='https://wa.me/1234567890'">Pedir por WhatsApp</button>
+    </div>
+
+    <!-- Combo 3 -->
+    <div class="promo-item">
+      <h3>Combo Luz Interior</h3>
+      <img src="https://via.placeholder.com/300x200/DBD4C8/000000?text=El+Jardín+Interior" alt="Libro">
+      <p><strong>Libro:</strong> El Jardín Interior</p>
+      <img src="https://via.placeholder.com/300x200/FFFFFF/000000?text=Eterna+Blanca" alt="Flor">
+      <p><strong>Flor:</strong> Eterna Blanca</p>
+      <img src="https://via.placeholder.com/300x200/444/ffffff?text=Difusor+de+Aromas" alt="Electro">
+      <p><strong>Electrodoméstico:</strong> Difusor de Aromas LED</p>
+      <p><del>S/162.90</del> <strong>Combo: S/138.90</strong></p>
+      <button onclick="window.location.href='https://wa.me/1234567890'">Pedir por WhatsApp</button>
+    </div>
+
+  </div>
+</section>
+
+<!-- Estilos Promociones -->
+<style>
+  .promo-section {
+    padding: 30px;
+    background-color: #fff8f0;
+    text-align: center;
+  }
+
+  .promo-section h2 {
+    font-size: 28px;
+    color: #8c6f45;
+    margin-bottom: 20px;
+  }
+
+  .promo-carousel {
+    display: flex;
+    overflow-x: scroll;
+    gap: 20px;
+    padding: 10px;
+    scrollbar-width: none;
+  }
+
+  .promo-item {
+    background-color: #fff;
+    border-radius: 15px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+    padding: 20px;
+    text-align: center;
+    flex-shrink: 0;
+    width: 280px;
+    transition: transform 0.3s ease;
+  }
+
+  .promo-item:hover {
+    transform: scale(1.05);
+  }
+
+  .promo-item img {
+    width: 100%;
+    border-radius: 10px;
+    margin: 5px 0;
+  }
+
+  .promo-item p {
+    font-size: 14px;
+    color: #444;
+    margin: 5px 0;
+  }
+
+  .promo-item del {
+    color: #999;
+  }
+
+  .promo-item strong {
+    font-weight: bold;
+    color: #d97c00;
+  }
+
+  .promo-item button {
+    margin-top: 10px;
+    padding: 10px 20px;
+    background-color: #c97a00;
+    border: none;
+    color: white;
+    font-weight: bold;
+    cursor: pointer;
+    border-radius: 5px;
+  }
+
+  .promo-item button:hover {
+    background-color: #a96300;
+  }
+
+  @media screen and (max-width: 768px) {
+    .promo-carousel {
+      flex-direction: column;
+      align-items: center;
+    }
+    .promo-item {
+      width: 100%;
+      margin-bottom: 20px;
+    }
+  }
+</style>
+<!-- Pie de Página -->
+<footer class="footer">
+  <div class="footer-content">
+    <p>📞 Contáctanos por WhatsApp: <a href="https://wa.me/1234567890" target="_blank">+51 123 456 789</a></p>
+    <p>© 2025 ÉterFlor. Todos los derechos reservados.</p>
+    <p>🌸 Gracias por visitarnos. Esperamos que hayas disfrutado explorando lo que con amor y detalle hemos creado para ti.</p>
+  </div>
+</footer>
+
+<!-- Estilos Footer -->
+<style>
+  .footer {
+    background-color: #2b2b2b;
+    color: #f2f2f2;
+    padding: 25px 10px;
+    text-align: center;
+    font-size: 14px;
+    margin-top: 40px;
+  }
+
+  .footer-content a {
+    color: #ffd700;
+    text-decoration: none;
+    font-weight: bold;
+  }
+
+  .footer-content a:hover {
+    text-decoration: underline;
+  }
+
+  .footer p {
+    margin: 8px 0;
   }
 </style>
 

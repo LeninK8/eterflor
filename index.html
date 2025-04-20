@@ -224,5 +224,125 @@
     }
   }
 </style>
+<!-- Sección de Libros -->
+<section class="book-section">
+  <h2>Libros Exclusivos</h2>
+  <div class="book-carousel">
+    <!-- Carrusel de Libros -->
+    <div class="book-item">
+      <img src="https://via.placeholder.com/300x200/D6CFCB/000000?text=Secretos+del+Éter" alt="Libro 1">
+      <h3>Secretos del Éter</h3>
+      <p>Una obra que te sumerge en lo invisible y lo eterno. Ideal para almas curiosas.</p>
+      <button onclick="window.location.href='https://wa.me/1234567890'">Comprar por WhatsApp</button>
+    </div>
+
+    <div class="book-item">
+      <img src="https://via.placeholder.com/300x200/C3D9D6/000000?text=Flor+de+Fuego" alt="Libro 2">
+      <h3>Flor de Fuego</h3>
+      <p>Una historia intensa sobre amor, pérdida y renacimiento. Atrapante hasta la última página.</p>
+      <button onclick="window.location.href='https://wa.me/1234567890'">Comprar por WhatsApp</button>
+    </div>
+
+    <div class="book-item">
+      <img src="https://via.placeholder.com/300x200/EADDCB/000000?text=El+Alquimista+Eterno" alt="Libro 3">
+      <h3>El Alquimista Eterno</h3>
+      <p>Filosofía, ciencia y magia convergen en esta joya literaria que cambiará tu forma de ver el mundo.</p>
+      <button onclick="window.location.href='https://wa.me/1234567890'">Comprar por WhatsApp</button>
+    </div>
+
+    <div class="book-item">
+      <img src="https://via.placeholder.com/300x200/F6E1DC/000000?text=Entre+Sombras+y+Luz" alt="Libro 4">
+      <h3>Entre Sombras y Luz</h3>
+      <p>Una novela poética y desgarradora que explora la dualidad del alma.</p>
+      <button onclick="window.location.href='https://wa.me/1234567890'">Comprar por WhatsApp</button>
+    </div>
+
+    <div class="book-item">
+      <img src="https://via.placeholder.com/300x200/DBD4C8/000000?text=El+Jardín+Interior" alt="Libro 5">
+      <h3>El Jardín Interior</h3>
+      <p>Reflexiones y relatos cortos que despiertan emociones profundas en cada palabra.</p>
+      <button onclick="window.location.href='https://wa.me/1234567890'">Comprar por WhatsApp</button>
+    </div>
+
+    <div class="book-item">
+      <img src="https://via.placeholder.com/300x200/D4E2D4/000000?text=ÉterFlor+Crónicas" alt="Libro 6">
+      <h3>ÉterFlor: Crónicas</h3>
+      <p>La historia detrás del fenómeno ÉterFlor, contada con estilo y elegancia. Imprescindible.</p>
+      <button onclick="window.location.href='https://wa.me/1234567890'">Comprar por WhatsApp</button>
+    </div>
+  </div>
+</section>
+
+<!-- Estilos del Carrusel de Libros -->
+<style>
+  .book-section {
+    padding: 30px;
+    background-color: #f9f9f9;
+    text-align: center;
+  }
+  .book-section h2 {
+    font-size: 28px;
+    color: #6d5c4f;
+    margin-bottom: 20px;
+  }
+  .book-carousel {
+    display: flex;
+    overflow-x: scroll;
+    gap: 20px;
+    padding: 10px;
+    scrollbar-width: none;
+  }
+  .book-item {
+    background-color: #ffffff;
+    border-radius: 15px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+    padding: 15px;
+    text-align: center;
+    flex-shrink: 0;
+    width: 250px;
+    transition: transform 0.3s ease;
+  }
+  .book-item:hover {
+    transform: scale(1.05);
+  }
+  .book-item img {
+    width: 100%;
+    border-radius: 10px;
+  }
+  .book-item h3 {
+    font-size: 18px;
+    margin: 10px 0;
+    color: #3b3b3b;
+  }
+  .book-item p {
+    font-size: 14px;
+    color: #666;
+    margin-bottom: 15px;
+  }
+  .book-item button {
+    padding: 10px 20px;
+    background-color: #c8a564;
+    border: none;
+    color: white;
+    font-weight: bold;
+    cursor: pointer;
+    border-radius: 5px;
+  }
+  .book-item button:hover {
+    background-color: #a88a4e;
+  }
+
+  /* Móvil responsive */
+  @media screen and (max-width: 768px) {
+    .book-carousel {
+      flex-direction: column;
+      align-items: center;
+    }
+    .book-item {
+      width: 100%;
+      margin-bottom: 20px;
+    }
+  }
+</style>
 
 </html>

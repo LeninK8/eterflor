@@ -752,6 +752,26 @@
     <p>© 2025 ÉterFlor. Todos los derechos reservados.</p>
     <p>🌸 Gracias por visitarnos. Esperamos que hayas disfrutado explorando lo que con amor y detalle hemos creado para ti.</p>
   </div>
+
+  <!-- Burbujas interactivos -->
+  <div class="footer-bubbles">
+    <div class="bubble" onclick="showPhrase(this)"></div>
+    <div class="bubble" onclick="showPhrase(this)"></div>
+    <div class="bubble" onclick="showPhrase(this)"></div>
+    <div class="bubble" onclick="showPhrase(this)"></div>
+    <div class="bubble" onclick="showPhrase(this)"></div>
+  </div>
+
+  <!-- Cinta deslizante de frases románticas -->
+  <div class="romantic-banner">
+    <div class="scroll-text">
+      🌸 Las flores eternas no marchitan, como los recuerdos que valen oro. ✨
+      &nbsp;&nbsp; El amor también se guarda en pétalos. 💕
+      &nbsp;&nbsp; ÉterFlor: donde cada ramo tiene alma. 🌹
+      &nbsp;&nbsp; Un pétalo eterno para un amor sin final. 💛
+      &nbsp;&nbsp; Que florezca lo que sientas. 🌼
+    </div>
+  </div>
 </footer>
 
 <!-- Estilos Footer -->
@@ -763,6 +783,8 @@
     text-align: center;
     font-size: 14px;
     margin-top: 40px;
+    position: relative;
+    overflow: hidden;
   }
 
   .footer-content a {
@@ -778,6 +800,91 @@
   .footer p {
     margin: 8px 0;
   }
+
+  /* Burbujas interactivas */
+  .footer-bubbles .bubble {
+    position: absolute;
+    bottom: 0;
+    width: 30px;
+    height: 30px;
+    background-color: rgba(255, 215, 0, 0.4);
+    border-radius: 50%;
+    animation: floatUp 8s infinite;
+    cursor: pointer;
+    transition: transform 0.2s;
+  }
+
+  .footer-bubbles .bubble:nth-child(1) { left: 20%; animation-delay: 0s; }
+  .footer-bubbles .bubble:nth-child(2) { left: 40%; animation-delay: 2s; }
+  .footer-bubbles .bubble:nth-child(3) { left: 60%; animation-delay: 4s; }
+  .footer-bubbles .bubble:nth-child(4) { left: 80%; animation-delay: 6s; }
+  .footer-bubbles .bubble:nth-child(5) { left: 30%; animation-delay: 1s; }
+
+  @keyframes floatUp {
+    0% { bottom: 0; opacity: 0.8; transform: translateY(0); }
+    50% { opacity: 0.5; }
+    100% { bottom: 100%; opacity: 0; transform: translateY(-200px); }
+  }
+
+  /* Cinta romántica */
+  .romantic-banner {
+    position: relative;
+    background-color: #1f1f1f;
+    color: #ffd700;
+    font-weight: bold;
+    padding: 10px 0;
+    overflow: hidden;
+    margin-top: 20px;
+  }
+
+  .scroll-text {
+    display: inline-block;
+    white-space: nowrap;
+    animation: scrollText 30s linear infinite;
+    font-size: 14px;
+  }
+
+  @keyframes scrollText {
+    from { transform: translateX(100%); }
+    to { transform: translateX(-100%); }
+  }
 </style>
 
-</html>
+<!-- Script para mostrar frases al hacer clic -->
+<script>
+  const frases = [
+    "💛 El amor también se guarda en pétalos.",
+    "🌹 ÉterFlor: donde cada ramo tiene alma.",
+    "✨ Un pétalo eterno para un amor sin final.",
+    "🌼 Que florezca lo que sientas.",
+    "🌸 Las flores eternas no marchitan.",
+    "💫 Detalles que perduran más que las palabras.",
+    "💖 Porque tú mereces flores que duren para siempre.",
+    "🌷 Recuerda: todo florece si se cuida con amor."
+  ];
+
+  function showPhrase(bubble) {
+    const frase = frases[Math.floor(Math.random() * frases.length)];
+    bubble.innerText = frase;
+    bubble.style.backgroundColor = "#ffd700";
+    bubble.style.color = "#2b2b2b";
+    bubble.style.fontSize = "10px";
+    bubble.style.display = "flex";
+    bubble.style.alignItems = "center";
+    bubble.style.justifyContent = "center";
+    bubble.style.padding = "3px";
+    bubble.style.borderRadius = "8px";
+    bubble.style.width = "auto";
+    bubble.style.height = "auto";
+    bubble.style.whiteSpace = "nowrap";
+    bubble.style.zIndex = "10";
+
+    setTimeout(() => {
+      bubble.innerText = "";
+      bubble.style.width = "30px";
+      bubble.style.height = "30px";
+      bubble.style.borderRadius = "50%";
+      bubble.style.backgroundColor = "rgba(255, 215, 0, 0.4)";
+    }, 3000);
+  }
+</script>

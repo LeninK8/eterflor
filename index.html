@@ -28,14 +28,22 @@
       margin-bottom: 20px;
     }
 
+    header .subtitle {
+      font-size: 1.3rem;
+      color: #5c4b3b;
+      font-weight: 400;
+      margin-top: 10px;
+    }
+
+    /* Burbujas grandes */
     .bubble {
       position: absolute;
       background-color: rgba(202, 168, 107, 0.6); /* Burbuja dorada suave */
       border-radius: 50%;
-      animation: bubble 8s infinite;
+      animation: bubble 8s infinite ease-in-out;
     }
 
-    .bubble:nth-child(1) {
+    .bubble:nth-child(3) {
       width: 150px;
       height: 150px;
       top: -50px;
@@ -43,7 +51,7 @@
       animation-duration: 6s;
     }
 
-    .bubble:nth-child(2) {
+    .bubble:nth-child(4) {
       width: 100px;
       height: 100px;
       top: 10%;
@@ -51,7 +59,7 @@
       animation-duration: 5s;
     }
 
-    .bubble:nth-child(3) {
+    .bubble:nth-child(5) {
       width: 120px;
       height: 120px;
       top: 25%;
@@ -59,7 +67,7 @@
       animation-duration: 7s;
     }
 
-    .bubble:nth-child(4) {
+    .bubble:nth-child(6) {
       width: 180px;
       height: 180px;
       top: 30%;
@@ -82,11 +90,59 @@
       }
     }
 
-    header .subtitle {
-      font-size: 1.3rem;
-      color: #5c4b3b;
-      font-weight: 400;
-      margin-top: 10px;
+    /* Miniburbujas adicionales */
+    .minibubble {
+      position: absolute;
+      background-color: rgba(202, 168, 107, 0.3); /* Dorado tenue */
+      border-radius: 50%;
+      width: 25px;
+      height: 25px;
+      animation: minibubble 10s infinite ease-in-out;
+    }
+
+    .minibubble:nth-child(7) {
+      top: 60%;
+      left: 25%;
+      animation-delay: 1s;
+    }
+
+    .minibubble:nth-child(8) {
+      top: 70%;
+      left: 65%;
+      animation-delay: 3s;
+    }
+
+    .minibubble:nth-child(9) {
+      top: 80%;
+      left: 45%;
+      animation-delay: 2s;
+    }
+
+    .minibubble:nth-child(10) {
+      top: 55%;
+      left: 80%;
+      animation-delay: 4s;
+    }
+
+    .minibubble:nth-child(11) {
+      top: 65%;
+      left: 15%;
+      animation-delay: 5s;
+    }
+
+    @keyframes minibubble {
+      0% {
+        transform: translateY(0) scale(1);
+        opacity: 0.6;
+      }
+      50% {
+        transform: translateY(-20px) scale(1.1);
+        opacity: 0.3;
+      }
+      100% {
+        transform: translateY(0) scale(1);
+        opacity: 0.6;
+      }
     }
   </style>
 </head>
@@ -96,14 +152,22 @@
     <h1>ÉterFlor - Belleza que Perdura</h1>
     <p class="subtitle">Flores eternas, libros y mucho más, con un toque de elegancia natural.</p>
 
-    <!-- Burbujeas animadas -->
+    <!-- Burbujas grandes -->
     <div class="bubble"></div>
     <div class="bubble"></div>
     <div class="bubble"></div>
     <div class="bubble"></div>
+
+    <!-- Miniburbujas -->
+    <div class="minibubble"></div>
+    <div class="minibubble"></div>
+    <div class="minibubble"></div>
+    <div class="minibubble"></div>
+    <div class="minibubble"></div>
   </header>
 
 </body>
+</html>
  <!-- Sección de Flores Eternas -->
 <section class="flower-section">
   <h2>Flores Eternas</h2>
